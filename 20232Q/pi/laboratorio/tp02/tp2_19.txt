@@ -1,0 +1,12 @@
+
+
+
+
+El segudo es el correcto, solo un printf
+
+Por otro lado, el tercero es erróneo, porque no se sabe cuál getchar se va a compilar primero
+
+
+
+
+

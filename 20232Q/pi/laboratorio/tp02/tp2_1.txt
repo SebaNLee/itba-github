@@ -1,0 +1,67 @@
+
+
+uso - para marcar entre primero y segundo
+
+
+a)
+en ambos casos se haría lo mismo, pero no sabríamos el resultado de la comparación 
+esto se debe a que no sabemos qué tipo de codificación usa la plataforma
+tipo ascii o ascii ampliado, etc
+
+b)
+en el primero, promueve a float y después lo divide, queda un valor con info completa
+en el segundo, divide entre ints y después promueve, agregando un .0, pierde info
+
+c)
+-se promueve y a float y se guarda un float en x
+-se promueve 3 a float, pero se guarda el valor entero en x
+
+
+d)
+-la operación va a ser promovida a float, pero solo se guarda parte entera en int x
+-y se castea a int, pero se volvería a promovear a float por el 3.0 
+en test.c
+
+e)
+-la operación es entre doubles, pero se guarda parte entera en int y
+-la operación también es entre doubles, y se guarda valor completo float en y
+en test.c
+
+f)
+da lo mismo
+en test.c
+
+g)
+-k overflow
+-k entra, no hay overflow
+
+h)
+-se imprimen ascii al no haber ''
+-lo mismo que arriba
+en test.c
+
+i)
+en ambos casos no se sabe el valor de z
+en test.c
+
+j)
+-guarda el caracter ascii 300 (con respectivo overflow) en x e y le sigue el juego
+-acá se guarda el entero 300 e y le sigue el juego
+en test.c
+
+
+
+k)
+-no se sabe cuál lado de la suma se va a ejecutar primero
+-esta es la forma correcta de redactarlo
+en test.c
+
+
+
+
+
+
+
+
+
+

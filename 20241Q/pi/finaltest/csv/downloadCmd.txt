@@ -1,0 +1,40 @@
+////////////////////////
+
+para subirlo a pampero desde cmd
+scp C:\Users\Sebalee_\Desktop\ticketsNYC.csv slee@pampero.itba.edu.ar:[$home]
+
+siendo C:\ ... directorio local
+siendo [$home] directorio en pampero
+
+https://github-wiki-see.page/m/mbrula/tutoriales/wiki/%5BLinux%5D-Uso-SSH-y-SCP
+
+/////////////////////
+
+
+
+para descargarlo en pampero con curl
+
+
+infractions
+
+curl -L -o infractionsNYC.csv "https://drive.google.com/uc?id=14NF2ZZsXo1DG0Z3jwzv16paZMA167N1J&export=download" 
+
+
+1000000
+
+curl -L -o ticketsNYC1000000.csv "https://drive.google.com/uc?id=16dZrzboRw9qHxN-NFiZr8bTR5f0_33uw" 
+
+
+15000000
+
+curl -L -o ticketsNYC15000000.csv "https://drive.google.com/uc?id=1A47KdOK3AyLSjfbCZ3YxmwSZA6rX32bO&export=download" 
+
+https://drive.google.com/file/d/1A47KdOK3AyLSjfbCZ3YxmwSZA6rX32bO/view?usp=sharing
+
+
+
+
+completo
+
+curl -L -o ticketsNYC.csv "https://drive.google.com/uc?id=1HvUDLiHaA-NLF1I8v8pUanixypNfjDef&export=download" 
+(este no funcionaba bien)

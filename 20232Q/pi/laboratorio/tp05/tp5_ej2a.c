@@ -1,0 +1,56 @@
+
+
+
+
+
+
+
+
+
+
+
+for ( i = 46; i <= 'H'; i++){
+    printf("%d %c %c\t", i, i, tolower(i));
+    printf("%s ", isalnum(i)? "si" : "no");
+    printf("%s ", isalpha(i)? "si" : "no");
+    printf("%s ", isdigit(i)? "si" : "no");
+    printf("%s ", islower(i)? "si" : "no");
+    printf("%s ", isupper(i)? "si" : "no");
+    printf("%s ", isxdigit(i)? "si" : "no");
+    printf("%s ", iscntrl(i)? "si" : "no");
+    printf("%s \n", ispunct(i)? "si" : "no");
+}
+
+/*
+
+se puede corroborar en respuestas, lo copio:
+
+46 . .	no no no no no no no si 
+47 / /	no no no no no no no si 
+48 0 0	si no si no no si no no 
+49 1 1	si no si no no si no no 
+50 2 2	si no si no no si no no 
+51 3 3	si no si no no si no no 
+52 4 4	si no si no no si no no 
+53 5 5	si no si no no si no no 
+54 6 6	si no si no no si no no 
+55 7 7	si no si no no si no no 
+56 8 8	si no si no no si no no 
+57 9 9	si no si no no si no no 
+58 : :	no no no no no no no si 
+59 ; ;	no no no no no no no si 
+60 < <	no no no no no no no si 
+61 = =	no no no no no no no si 
+62 > >	no no no no no no no si 
+63 ? ?	no no no no no no no si 
+64 @ @	no no no no no no no si 
+65 A a	si si no no si si no no 
+66 B b	si si no no si si no no 
+67 C c	si si no no si si no no 
+68 D d	si si no no si si no no 
+69 E e	si si no no si si no no 
+70 F f	si si no no si si no no 
+71 G g	si si no no si no no no 
+72 H h	si si no no si no no no
+
+*/

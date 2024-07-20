@@ -1,0 +1,1 @@
+no fui para estudiar lógica

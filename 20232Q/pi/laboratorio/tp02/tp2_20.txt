@@ -1,0 +1,28 @@
+
+
+
+1.1 lmao
+
+1.2 \c no es un caracter que hace algo en específico, imprime simplemente c
+
+1.6 va leyendo caracteres de la entrada y si no es un EOF manda 0, y si lo es un 1
+
+1.7 printf("Valor de EOF es: %d\n", EOF)
+    es como una constante / variable con un valor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

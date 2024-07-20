@@ -1,0 +1,2 @@
+no, no es válido porque está en dos líneas separadas
+error por falta de ""s, falta de ; y ()s

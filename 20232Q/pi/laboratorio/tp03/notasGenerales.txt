@@ -1,0 +1,7 @@
+para caracteres:
+es mejor usar un int si se quiere hacer operaciones o comparaciones
+y un signed char suele ser suficiente para los ascii no extendidos
+
+EOF
+    ctrol + d EOF
+    ctrol + z como que termina repentinamente el código

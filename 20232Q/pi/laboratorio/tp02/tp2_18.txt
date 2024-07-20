@@ -1,0 +1,13 @@
+
+
+
+a) F, donde está el cursor en la terminal
+
+b) V
+
+c) V, siempre y cuando antes de usarlas
+
+d) F, no necesariamente, con \n
+
+
+

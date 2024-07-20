@@ -1,0 +1,295 @@
+
+
+
+
+implementación fallida por problemas de memoria
+no se podía asumir que eran sí o sí alfanuméricos las patentes,
+entonces era necesario hacer el vector * children con 256 (todo tipo char)
+eso hacía que fuese demasiada memoria para 46millones de entradas
+
+optamos por hash tables
+
+
+
+
+
+//////////////////////////////////
+
+
+fue el csv de 15millones, con vector children en 36 (solo considerando mayus y nums)
+10GB de RAM
+terminó de ejecutar
+
+sebalee@PCCometLake:~/dp/itba/20241Q/pi/finaltest/tries$ ./a.out ticketsNYC15000000.csv infractionsNYC.csv
+Invalid plateIndex in trie insertion: HKe4291
+Invalid plateIndex in trie insertion: JNw5778
+Invalid plateIndex in trie insertion: gXV8062
+Invalid plateIndex in trie insertion: GwV1630
+Invalid plateIndex in trie insertion: JhA7122
+Invalid plateIndex in trie insertion: EkW7632
+Invalid plateIndex in trie insertion: GwV8081
+Invalid plateIndex in trie insertion: HuV5192
+Invalid plateIndex in trie insertion: GHn5789
+Invalid plateIndex in trie insertion: hLF2995
+Invalid plateIndex in trie insertion: KkD9018
+Invalid plateIndex in trie insertion: jhs4430
+Invalid plateIndex in trie insertion: Y102652c
+Invalid plateIndex in trie insertion: 35Sw81
+Invalid plateIndex in trie insertion: Y103216c
+Invalid plateIndex in trie insertion: ESe1582
+Invalid plateIndex in trie insertion: Y103136c
+Invalid plateIndex in trie insertion: BPy3999
+Invalid plateIndex in trie insertion: GhM2481
+Invalid plateIndex in trie insertion: 48563Mc
+Invalid plateIndex in trie insertion: GdF3211
+Invalid plateIndex in trie insertion: JbN2121
+Invalid plateIndex in trie insertion: 90898ml
+Invalid plateIndex in trie insertion: hNN7585
+Invalid plateIndex in trie insertion: GTe4065
+Invalid plateIndex in trie insertion: FWh2508
+Invalid plateIndex in trie insertion: HaP9010
+Invalid plateIndex in trie insertion: R26LHt
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: Y101221c
+OK!!
+Tiempo transcurrido: 46.383975 segundos
+
+
+
+//////////////////////////////////
+
+
+
+fue el csv completo, con vector children en 36 (solo considerando mayus y nums)
+16GB de RAM
+no terminó de ejecutar (como que iba volviendose cada vez más lento, seguramente por no encontrar memoria libre rápidamente)
+
+sebalee@PCCometLake:~/dp/itba/20241Q/pi/finaltest/tries$ ./a.out ticketsNYC.csv infractionsNYC.csv
+
+Invalid plateIndex in trie insertion: HKe4291
+Invalid plateIndex in trie insertion: gXV8062
+Invalid plateIndex in trie insertion: GwV1630
+Invalid plateIndex in trie insertion: JNw5778
+Invalid plateIndex in trie insertion: JhA7122
+Invalid plateIndex in trie insertion: GwV8081
+Invalid plateIndex in trie insertion: EkW7632
+Invalid plateIndex in trie insertion: GHn5789
+Invalid plateIndex in trie insertion: HuV5192
+Invalid plateIndex in trie insertion: hLF2995
+Invalid plateIndex in trie insertion: KkD9018
+Invalid plateIndex in trie insertion: jhs4430
+Invalid plateIndex in trie insertion: Y102652c
+Invalid plateIndex in trie insertion: 35Sw81
+Invalid plateIndex in trie insertion: Y103216c
+Invalid plateIndex in trie insertion: ESe1582
+Invalid plateIndex in trie insertion: Y103136c
+Invalid plateIndex in trie insertion: GhM2481
+Invalid plateIndex in trie insertion: BPy3999
+Invalid plateIndex in trie insertion: 48563Mc
+Invalid plateIndex in trie insertion: GdF3211
+Invalid plateIndex in trie insertion: JbN2121
+Invalid plateIndex in trie insertion: 90898ml
+Invalid plateIndex in trie insertion: hNN7585
+Invalid plateIndex in trie insertion: FWh2508
+Invalid plateIndex in trie insertion: GTe4065
+Invalid plateIndex in trie insertion: HaP9010
+Invalid plateIndex in trie insertion: R26LHt
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: Y101221c
+Invalid plateIndex in trie insertion: HC.2349
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: 96404.B
+Invalid plateIndex in trie insertion: Y53LmJ
+Invalid plateIndex in trie insertion: WJi360
+Invalid plateIndex in trie insertion: 5JF36d
+Invalid plateIndex in trie insertion: hFP5656
+Invalid plateIndex in trie insertion: 63Tf81
+Invalid plateIndex in trie insertion: JmT7287
+Invalid plateIndex in trie insertion: JBw4378
+Invalid plateIndex in trie insertion: 287iNTA
+Invalid plateIndex in trie insertion: HSe5596
+Invalid plateIndex in trie insertion: HwA1820
+Invalid plateIndex in trie insertion: Bb09746
+Invalid plateIndex in trie insertion: ftH3589
+Invalid plateIndex in trie insertion: JG3VO,
+Invalid plateIndex in trie insertion: I'MLAZY
+Invalid plateIndex in trie insertion: HCw2761
+Invalid plateIndex in trie insertion: PLei3
+Invalid plateIndex in trie insertion: K.K9039
+Invalid plateIndex in trie insertion: NI.BUZ
+Invalid plateIndex in trie insertion: D,Y865
+Invalid plateIndex in trie insertion: I'MBW12
+Invalid plateIndex in trie insertion: HELPW/RE
+Invalid plateIndex in trie insertion: R,ZL61L
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: LS.2269
+Invalid plateIndex in trie insertion: Hmw5010
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/S
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: Lbh7081
+Invalid plateIndex in trie insertion: HRK,<
+Invalid plateIndex in trie insertion: HF.6624
+Invalid plateIndex in trie insertion: THAT$IT
+Invalid plateIndex in trie insertion: 145.XZ
+Invalid plateIndex in trie insertion: GMW,WJ
+Invalid plateIndex in trie insertion: THAT$IT
+Invalid plateIndex in trie insertion: EDVOZART#1
+Invalid plateIndex in trie insertion: L.FM9231
+Invalid plateIndex in trie insertion: ,V93252
+Invalid plateIndex in trie insertion: KZF2587]
+Invalid plateIndex in trie insertion: .60NXA
+Invalid plateIndex in trie insertion: A.98019
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: E.5090
+Invalid plateIndex in trie insertion: IN0L&R
+Invalid plateIndex in trie insertion: K.S6891
+Invalid plateIndex in trie insertion: .58KXT
+Invalid plateIndex in trie insertion: J.J4968
+Invalid plateIndex in trie insertion: E,F9892
+Invalid plateIndex in trie insertion: ,TT4306
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: DH.0281
+Invalid plateIndex in trie insertion: THAT$IT
+Invalid plateIndex in trie insertion: ET,1970
+Invalid plateIndex in trie insertion: CH.298
+Invalid plateIndex in trie insertion: QU.W82
+Invalid plateIndex in trie insertion: 7.PV572
+Invalid plateIndex in trie insertion: LG.0705
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: HK,X48
+Invalid plateIndex in trie insertion: KR,8341
+Invalid plateIndex in trie insertion: N/S
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: 2JP.91
+Invalid plateIndex in trie insertion: 7288C
+Invalid plateIndex in trie insertion: EDBOZARTH#
+Invalid plateIndex in trie insertion: I!1!ILW
+Invalid plateIndex in trie insertion: STATE#6
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: EDBOZARTH#
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: 5FL7242.
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: HT,3740
+Invalid plateIndex in trie insertion: G73.WA
+Invalid plateIndex in trie insertion: STATE#6
+Invalid plateIndex in trie insertion: CT,S757
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: #1MOM
+Invalid plateIndex in trie insertion: I!I!ILW
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: GB.,EN9
+Invalid plateIndex in trie insertion: N/S
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: LT,3642
+Invalid plateIndex in trie insertion: RO.IE1
+Invalid plateIndex in trie insertion: HzP5251
+Invalid plateIndex in trie insertion: LdF8853
+Invalid plateIndex in trie insertion: JkX3407
+Invalid plateIndex in trie insertion: JbE5568
+Invalid plateIndex in trie insertion: OLA&I
+Invalid plateIndex in trie insertion: SMUTTY+
+Invalid plateIndex in trie insertion: KB.4176
+Invalid plateIndex in trie insertion: FWL80g0
+Invalid plateIndex in trie insertion: 5JF36d
+Invalid plateIndex in trie insertion: JmJ4114
+Invalid plateIndex in trie insertion: 5JF36d
+Invalid plateIndex in trie insertion: JGm5083
+Invalid plateIndex in trie insertion: Hla5214
+Invalid plateIndex in trie insertion: bDN6605
+Invalid plateIndex in trie insertion: fyD5659
+Invalid plateIndex in trie insertion: JKx1404
+Invalid plateIndex in trie insertion: hDV5069
+Invalid plateIndex in trie insertion: EuV9029
+Invalid plateIndex in trie insertion: Klz1150
+Invalid plateIndex in trie insertion: 17tu50
+Invalid plateIndex in trie insertion: 79885Mh
+Invalid plateIndex in trie insertion: 24213Me
+Invalid plateIndex in trie insertion: Y102180c
+Invalid plateIndex in trie insertion: JGy8178
+Invalid plateIndex in trie insertion: HG.5679
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: P32.KV
+Invalid plateIndex in trie insertion: 50AA,J
+Invalid plateIndex in trie insertion: NLH.13
+Invalid plateIndex in trie insertion: 756XT,
+Invalid plateIndex in trie insertion: A,72983
+Invalid plateIndex in trie insertion: 58673g9
+Invalid plateIndex in trie insertion: FRL558l
+Invalid plateIndex in trie insertion: 75858Mc
+Invalid plateIndex in trie insertion: N/A
+Invalid plateIndex in trie insertion: #1MOM
+Invalid plateIndex in trie insertion: 47247.L
+Invalid plateIndex in trie insertion: tR8DER
+Invalid plateIndex in trie insertion: H55EZ.
+Invalid plateIndex in trie insertion: 8967.CX
+Invalid plateIndex in trie insertion: 357(601
+Killed
+
+(literalmente me devolvió "Killed")
+
+
+
+
+
+
+
+//////////////////////////////////
+
+
+void insertPlateTrie(TTrieNode * root, const char * plate);
+
+getPlateMaxInfractionTrie()
+
+void freeTrie(TTrieNode * node);
+
+int charToIndexTrie(char c);
+
+TTrieNode * createNodeTrie(void);
+
+
+
+l modificar addinfraction, agregale tries
+verificar que query1 y query3 funcionen
+
+l tengo que modificar freeInfractionsSystem()
+tengo que reemplazar getPlateMaxInfraction() a la vers Trie
+modif new vecInfractions
+
+
+log:
+modificado infractionsADT.h, agregado struct y prototipos
+modificado infractionsADT.c, addInfraction(), agregado funciones al final, modificado CDT para guardar trie
+
+

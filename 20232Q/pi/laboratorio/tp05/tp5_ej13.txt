@@ -1,0 +1,14 @@
+
+
+a)
+para que el compilador sepa qué tipos de datos maneja func.c
+
+b)
+compilaría todo junto, no se debe hacer, horrible práctica
+
+c)
+gcc -c main.c
+gcc -c func.c
+gcc –o pgm main.o func.o
+
+compila los dos .c y finalmente linkedita

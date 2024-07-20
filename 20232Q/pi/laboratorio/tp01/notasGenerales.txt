@@ -1,0 +1,13 @@
+
+general
+si se usa el flag -c solo para compilar y no linkeditar, solito se encarga de poner el mismo nombre con formato .o
+se usa el flag -E solamene para preprocesar el archivos. por default, devuelve por consola y no guarda nada. esto se puede cambiar con -o, crea nuevo archivo
+-o para renombrar
+
+iba a copiando los archivos manualmente (ineficiente y no coinciden las consignas)
+    desde el ej tp1_11 voy a descargar los archivos y usar el formato predeterminado
+
+
+ej07
+para solo compilar y no linkeditar -c
+para linkeditar varios archivos objeto -o renomreAcá arch1 ach2 ...

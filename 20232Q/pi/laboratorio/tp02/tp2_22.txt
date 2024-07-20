@@ -1,0 +1,16 @@
+
+
+
+
+tiene que ser signed char sí o sí, porque EOF suele ser -1
+
+
+
+
+
+
+
+
+
+
+

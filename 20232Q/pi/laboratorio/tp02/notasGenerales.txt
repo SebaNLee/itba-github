@@ -1,0 +1,12 @@
+
+%i y %d se comportan igual para un printf
+pero en otros casos, como scanf(), %d asume base 10 automáticamente, pero %i es automático
+por ejemplo, a 012, &i lo detectaría como 12, pero %d lo detectaría como 12
+
+se usa -w para ignorar errores y compilar igual
+
+si se usa la librería <math.h>, se tiene que usar el flag -lm al compilar
+
+GUARDA CON CHARS!! TIENE QUE SER SIGNED O UNSIGNED  
+    ejercicios hasta ahora no los usé y andaron bien, corrijo esto desde ahora
+

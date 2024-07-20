@@ -1,0 +1,5 @@
+
+se compila igual si se declaran variables fuera de funciones sin static ni extern
+
+excelente ejemplo el ej 6 para ver el comportamiento de do while con un getchar y printf
+
