@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!-- el documento se llamaría emails.xml -->
+
+<emails>
+    <email>
+        <date format="YYYY-MM-DD" use="required"></date>
+
+        <header>
+            <from>
+                <name format="nombre, apellido"></name>
+                <address use="required"></address>
+            </from>
+            <to>
+                <name format="nombre, apellido"></name>
+                <address use="required"></address>
+            </to>
+
+        </header>
+
+        <subject maxLengthValue="256" use="required">
+
+        </subject>
+        
+        <body>
+
+        </body>
+    </email>
+
+    <!-- y se copiaría email 2 veces más -->
+
+</emails>
+
+<!-- NOTA!: ?xml DEBE estar en l1, sino no funciona dom.Writer -->
+
+<!-- NOTA: los comentarios deben estar debajo de ?xml... -->
+<!-- NOTA: los comentarios por fuera de etiquetas no se visualizaran al ejecutar dom.Writer -->
+ 

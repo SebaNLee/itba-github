@@ -1,0 +1,6 @@
+ 
+ejecutar: 
+java dom.Writer pruebaTP1.xml
+
+
+ejecuta correctamente, pues está bien definida
