@@ -16,3 +16,17 @@ además, correr código fuente en Windows no daba problemas
 también, había explorado opciones de conexión remota con IntelliJ, pero era lento e incómodo
 
 entonces, el IntelliJ lo usaría solo para Windows
+
+
+10/8/2024
+
+planteado y desarrollado ideas de tener doble directorio en WSL y Windows, pero abandono la idea por ser incómodo (varias materias)
+
+parece que había problemas proque abría como proyecto una carpeta global en donde abría varios subproyecto adentro
+IntelliJ compartía la carpeta ejecutable /out para todos los proyecto
+VSCode generaba comportamiento raro al tener proyectos con ejecutables con el mismo nombre
+
+estos dos posibles causas, posiblemente aislados, generaban el mismo problema
+
+CONCLUSIÓN:
+uso VSCode por ahora, a ver hasta dónde llega
