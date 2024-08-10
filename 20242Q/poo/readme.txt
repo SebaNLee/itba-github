@@ -1,3 +1,20 @@
+
+
+
+extensiones instaladas:
+
+Language Support for Java, Red Hat
+Test Runner for Java, Microsoft
+Debugger for Java, Microsoft
+Project Manager for Java, Microsoft
+PlantUML
+
+
+
+//////////////////////////////////////////////
+
+problema de compilación:
+
 1/8/2024
 
 mentalidad instalación: 
