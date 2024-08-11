@@ -1,0 +1,9 @@
+
+
+class Gear {
+    -int chainring
+    -double cog
+
+    +void Gear(int chainring, double cog)
+    +double ratio()
+}

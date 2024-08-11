@@ -1,0 +1,12 @@
+
+class Affiliate {
+    -String nombre
+    -String apellido
+    -Date fechaNacimiento
+    -int number
+    -{static} int INITIAL_NUMBER = 1000
+    -{static} int CURRENT_NUMBER
+
+    +Affiliate(String nombre, String apellido, Date fechaNacimiento)
+    -int getAndIncrement()
+}

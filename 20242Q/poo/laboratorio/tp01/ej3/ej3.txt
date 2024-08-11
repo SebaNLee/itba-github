@@ -1,0 +1,7 @@
+
+A es la correcta
+
+en POO, se pasa un punto al método llamado desde otro punto
+es responsabilidad del objeto de saber operar teniendo en cuenta las instancias propias que tiene y lo que recibe por parámetro
+
+B sería correcto en PI

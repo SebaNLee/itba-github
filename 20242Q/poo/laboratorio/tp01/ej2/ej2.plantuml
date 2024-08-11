@@ -1,0 +1,14 @@
+
+
+class ComplexNumber {
+    -double real
+    -double imaginaria
+
+    +ComplexNumber(double real)
+    +ComplexNumber(double real, double imaginaria)
+    +double getReal()
+    +double getImaginaria()
+    +ComplexNumber plus(ComplexNumber cNum) // !! plus es mejor que add, pues no modifica valores
+
+}
+
