@@ -1,0 +1,5 @@
+V o F
+
+4.1 F, pues el ID es único en todo el xml
+4.2 V, pues se pueden declarar varios atributos de tipo ID, pero deben ser únicos
+4.3 F, pues el ID es único en todo el xml, los atributos pueden diferir en nombre, pero no deben compartir IDs

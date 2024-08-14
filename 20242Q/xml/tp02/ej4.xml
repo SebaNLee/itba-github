@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE rss [
+    <!ELEMENT rss (channel)>
+
+    <!ELEMENT channel (title, link, description, pubDate?, webMaster?, language?, item*)>
+    <!ELEMENT title (#PCDATA)>
+    <!ELEMENT link (#PCDATA)>
+    <!ELEMENT description (#PCDATA)>
+    <!ELEMENT pubDate (#PCDATA)>
+    <!ELEMENT webMaster (#PCDATA)>
+    <!ELEMENT language (#PCDATA)> <!-- problemas con language, tiene que ser atributo si quiero especificar si es es-ar o en-us -->
+
+    <!ELEMENT item (title, link, pubDate)>
+
+    <!ATTLIST rss version (0.9.1|0.9|1.0|2.0) #REQUIRED>
+
+]>
+<rss version="2.0">
+    <channel>
+        <title>test</title>
+        <link>test.com</link>
+        <description>testtesttest</description>
+
+        <language>es-ar</language>
+        <item>
+            <title>testtitle</title>
+            <link>test.link</link>
+            <pubDate>0000</pubDate>
+        </item>
+    </channel>
+</rss>
+
+<!-- 
+    notas:
+    5.1 salteo, ya está testeado con un ejemplo
+    en vez de crear un .dtd lo hice inline
+    5.3 salteo
+-->
+
+<!-- java dom.Writer -v ej4.xml -->

@@ -1,0 +1,14 @@
+<!ELEMENT emails (email*)>
+<!ELEMENT email (date, header, subject, body)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT header (from, to)>
+<!ELEMENT subject (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+<!ELEMENT from (name, address)>
+<!ELEMENT to (name, address)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+
+<!ATTLIST date format CDATA #REQUIRED>
+<!ATTLIST name format CDATA #REQUIRED>
+<!ATTLIST subject maxLengthValue CDATA #REQUIRED>
