@@ -47,3 +47,8 @@ estos dos posibles causas, posiblemente aislados, generaban el mismo problema
 
 CONCLUSIÓN:
 uso VSCode por ahora, a ver hasta dónde llega
+
+
+14/8/2024
+
+HIPÓTESIS: package, lo vi en clase que se creaba varios proyectos en un mismo directorio, pero con package
