@@ -53,8 +53,8 @@
 
         </header>
 
-        CODIGOSEG1
-
+        <!-- CODIGOSEG1, si agrego este código de seguridad me salta error, lo comento -->
+        
         <subject maxLengthValue="256">
 
         </subject>
