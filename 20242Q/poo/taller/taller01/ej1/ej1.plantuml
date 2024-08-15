@@ -1,0 +1,9 @@
+@startuml
+class Counter {
+	-int count
+	+void Counter() // constructor
+	+void increment()
+	+void decrement()
+	+int getCount() // getter
+}
+@enduml
