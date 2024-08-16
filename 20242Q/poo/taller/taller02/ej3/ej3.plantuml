@@ -1,0 +1,41 @@
+@startuml
+
+class CentralSubte {
+    -double costoViaje
+
+    +CentralSubte(double saldoInicial)
+    +void setPrecioViaje(double precioViaje)
+    +double getPrecioViaje()
+}
+
+abstract class TarjetaSubte {
+    -CentralSubte sc
+
+    +TarjetaSubte(CentralSubte sc)
+    {abstract} +void viajar() ' prestar atención para este
+    #boolean puedoViajar()
+}
+
+class TarjetaFijaSubte {
+    -int viajes
+
+    +TarjetaFijaSubte(CentralSubte sc, int vijes)
+    +void viajar()
+}
+
+class TarjetaSaldoSubte {
+    -double saldo
+
+    +TarjetaSaldoSubte(CentralSubte sc)
+    +void viajar()
+    #boolean puedoViajar()
+    +void recarga(double aumento)
+    +double getSaldo()
+}
+
+
+TarjetaSubte *-- CentralSubte
+TarjetaSubte <|-- TarjetaSaldoSubte
+TarjetaSubte <|-- TarjetaFijaSubte
+
+@enduml

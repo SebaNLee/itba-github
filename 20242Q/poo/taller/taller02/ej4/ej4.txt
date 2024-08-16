@@ -1,0 +1,11 @@
+se le agregaría lo siguiente al ej3:
+
+
+class TarjetaRecargableDescuentoSubte {
+    -double descuento
+
+    +TarjetaRecargableDescuentoSubte(CentralSubte sc, double descuento)
+    +void viajar()
+    #boolean puedoViajar()
+    ' recargar() y getSaldo() no necesitan override, pues se comportan igual
+}

@@ -1,0 +1,24 @@
+@startuml
+
+class CentralSubte {
+    -double costoViaje
+
+    +CentralSubte(double saldoInicial)
+    +void setPrecioViaje(double precioViaje)
+    +double getPrecioViaje()
+}
+
+class TarjetaSubte {
+    -double saldo
+    -CentralSubte sc
+
+    +TarjetaSubte(CentralSubte sc)
+    +void recarga(double aumento)
+    +double getSaldo()
+    +void viaje()
+    -boolean puedoViaje()
+}
+
+TarjetaSubte *-- CentralSubte
+
+@enduml
