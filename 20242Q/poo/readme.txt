@@ -9,6 +9,9 @@ Debugger for Java, Microsoft
 Project Manager for Java, Microsoft
 PlantUML
 
+PlantUML, estoy usandolo con servidor (necesito wifi), editado en configuración
+https://www.plantuml.com/plantuml/
+
 
 
 //////////////////////////////////////////////
