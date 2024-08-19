@@ -1,0 +1,57 @@
+
+@startuml
+
+abstract class Figure {
+
+    +double perimeter()
+    +double area()
+}
+
+class Rectangle {
+    -Point bottomLeft
+    -Point topRight
+
+    +Rectangle(Point bottomLeft, Point topRight)
+    +double base()
+    +double height()
+    +double perimeter()
+    +double area()
+}
+
+class Triangle {
+    -Point topCenter
+    -Point bottomLeft
+    -Point bottomRight
+
+    +Triangle(Point topCenter, Point bottomLeft, Point bottomRight)
+    +double perimeter()
+    +double area()
+}
+
+' notar que un círculo es una elipse, pero no al revés ("es-un")
+' al hacer que un círculo sea una elipse se reutilizan todos los métodos,
+' solo es cuestión de hacer un constrictur adecuado para círculos
+
+class Elipse {
+    -Point centerPoint
+    -double axisY
+    -double axisX
+
+    +Elipse(Point centerPoint, double axisY, double axisX)
+    +double perimeter()
+    +double area()
+}
+
+class Circle {
+    +Circle(Point centerPoint, double radius)
+}
+
+
+Figure <|-- Rectangle
+Figure <|-- Triangle
+Figure <|-- Elipse
+Elipse <|-- Circle
+
+
+
+@enduml

@@ -1,0 +1,3 @@
+
+-Amout y Currency van siempre juntos, entonces lo podría meter en una sola clase Money
+-podría agregar el método de convert() a Money para no necesitar la clase PriceConverter

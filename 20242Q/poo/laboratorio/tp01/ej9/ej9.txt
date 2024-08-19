@@ -1,0 +1,2 @@
+se agregaría en la clase abstracta Figure, 
+pues todas las figuras saben con la información de cada una si pertenece o no el punto al contorno

@@ -1,0 +1,4 @@
+
+1. el constructor debe pedir coordenadas
+2. las coordendas deben ser privadas, y crear getters
+3. los setters no son necesarios, pues las coordenadas no se deberían de cambiar en principio

@@ -1,0 +1,5 @@
+
+el C resulta correcto, sin relación entre Point y Point3D
+
+principalmente debido al comportamiento de los objetos
+el hacer el cálculo de la distancia entre dos puntos en 2D y 3D cambia
