@@ -13,3 +13,5 @@ public class Ej2_6 {
         return a + b;
     }
 }
+
+// no pues, se le manda long en vez de int

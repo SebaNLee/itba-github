@@ -7,3 +7,5 @@ public class Ej2_2 {
         System.out.println("El valor de a es: " + a);
     }
 }
+
+// int a String, inválido

@@ -6,3 +6,5 @@ public class Ej2_3 {
         int b = a + 5;
     }
 }
+
+// var a no está inicializada

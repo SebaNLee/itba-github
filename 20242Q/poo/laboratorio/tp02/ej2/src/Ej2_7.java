@@ -7,3 +7,5 @@ public class Ej2_7 {
         }
     }
 }
+
+// no corresponde el break en un if, como en C

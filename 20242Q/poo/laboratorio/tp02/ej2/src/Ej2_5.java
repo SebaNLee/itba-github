@@ -8,3 +8,5 @@ public class Ej2_5 {
         }
     }
 }
+
+// los condicionales solo con boolean en Java

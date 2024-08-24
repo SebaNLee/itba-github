@@ -7,3 +7,5 @@ public class Ej2_1 {
         double resultado = numero1 + numero2;
     }
 }
+
+// variables no instanciadas, valores en default 0
