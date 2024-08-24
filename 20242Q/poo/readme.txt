@@ -55,3 +55,13 @@ uso VSCode por ahora, a ver hasta dónde llega
 14/8/2024
 
 HIPÓTESIS: package, lo vi en clase que se creaba varios proyectos en un mismo directorio, pero con package
+
+24/8/2024
+
+veo que el problema viene dado porque al clickear el botón de correr código, se necesita declarar en un json con el sourcepath
+el comando de click derecho de new java project no generaba el problema por crear el json automáticamente
+ahora, se generan problemas al crear directamente el .java como un archivo individual, pues no tiene el json
+
+CONCLUSIÓN: creo para todo ejercicio un proyecto de java por ejercicio y meto todos los incisos dentro de src
+
+PENDIENTE: todavía no sé qué hace package, tal vez sea la solución óptima
