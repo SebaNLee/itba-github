@@ -1,0 +1,45 @@
+@startuml
+
+class CellPhoneBill {
+    -String number
+    #Call[] calls
+    #int callsIndex
+    -{static} int DEFAULT_SIZE
+
+    ~CellPhoneBill(String number)
+    +void registerCall(String toNumber, int duration)
+    -void addCall(Call call)
+    +double processBill()
+    -void resize()
+}
+
+class Call {
+    -String from
+    -String to
+    -int duration
+    -{static} COST_PER_SECOND
+
+    ~Call(String from, String to, int duration)
+    +double getCost()
+}
+
+class FriendCellPhoneBill {
+    -String[] friends
+    -int friendsIndex
+    -int friendsLimit
+    -double cost
+    -{static} double DEFAULT_FIEND_COST_PER_SECOND
+
+    ~FriendCellPhoneBill(String number, limit)
+    +void setCost(double cost)
+    +void addFriend(String number)
+    -boolean containsFriend(String number)
+    +void removeFriend(String number)
+    +double processBill()
+
+}
+
+CellPhoneBill *-- Call
+CellPhoneBill <|-- FriendCellPhoneBill
+
+@enduml
