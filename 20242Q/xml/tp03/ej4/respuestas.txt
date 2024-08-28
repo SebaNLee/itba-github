@@ -1,0 +1,5 @@
+
+4.1) falso, se podría repetir
+4.2) AI: En XML Schema, la derivación por extensión permite agregar elementos y atributos a un tipo complejo existente, pero un tipo simple no puede ser extendido con atributos. Un tipo simple sólo puede derivarse mediante restricciones.
+4.3) falso, son exclusivos
+4.4) verd, puede no estar
