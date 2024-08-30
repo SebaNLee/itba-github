@@ -65,3 +65,11 @@ ahora, se generan problemas al crear directamente el .java como un archivo indiv
 CONCLUSIÓN: creo para todo ejercicio un proyecto de java por ejercicio y meto todos los incisos dentro de src
 
 PENDIENTE: todavía no sé qué hace package, tal vez sea la solución óptima
+
+30/8/2024
+
+logré usar package correctamente
+funciona si hago referencia desde src/... 
+pero nofunciona de 20242Q/poo/...
+
+CONCLUSIÓN: uso package para incisos de ejercicios
