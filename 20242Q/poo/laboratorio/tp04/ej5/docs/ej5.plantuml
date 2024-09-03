@@ -1,0 +1,55 @@
+@startuml
+
+interface HTMLText {
+    String source()
+
+}
+
+class BasicText {
+
+    +String toString()
+}
+
+class PlainText{
+    -String text
+
+    +PlainText(String text)
+    +String source()
+    +void setText()
+}
+
+class FormatText {
+    #HTMLText element
+    #String format
+
+    +FormatText(HTMLText element, String format)
+    +String source()
+}
+
+class BoldText {
+    -{static} String ELEMENT
+    
+    +BoldText(HTMLText content)
+}
+
+class ItalicText {
+    -{static} String ELEMENT
+
+    +ItalicText(HTMLText content)
+}
+
+class LinkText {
+
+    +LinkText(HTMLText content, String link)
+    +String source()
+}
+
+HTMLText <|-- BasicText
+BasicText <|-- PlainText
+BasicText <|-- FormatText
+FormatText <|-- BoldText
+FormatText <|-- ItalicText
+FormatText <|-- LinkText
+
+
+@enduml
