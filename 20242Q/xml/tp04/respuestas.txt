@@ -1,0 +1,42 @@
+
+se pueden testear acá: https://www.freeformatter.com/xpath-tester.html#before-output
+
+ej1
+1. //Profile::name
+2. //Profile[@name="Home"]/*/Concepts/Concept/@key o //Profile[@name="Home"]/ExplicitData/Concepts/Concept/@key
+3. //Concept/@key
+4. //ImplicitData/Sources/Source/@updated
+5. //Profile[not(ImplicitData/*)]/@name
+
+ej2
+1. //Concept[@*[contains(.,"business")]] | //Concept[contains(text(), "business")]
+2. //Concept[@value >= 0.95]
+3. //Profile[(count(./*/Concepts/Concept) < (count(//Concept) div count(//Profile))]/@name
+4. //Concept/@key[starts-with(.,"a")] | @key[starts-with(.,"e")] | ...etc
+
+ej3
+1. sum(//Profile[@name='Work']/*/Concepts/Concept/@value) div count(//Profile[@name='Work']/*/Concepts/Concept/@value) -> Work
+2. ??
+3. count(//Profile/*/Sources/Source)
+4. ??
+
+ej4
+1. //Profile[position()=1]/@name
+2. //Profile[last()]/*/Concepts/Concept[position()=1]/@key
+3. //Profile/ImplicitData/Concepts/Concept[position()=3]/@key
+
+ej5
+1. //Profile/ancestor::*
+2. //Sources
+
+ej6
+salteo
+
+ej7
+1. 
+
+
+....
+
+
+
