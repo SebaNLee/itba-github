@@ -1,0 +1,21 @@
+
+' uml puede estar incompleto
+' da por obvio los constructores, por ejemplo
+
+class Counter {
+    -String airline
+    -int number
+    -boolean checkin
+
+    +void checkIn()
+    +String toString()
+}
+
+class AirPort {
+    -Counter[] counters
+
+    +Counter addCounter(String airline)
+    +Counter couunterCheckIn()
+}
+
+Counter *-- AirPort
