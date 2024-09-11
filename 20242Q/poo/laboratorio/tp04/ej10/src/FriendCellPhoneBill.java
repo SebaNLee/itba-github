@@ -1,3 +1,5 @@
+// copiado
+
 public class FriendCellPhoneBill extends CellPhoneBill {
     
     private String[] friends;
@@ -18,10 +20,19 @@ public class FriendCellPhoneBill extends CellPhoneBill {
         this.cost = cost;
     }
 
-    public void addFriend(String number) {
-        if(friendsIndex < friendsLimit && !containsFriend(number)) {
-            friends[friendsIndex++] = number;
+    public void addFriend(String number) throws TooManyFriendsException, AlreadyExistsFriendException { // agrego el throws
+        
+        // y modifico el código
+
+        if(friendsIndex == friendsLimit) {
+            throw new TooManyFriendsException(number);
         }
+        if(containsFriend(number)) {
+            throw new AlreadyExistsFriendException(number);
+        }
+
+        friends[friendsIndex++] = number;
+
     }
 
     // creo que se podría optimizar que devuelva el índice si encuentra, para reutilizarlo en remove Friend
@@ -35,7 +46,7 @@ public class FriendCellPhoneBill extends CellPhoneBill {
         return false;
     }
 
-    public void removeFriend(String number) {
+    public void removeFriend(String number) throws FriendNotFoundException { // agrego throws
         boolean found = false;
 
         // !! lindo ciclo
@@ -44,6 +55,10 @@ public class FriendCellPhoneBill extends CellPhoneBill {
                 friends[i] = friends[--friendsIndex];
                 found = true;
             }
+        }
+
+        if(!found) {
+            throw new FriendNotFoundException(number);
         }
     }
 
