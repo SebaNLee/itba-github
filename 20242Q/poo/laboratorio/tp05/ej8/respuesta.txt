@@ -1,0 +1,13 @@
+
+
+obs:
+
+el tester ahora usa Arrays.sort(), entonces se debe implementar interfaz Comparable<Pair<A, B>> y la función compareTo()
+
+luego, se restringe a A y B para que estos o alguna de sus subclases debe extender a Comparable. De esta manera:
+
+Pari<A extends Comparable<? super A>, B extends Comparable<? super B>>
+
+
+// ? super A, comodín acotado inferior
+// ? extends A, comodín acotado superior

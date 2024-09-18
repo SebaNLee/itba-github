@@ -1,0 +1,6 @@
+
+en la consigna se está utilizando clase anónima para mandarle el Comparator a compare()
+
+se podría utilizar una expresión lambda, que es más corto
+
+Arrays.sort(intArray, (o1, o2) -> o2.compareTo(o1));

@@ -1,0 +1,4 @@
+
+
+se lo modifica directamente en el código de prueba
+se ejecuta Arrays.compare(pairArray, <y acá se le agrega el Comparator deseado> )
