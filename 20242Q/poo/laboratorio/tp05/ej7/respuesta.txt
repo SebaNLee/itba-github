@@ -1,0 +1,9 @@
+
+
+
+
+toString de Arrays funciona a lo esperado
+
+al usar Array.sort() utiliza orden natural (creciente)
+
+comportamiento estimable por documentación

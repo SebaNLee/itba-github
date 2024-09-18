@@ -1,0 +1,4 @@
+
+
+el Override no funciona pues A y B son generics reemplazables, pero considerados Objects en compilación
+entonces tiene la misma firma, y falla
