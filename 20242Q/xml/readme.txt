@@ -4,7 +4,7 @@ log de instalaciones xml:
 
 archivos de instalación en $home/XML
 
-editado la carpeta de bashrc.txt (archivo que se ejecuta cada vez que se inicia sesión), agregando:
+editado la carpeta de bashrc.txt (archivo que se ejecuta cada vez que se inicia sesión) (está oculto, ver con ls -a), agregando:
 
 export CLASSPATH=$CLASSPATH:/home/sebalee/XML/xerces-2_12_1/xercesSamples.jar:/home/sebalee/XML/xerces-2_12_1/xml-apis.jar:/home/sebalee/XML/xerces-2_12_1/xercesImpl.jar
 export PATH=$PATH:/usr/lib/jvm/java-7-openjdk-amd64/
