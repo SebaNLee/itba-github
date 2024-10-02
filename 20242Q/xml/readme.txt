@@ -1,4 +1,8 @@
-esta es la carpeta de instalación del parser para la materia XML 20242Q
+log de instalaciones xml:
+
+?/8/2024
+
+archivos de instalación en $home/XML
 
 editado la carpeta de bashrc.txt (archivo que se ejecuta cada vez que se inicia sesión), agregando:
 
@@ -10,4 +14,5 @@ el archivo de ejemplo a copiar tenía la versión del programa mal, lo tuve que 
 
 
 
-archivos de instalación en $home/XML
+2/10/2024
+
