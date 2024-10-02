@@ -16,3 +16,15 @@ el archivo de ejemplo a copiar tenía la versión del programa mal, lo tuve que 
 
 2/10/2024
 
+archivos de instalación en $home/XML
+
+a bashrc.txt agrego:
+
+export CLASSPATH=$CLASSPATH:/home/sebalee/XML/SaxonHE11-3J/saxon-he-11.3.jar
+
+
+el archivo de ejemplo a copiar tenía la versión del programa mal, descargué el nuevo por la página y lo tuve que editar en la línea agregada a bashrc.txt
+
+testeo con:
+
+java net.sf.saxon.Query consultaXP.xq
