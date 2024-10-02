@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<clients>
+		<client name="Clarin">
+			<since>2008-01-01</since>
+		</client>
+		<client name="YPF">
+			<since>2000-01-01</since>
+		</client>
+		<client name="ITBA">
+			<since>2005-06-01</since>
+		</client>
+		<client name="TN">
+			<since>2000-06-01</since>
+		</client>
+		<client name="Garbarino">
+			<since>2002-04-15</since>
+		</client>
+	</clients>

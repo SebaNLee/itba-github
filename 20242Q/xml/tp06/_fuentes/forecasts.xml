@@ -1,0 +1,2751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cityForecast cityName="Bilbao">
+	<time done="01/03/2017 [07:56:33]" month="3" day="1">
+		<forecast date="01/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="02/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="03/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>12</tempMin>
+		</forecast>
+	</time>
+	<time done="01/03/2017 [10:52:33]" month="3" day="1">
+		<forecast date="01/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="02/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>20</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="03/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>12</tempMin>
+		</forecast>
+	</time>
+	<time done="01/03/2017 [18:46:32]" month="3" day="1">
+		<forecast date="01/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>6</tempMin>
+		</forecast>
+		<forecast date="02/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>20</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="03/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>20</tempMax>
+			<tempMin>12</tempMin>
+		</forecast>
+	</time>
+	<time done="02/03/2017 [08:50:50]" month="3" day="2">
+		<forecast date="02/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>20</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="03/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>22</tempMax>
+			<tempMin>12</tempMin>
+		</forecast>
+		<forecast date="04/03/2017">
+			<weather>
+				<icon>12</icon>
+				<description>Lluvia débil: precipitación de agua líquida, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+	</time>
+	<time done="02/03/2017 [10:50:35]" month="3" day="2">
+		<forecast date="02/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>20</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="03/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>22</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="04/03/2017">
+			<weather>
+				<icon>12</icon>
+				<description>Lluvia débil: precipitación de agua líquida, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+	</time>
+	<time done="02/03/2017 [11:01:48]" month="3" day="2">
+		<forecast date="02/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>20</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="03/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>22</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="04/03/2017">
+			<weather>
+				<icon>12</icon>
+				<description>Lluvia débil: precipitación de agua líquida, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+	</time>
+	<time done="02/03/2017 [18:35:09]" month="3" day="2">
+		<forecast date="02/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="03/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>21</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="04/03/2017">
+			<weather>
+				<icon>12</icon>
+				<description>Lluvia débil: precipitación de agua líquida, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+	</time>
+	<time done="03/03/2017 [12:26:47]" month="3" day="3">
+		<forecast date="03/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>21</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="04/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+		<forecast date="05/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+	</time>
+	<time done="03/03/2017 [19:42:40]" month="3" day="3">
+		<forecast date="03/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="04/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+		<forecast date="05/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+	</time>
+	<time done="04/03/2017 [08:24:38]" month="3" day="4">
+		<forecast date="04/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+		<forecast date="05/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>15</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+		<forecast date="06/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>11</tempMin>
+		</forecast>
+	</time>
+	<time done="04/03/2017 [11:35:20]" month="3" day="4">
+		<forecast date="04/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+		<forecast date="05/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>15</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+		<forecast date="06/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>11</tempMin>
+		</forecast>
+	</time>
+	<time done="04/03/2017 [12:39:31]" month="3" day="4">
+		<forecast date="04/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+		<forecast date="05/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>15</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+		<forecast date="06/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>11</tempMin>
+		</forecast>
+	</time>
+	<time done="04/03/2017 [18:34:32]" month="3" day="4">
+		<forecast date="04/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>6</tempMin>
+		</forecast>
+		<forecast date="05/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>15</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="06/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>11</tempMin>
+		</forecast>
+	</time>
+	<time done="05/03/2017 [08:09:25]" month="3" day="5">
+		<forecast date="05/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>15</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="06/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>11</tempMin>
+		</forecast>
+		<forecast date="07/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+	</time>
+	<time done="05/03/2017 [10:17:41]" month="3" day="5">
+		<forecast date="05/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>15</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="06/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>11</tempMin>
+		</forecast>
+		<forecast date="07/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+	</time>
+	<time done="05/03/2017 [11:11:35]" month="3" day="5">
+		<forecast date="05/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>15</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="06/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>11</tempMin>
+		</forecast>
+		<forecast date="07/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+	</time>
+	<time done="05/03/2017 [12:32:17]" month="3" day="5">
+		<forecast date="05/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>15</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="06/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>11</tempMin>
+		</forecast>
+		<forecast date="07/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+	</time>
+	<time done="05/03/2017 [18:45:22]" month="3" day="5">
+		<forecast date="05/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="06/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>11</tempMin>
+		</forecast>
+		<forecast date="07/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>15</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+	</time>
+	<time done="06/03/2017 [08:22:13]" month="3" day="6">
+		<forecast date="06/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>17</tempMax>
+			<tempMin>13</tempMin>
+		</forecast>
+		<forecast date="07/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>15</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="08/03/2017">
+			<weather>
+				<icon>07</icon>
+				<description>Nubes medias y altas: presencia de nubes de tipo medio y alto (nubes por encima de 2000 m)</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+	</time>
+	<time done="06/03/2017 [10:42:48]" month="3" day="6">
+		<forecast date="06/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>13</tempMin>
+		</forecast>
+		<forecast date="07/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>15</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="08/03/2017">
+			<weather>
+				<icon>07</icon>
+				<description>Nubes medias y altas: presencia de nubes de tipo medio y alto (nubes por encima de 2000 m)</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+	</time>
+	<time done="06/03/2017 [11:03:39]" month="3" day="6">
+		<forecast date="06/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>13</tempMin>
+		</forecast>
+		<forecast date="07/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>15</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="08/03/2017">
+			<weather>
+				<icon>07</icon>
+				<description>Nubes medias y altas: presencia de nubes de tipo medio y alto (nubes por encima de 2000 m)</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+	</time>
+	<time done="06/03/2017 [17:10:07]" month="3" day="6">
+		<forecast date="06/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>17</tempMax>
+			<tempMin>13</tempMin>
+		</forecast>
+		<forecast date="07/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>15</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="08/03/2017">
+			<weather>
+				<icon>07</icon>
+				<description>Nubes medias y altas: presencia de nubes de tipo medio y alto (nubes por encima de 2000 m)</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+	</time>
+	<time done="07/03/2017 [08:14:46]" month="3" day="7">
+		<forecast date="07/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="08/03/2017">
+			<weather>
+				<icon>07</icon>
+				<description>Nubes medias y altas: presencia de nubes de tipo medio y alto (nubes por encima de 2000 m)</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="09/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>23</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+	</time>
+	<time done="07/03/2017 [17:07:08]" month="3" day="7">
+		<forecast date="07/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="08/03/2017">
+			<weather>
+				<icon>07</icon>
+				<description>Nubes medias y altas: presencia de nubes de tipo medio y alto (nubes por encima de 2000 m)</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="09/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>20</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+	</time>
+	<time done="08/03/2017 [07:20:03]" month="3" day="8">
+		<forecast date="08/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>12</tempMin>
+		</forecast>
+		<forecast date="09/03/2017">
+			<weather>
+				<icon>07</icon>
+				<description>Nubes medias y altas: presencia de nubes de tipo medio y alto (nubes por encima de 2000 m)</description>
+			</weather>
+			<tempMax>20</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+		<forecast date="10/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>24</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+	</time>
+	<time done="08/03/2017 [09:21:22]" month="3" day="8">
+		<forecast date="08/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>12</tempMin>
+		</forecast>
+		<forecast date="09/03/2017">
+			<weather>
+				<icon>07</icon>
+				<description>Nubes medias y altas: presencia de nubes de tipo medio y alto (nubes por encima de 2000 m)</description>
+			</weather>
+			<tempMax>20</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+		<forecast date="10/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>24</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+	</time>
+	<time done="08/03/2017 [17:09:17]" month="3" day="8">
+		<forecast date="08/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>17</tempMax>
+			<tempMin>12</tempMin>
+		</forecast>
+		<forecast date="09/03/2017">
+			<weather>
+				<icon>07</icon>
+				<description>Nubes medias y altas: presencia de nubes de tipo medio y alto (nubes por encima de 2000 m)</description>
+			</weather>
+			<tempMax>20</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="10/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>22</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+	</time>
+	<time done="09/03/2017 [07:29:34]" month="3" day="9">
+		<forecast date="09/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>21</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="10/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>23</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="11/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>20</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+	</time>
+	<time done="09/03/2017 [10:07:30]" month="3" day="9">
+		<forecast date="09/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>11</tempMin>
+		</forecast>
+		<forecast date="10/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>22</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="11/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+	</time>
+	<time done="09/03/2017 [17:15:18]" month="3" day="9">
+		<forecast date="09/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>11</tempMin>
+		</forecast>
+		<forecast date="10/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>22</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="11/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+	</time>
+	<time done="10/03/2017 [07:38:53]" month="3" day="10">
+		<forecast date="10/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>23</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="11/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="12/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+	</time>
+	<time done="10/03/2017 [10:26:14]" month="3" day="10">
+		<forecast date="10/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>23</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="11/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="12/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+	</time>
+	<time done="10/03/2017 [17:14:10]" month="3" day="10">
+		<forecast date="10/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>25</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="11/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="12/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+	</time>
+	<time done="11/03/2017 [07:48:16]" month="3" day="11">
+		<forecast date="11/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>20</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="12/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="13/03/2017">
+			<weather>
+				<icon>12</icon>
+				<description>Lluvia débil: precipitación de agua líquida, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>11</tempMax>
+			<tempMin>6</tempMin>
+		</forecast>
+	</time>
+	<time done="11/03/2017 [10:37:38]" month="3" day="11">
+		<forecast date="11/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>21</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="12/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="13/03/2017">
+			<weather>
+				<icon>12</icon>
+				<description>Lluvia débil: precipitación de agua líquida, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+	</time>
+	<time done="11/03/2017 [17:28:52]" month="3" day="11">
+		<forecast date="11/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>23</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="12/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="13/03/2017">
+			<weather>
+				<icon>12</icon>
+				<description>Lluvia débil: precipitación de agua líquida, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+	</time>
+	<time done="12/03/2017 [08:16:14]" month="3" day="12">
+		<forecast date="12/03/2017">
+			<weather>
+				<icon>12</icon>
+				<description>Lluvia débil: precipitación de agua líquida, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="13/03/2017">
+			<weather>
+				<icon>12</icon>
+				<description>Lluvia débil: precipitación de agua líquida, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="14/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+	</time>
+	<time done="12/03/2017 [10:39:58]" month="3" day="12">
+		<forecast date="12/03/2017">
+			<weather>
+				<icon>12</icon>
+				<description>Lluvia débil: precipitación de agua líquida, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="13/03/2017">
+			<weather>
+				<icon>12</icon>
+				<description>Lluvia débil: precipitación de agua líquida, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="14/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+	</time>
+	<time done="12/03/2017 [17:11:20]" month="3" day="12">
+		<forecast date="12/03/2017">
+			<weather>
+				<icon>12</icon>
+				<description>Lluvia débil: precipitación de agua líquida, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="13/03/2017">
+			<weather>
+				<icon>12</icon>
+				<description>Lluvia débil: precipitación de agua líquida, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="14/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+	</time>
+	<time done="13/03/2017 [07:44:35]" month="3" day="13">
+		<forecast date="13/03/2017">
+			<weather>
+				<icon>12</icon>
+				<description>Lluvia débil: precipitación de agua líquida, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="14/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="15/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+	</time>
+	<time done="13/03/2017 [10:49:05]" month="3" day="13">
+		<forecast date="13/03/2017">
+			<weather>
+				<icon>12</icon>
+				<description>Lluvia débil: precipitación de agua líquida, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="14/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="15/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+	</time>
+	<time done="13/03/2017 [18:49:43]" month="3" day="13">
+		<forecast date="13/03/2017">
+			<weather>
+				<icon>12</icon>
+				<description>Lluvia débil: precipitación de agua líquida, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>11</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="14/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="15/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>17</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+	</time>
+	<time done="14/03/2017 [07:58:29]" month="3" day="14">
+		<forecast date="14/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="15/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="16/03/2017">
+			<weather>
+				<icon>07</icon>
+				<description>Nubes medias y altas: presencia de nubes de tipo medio y alto (nubes por encima de 2000 m)</description>
+			</weather>
+			<tempMax>22</tempMax>
+			<tempMin>12</tempMin>
+		</forecast>
+	</time>
+	<time done="14/03/2017 [09:45:27]" month="3" day="14">
+		<forecast date="14/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="15/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="16/03/2017">
+			<weather>
+				<icon>07</icon>
+				<description>Nubes medias y altas: presencia de nubes de tipo medio y alto (nubes por encima de 2000 m)</description>
+			</weather>
+			<tempMax>22</tempMax>
+			<tempMin>12</tempMin>
+		</forecast>
+	</time>
+	<time done="14/03/2017 [12:31:46]" month="3" day="14">
+		<forecast date="14/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="15/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="16/03/2017">
+			<weather>
+				<icon>07</icon>
+				<description>Nubes medias y altas: presencia de nubes de tipo medio y alto (nubes por encima de 2000 m)</description>
+			</weather>
+			<tempMax>22</tempMax>
+			<tempMin>12</tempMin>
+		</forecast>
+	</time>
+	<time done="14/03/2017 [18:44:07]" month="3" day="14">
+		<forecast date="14/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>11</tempMin>
+		</forecast>
+		<forecast date="15/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="16/03/2017">
+			<weather>
+				<icon>07</icon>
+				<description>Nubes medias y altas: presencia de nubes de tipo medio y alto (nubes por encima de 2000 m)</description>
+			</weather>
+			<tempMax>22</tempMax>
+			<tempMin>12</tempMin>
+		</forecast>
+	</time>
+	<time done="15/03/2017 [07:38:43]" month="3" day="15">
+		<forecast date="15/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="16/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>23</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="17/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>17</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+	</time>
+	<time done="15/03/2017 [08:41:38]" month="3" day="15">
+		<forecast date="15/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="16/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>23</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="17/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>17</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+	</time>
+	<time done="15/03/2017 [11:10:28]" month="3" day="15">
+		<forecast date="15/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="16/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>23</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="17/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>17</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+	</time>
+	<time done="15/03/2017 [18:31:17]" month="3" day="15">
+		<forecast date="15/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="16/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>23</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="17/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>17</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+	</time>
+	<time done="16/03/2017 [07:38:30]" month="3" day="16">
+		<forecast date="16/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>23</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="17/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>17</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="18/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+	</time>
+	<time done="16/03/2017 [09:26:01]" month="3" day="16">
+		<forecast date="16/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>23</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="17/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>17</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="18/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+	</time>
+	<time done="16/03/2017 [10:34:12]" month="3" day="16">
+		<forecast date="16/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>24</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="17/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>17</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="18/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+	</time>
+	<time done="16/03/2017 [18:48:55]" month="3" day="16">
+		<forecast date="16/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>25</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="17/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>17</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="18/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+	</time>
+	<time done="17/03/2017 [08:13:12]" month="3" day="17">
+		<forecast date="17/03/2017">
+			<weather>
+				<icon>04</icon>
+				<description>Muy nuboso: entre 5/8 y 7/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>17</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="18/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="19/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>17</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+	</time>
+	<time done="17/03/2017 [10:38:50]" month="3" day="17">
+		<forecast date="17/03/2017">
+			<weather>
+				<icon>04</icon>
+				<description>Muy nuboso: entre 5/8 y 7/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="18/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>15</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="19/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>17</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+	</time>
+	<time done="17/03/2017 [18:30:48]" month="3" day="17">
+		<forecast date="17/03/2017">
+			<weather>
+				<icon>04</icon>
+				<description>Muy nuboso: entre 5/8 y 7/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>15</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="18/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>15</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="19/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+	</time>
+	<time done="18/03/2017 [08:44:22]" month="3" day="18">
+		<forecast date="18/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>15</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="19/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="20/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+	</time>
+	<time done="18/03/2017 [10:29:02]" month="3" day="18">
+		<forecast date="18/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>15</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="19/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="20/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+	</time>
+	<time done="18/03/2017 [11:12:46]" month="3" day="18">
+		<forecast date="18/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>15</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="19/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="20/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+	</time>
+	<time done="18/03/2017 [18:36:03]" month="3" day="18">
+		<forecast date="18/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>15</tempMax>
+			<tempMin>11</tempMin>
+		</forecast>
+		<forecast date="19/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+		<forecast date="20/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>8</tempMin>
+		</forecast>
+	</time>
+	<time done="19/03/2017 [08:09:15]" month="3" day="19">
+		<forecast date="19/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>17</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+		<forecast date="20/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="21/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>15</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+	</time>
+	<time done="19/03/2017 [09:16:14]" month="3" day="19">
+		<forecast date="19/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>17</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+		<forecast date="20/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="21/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>15</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+	</time>
+	<time done="19/03/2017 [10:38:09]" month="3" day="19">
+		<forecast date="19/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>17</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+		<forecast date="20/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="21/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>15</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+	</time>
+	<time done="19/03/2017 [18:52:14]" month="3" day="19">
+		<forecast date="19/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="20/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="21/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+	</time>
+	<time done="20/03/2017 [07:39:52]" month="3" day="20">
+		<forecast date="20/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>15</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="21/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="22/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+	</time>
+	<time done="20/03/2017 [10:38:44]" month="3" day="20">
+		<forecast date="20/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>15</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="21/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="22/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+	</time>
+	<time done="20/03/2017 [17:12:36]" month="3" day="20">
+		<forecast date="20/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="21/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="22/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+	</time>
+	<time done="21/03/2017 [07:41:00]" month="3" day="21">
+		<forecast date="21/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="22/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+		<forecast date="23/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>10</tempMax>
+			<tempMin>5</tempMin>
+		</forecast>
+	</time>
+	<time done="21/03/2017 [10:54:58]" month="3" day="21">
+		<forecast date="21/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="22/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+		<forecast date="23/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>10</tempMax>
+			<tempMin>5</tempMin>
+		</forecast>
+	</time>
+	<time done="21/03/2017 [17:08:00]" month="3" day="21">
+		<forecast date="21/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>11</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="22/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+		<forecast date="23/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>10</tempMax>
+			<tempMin>5</tempMin>
+		</forecast>
+	</time>
+	<time done="22/03/2017 [09:21:45]" month="3" day="22">
+		<forecast date="22/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+		<forecast date="23/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>5</tempMin>
+		</forecast>
+		<forecast date="24/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>3</tempMin>
+		</forecast>
+	</time>
+	<time done="22/03/2017 [10:51:59]" month="3" day="22">
+		<forecast date="22/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+		<forecast date="23/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>5</tempMin>
+		</forecast>
+		<forecast date="24/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>3</tempMin>
+		</forecast>
+	</time>
+	<time done="22/03/2017 [11:20:46]" month="3" day="22">
+		<forecast date="22/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+		<forecast date="23/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>5</tempMin>
+		</forecast>
+		<forecast date="24/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>3</tempMin>
+		</forecast>
+	</time>
+	<time done="22/03/2017 [12:43:26]" month="3" day="22">
+		<forecast date="22/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+		<forecast date="23/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>5</tempMin>
+		</forecast>
+		<forecast date="24/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>3</tempMin>
+		</forecast>
+	</time>
+	<time done="22/03/2017 [17:12:20]" month="3" day="22">
+		<forecast date="22/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>11</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+		<forecast date="23/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>5</tempMin>
+		</forecast>
+		<forecast date="24/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>3</tempMin>
+		</forecast>
+	</time>
+	<time done="23/03/2017 [08:21:17]" month="3" day="23">
+		<forecast date="23/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>12</tempMax>
+			<tempMin>4</tempMin>
+		</forecast>
+		<forecast date="24/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>4</tempMin>
+		</forecast>
+		<forecast date="25/03/2017">
+			<weather>
+				<icon>12</icon>
+				<description>Lluvia débil: precipitación de agua líquida, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>3</tempMin>
+		</forecast>
+	</time>
+	<time done="23/03/2017 [10:42:29]" month="3" day="23">
+		<forecast date="23/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>4</tempMin>
+		</forecast>
+		<forecast date="24/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>4</tempMin>
+		</forecast>
+		<forecast date="25/03/2017">
+			<weather>
+				<icon>12</icon>
+				<description>Lluvia débil: precipitación de agua líquida, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>3</tempMin>
+		</forecast>
+	</time>
+	<time done="23/03/2017 [17:08:27]" month="3" day="23">
+		<forecast date="23/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>4</tempMin>
+		</forecast>
+		<forecast date="24/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>4</tempMin>
+		</forecast>
+		<forecast date="25/03/2017">
+			<weather>
+				<icon>12</icon>
+				<description>Lluvia débil: precipitación de agua líquida, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>3</tempMin>
+		</forecast>
+	</time>
+	<time done="24/03/2017 [07:53:36]" month="3" day="24">
+		<forecast date="24/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>4</tempMin>
+		</forecast>
+		<forecast date="25/03/2017">
+			<weather>
+				<icon>13</icon>
+				<description>Lluvia fuerte: precipitación de agua líquida, con cantidades superiores a 15 mm/h</description>
+			</weather>
+			<tempMax>10</tempMax>
+			<tempMin>6</tempMin>
+		</forecast>
+		<forecast date="26/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+	</time>
+	<time done="24/03/2017 [10:24:06]" month="3" day="24">
+		<forecast date="24/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>4</tempMin>
+		</forecast>
+		<forecast date="25/03/2017">
+			<weather>
+				<icon>13</icon>
+				<description>Lluvia fuerte: precipitación de agua líquida, con cantidades superiores a 15 mm/h</description>
+			</weather>
+			<tempMax>10</tempMax>
+			<tempMin>6</tempMin>
+		</forecast>
+		<forecast date="26/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+	</time>
+	<time done="24/03/2017 [17:12:11]" month="3" day="24">
+		<forecast date="24/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>4</tempMin>
+		</forecast>
+		<forecast date="25/03/2017">
+			<weather>
+				<icon>13</icon>
+				<description>Lluvia fuerte: precipitación de agua líquida, con cantidades superiores a 15 mm/h</description>
+			</weather>
+			<tempMax>10</tempMax>
+			<tempMin>6</tempMin>
+		</forecast>
+		<forecast date="26/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+	</time>
+	<time done="25/03/2017 [07:52:17]" month="3" day="25">
+		<forecast date="25/03/2017">
+			<weather>
+				<icon>13</icon>
+				<description>Lluvia fuerte: precipitación de agua líquida, con cantidades superiores a 15 mm/h</description>
+			</weather>
+			<tempMax>10</tempMax>
+			<tempMin>6</tempMin>
+		</forecast>
+		<forecast date="26/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+		<forecast date="27/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>17</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+	</time>
+	<time done="25/03/2017 [10:44:24]" month="3" day="25">
+		<forecast date="25/03/2017">
+			<weather>
+				<icon>13</icon>
+				<description>Lluvia fuerte: precipitación de agua líquida, con cantidades superiores a 15 mm/h</description>
+			</weather>
+			<tempMax>10</tempMax>
+			<tempMin>6</tempMin>
+		</forecast>
+		<forecast date="26/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+		<forecast date="27/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>17</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+	</time>
+	<time done="25/03/2017 [17:09:47]" month="3" day="26">
+		<forecast date="26/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>16</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+		<forecast date="27/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>17</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+	</time>
+	<time done="26/03/2017 [07:29:52]" month="3" day="26">
+		<forecast date="26/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+		<forecast date="27/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="28/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+	</time>
+	<time done="26/03/2017 [18:07:10]" month="3" day="26">
+		<forecast date="26/03/2017">
+			<weather>
+				<icon>02</icon>
+				<description>Parcialmente nuboso: entre 2/8 y 4/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>7</tempMin>
+		</forecast>
+		<forecast date="27/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="28/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+	</time>
+	<time done="27/03/2017 [07:33:18]" month="3" day="27">
+		<forecast date="27/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="28/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="29/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>24</tempMax>
+			<tempMin>11</tempMin>
+		</forecast>
+	</time>
+	<time done="27/03/2017 [08:25:05]" month="3" day="27">
+		<forecast date="27/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="28/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="29/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>24</tempMax>
+			<tempMin>11</tempMin>
+		</forecast>
+	</time>
+	<time done="27/03/2017 [10:42:11]" month="3" day="27">
+		<forecast date="27/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="28/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="29/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>24</tempMax>
+			<tempMin>11</tempMin>
+		</forecast>
+	</time>
+	<time done="27/03/2017 [18:41:44]" month="3" day="27">
+		<forecast date="27/03/2017">
+			<weather>
+				<icon>03</icon>
+				<description>Nuboso: entre 4/8 y 5/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="28/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="29/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>24</tempMax>
+			<tempMin>11</tempMin>
+		</forecast>
+	</time>
+	<time done="28/03/2017 [07:32:57]" month="3" day="28">
+		<forecast date="28/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>20</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="29/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>23</tempMax>
+			<tempMin>11</tempMin>
+		</forecast>
+		<forecast date="30/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>25</tempMax>
+			<tempMin>12</tempMin>
+		</forecast>
+	</time>
+	<time done="28/03/2017 [08:42:11]" month="3" day="28">
+		<forecast date="28/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>20</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="29/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>23</tempMax>
+			<tempMin>11</tempMin>
+		</forecast>
+		<forecast date="30/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>25</tempMax>
+			<tempMin>12</tempMin>
+		</forecast>
+	</time>
+	<time done="28/03/2017 [10:43:03]" month="3" day="28">
+		<forecast date="28/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>20</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="29/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>24</tempMax>
+			<tempMin>11</tempMin>
+		</forecast>
+		<forecast date="30/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>25</tempMax>
+			<tempMin>12</tempMin>
+		</forecast>
+	</time>
+	<time done="28/03/2017 [18:41:03]" month="3" day="28">
+		<forecast date="28/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>21</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="29/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>24</tempMax>
+			<tempMin>11</tempMin>
+		</forecast>
+		<forecast date="30/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>25</tempMax>
+			<tempMin>12</tempMin>
+		</forecast>
+	</time>
+	<time done="28/03/2017 [19:33:00]" month="3" day="28">
+		<forecast date="28/03/2017">
+			<weather>
+				<icon>01</icon>
+				<description>Poco nuboso: entre 1/8 y 2/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>21</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+		<forecast date="29/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>24</tempMax>
+			<tempMin>11</tempMin>
+		</forecast>
+		<forecast date="30/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>25</tempMax>
+			<tempMin>12</tempMin>
+		</forecast>
+	</time>
+	<time done="29/03/2017 [07:29:20]" month="3" day="29">
+		<forecast date="29/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>24</tempMax>
+			<tempMin>11</tempMin>
+		</forecast>
+		<forecast date="30/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>25</tempMax>
+			<tempMin>12</tempMin>
+		</forecast>
+		<forecast date="31/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>13</tempMin>
+		</forecast>
+	</time>
+	<time done="29/03/2017 [10:49:24]" month="3" day="29">
+		<forecast date="29/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>24</tempMax>
+			<tempMin>11</tempMin>
+		</forecast>
+		<forecast date="30/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>25</tempMax>
+			<tempMin>14</tempMin>
+		</forecast>
+		<forecast date="31/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>13</tempMin>
+		</forecast>
+	</time>
+	<time done="29/03/2017 [18:30:50]" month="3" day="29">
+		<forecast date="29/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>24</tempMax>
+			<tempMin>12</tempMin>
+		</forecast>
+		<forecast date="30/03/2017">
+			<weather>
+				<icon>00</icon>
+				<description>Despejado: cielo sin nubosidad o 1/8 de cielo cubierto</description>
+			</weather>
+			<tempMax>25</tempMax>
+			<tempMin>14</tempMin>
+		</forecast>
+		<forecast date="31/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>18</tempMax>
+			<tempMin>13</tempMin>
+		</forecast>
+	</time>
+	<time done="30/03/2017 [07:35:57]" month="3" day="30">
+		<forecast date="30/03/2017">
+			<weather>
+				<icon>07</icon>
+				<description>Nubes medias y altas: presencia de nubes de tipo medio y alto (nubes por encima de 2000 m)</description>
+			</weather>
+			<tempMax>25</tempMax>
+			<tempMin>14</tempMin>
+		</forecast>
+		<forecast date="31/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>13</tempMin>
+		</forecast>
+		<forecast date="01/04/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+	</time>
+	<time done="30/03/2017 [10:25:24]" month="3" day="30">
+		<forecast date="30/03/2017">
+			<weather>
+				<icon>07</icon>
+				<description>Nubes medias y altas: presencia de nubes de tipo medio y alto (nubes por encima de 2000 m)</description>
+			</weather>
+			<tempMax>26</tempMax>
+			<tempMin>14</tempMin>
+		</forecast>
+		<forecast date="31/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>11</tempMin>
+		</forecast>
+		<forecast date="01/04/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+	</time>
+	<time done="30/03/2017 [19:04:31]" month="3" day="30">
+		<forecast date="30/03/2017">
+			<weather>
+				<icon>07</icon>
+				<description>Nubes medias y altas: presencia de nubes de tipo medio y alto (nubes por encima de 2000 m)</description>
+			</weather>
+			<tempMax>25</tempMax>
+			<tempMin>13</tempMin>
+		</forecast>
+		<forecast date="31/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>11</tempMin>
+		</forecast>
+		<forecast date="01/04/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>10</tempMin>
+		</forecast>
+	</time>
+	<time done="31/03/2017 [08:22:59]" month="3" day="31">
+		<forecast date="31/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>12</tempMin>
+		</forecast>
+		<forecast date="01/04/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="02/04/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+	</time>
+	<time done="31/03/2017 [10:44:04]" month="3" day="31">
+		<forecast date="31/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>19</tempMax>
+			<tempMin>12</tempMin>
+		</forecast>
+		<forecast date="01/04/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="02/04/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+	</time>
+	<time done="31/03/2017 [19:02:28]" month="3" day="31">
+		<forecast date="31/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>22</tempMax>
+			<tempMin>13</tempMin>
+		</forecast>
+		<forecast date="01/04/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="02/04/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+	</time>
+	<time done="31/03/2017 [19:02:28]" month="3" day="31">
+		<forecast date="31/03/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>22</tempMax>
+			<tempMin>13</tempMin>
+		</forecast>
+		<forecast date="01/04/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>14</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+		<forecast date="02/04/2017">
+			<weather>
+				<icon>10</icon>
+				<description>Chubascos débiles: precipitación intensa y de corta duración, con cantidades inferiores a 15 mm/h</description>
+			</weather>
+			<tempMax>13</tempMax>
+			<tempMin>9</tempMin>
+		</forecast>
+	</time>
+</cityForecast>
