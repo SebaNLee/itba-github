@@ -17,7 +17,7 @@ public class Person {
     public boolean equals(Object o) {
         return o instanceof Person person &&
                 firstName.equals(person.firstName) &&
-                lastName.equals(person.lastName));
+                lastName.equals(person.lastName);
     }
 
     @Override
