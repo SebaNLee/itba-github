@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<persons>
+		<person document="1">
+			<firstname>Matias</firstname>
+			<lastname>Soto</lastname>
+			<age>24</age>
+		</person>
+		<person document="2">
+			<firstname>Sonia</firstname>
+			<lastname>Gomez</lastname>
+			<age>45</age>
+		</person>
+		<person document="3">
+			<firstname>Juan</firstname>
+			<lastname>Vidal</lastname>
+			<age>33</age>
+		</person>
+		<person document="4">
+			<firstname>Fernando</firstname>
+			<lastname>Perez</lastname>
+			<age>28</age>
+		</person>
+		<person document="5">
+			<firstname>Micaela</firstname>
+			<lastname>Solari</lastname>
+			<age>30</age>
+		</person>
+		<person document="6">
+			<firstname>Gabriel</firstname>
+			<lastname>Quiroga</lastname>
+			<age>55</age>
+		</person>
+		<person document="7">
+			<firstname>Agustina</firstname>
+			<lastname>Spadari</lastname>
+			<age>50</age>
+		</person>
+		<person document="8">
+			<firstname>Ignacio</firstname>
+			<lastname>Perez</lastname>
+			<age>26</age>
+		</person>
+		<person document="9">
+			<firstname>Rodrigo</firstname>
+			<lastname>Santos</lastname>
+			<age>37</age>
+		</person>
+	</persons>

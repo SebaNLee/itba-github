@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<projects>
+		<project name="Mas oportunidades">
+			<client name="Clarin"/>
+			<dates from="2008-01-01" to="2008-12-31"/>
+			<platform name="Java"/>
+			<staff>
+				<person document="1"/>
+				<person document="3"/>
+				<person document="4"/>
+				<person document="7"/>
+			</staff>
+		</project>
+		<project name="CRM YPF">
+			<client name="YPF"/>
+			<dates from="2020-01-01" to="2022-12-01"/>
+			<platform name="PHP"/>
+			<staff>
+				<person document="1"/>
+			</staff>
+		</project>
+		<project name="IOL2">
+			<client name="ITBA"/>
+			<dates from="2009-06-01" to="2011-01-01"/>
+			<platform name="Java"/>
+			<staff>
+				<person document="2"/>
+				<person document="3"/>
+				<person document="6"/>
+				<person document="7"/>
+				<person document="8"/>
+			</staff>
+		</project>
+		<project name="TN staff administration">
+			<client name="TN"/>
+			<dates from="2000-06-01" to="2005-05-23"/>
+			<platform name=".Net"/>
+			<staff>
+				<person document="2"/>
+			</staff>
+		</project>
+		<project name="confronte">
+			<client name="Clarin"/>
+			<dates from="2020-01-01" to="2023-12-31"/>
+			<platform name="Java"/>
+			<staff>
+				<person document="1"/>
+			</staff>
+		</project>
+	</projects>
