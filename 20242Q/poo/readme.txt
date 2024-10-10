@@ -1,20 +1,56 @@
 
 
 
-extensiones instaladas:
+extensiones instaladas (java):
 
-Language Support for Java, Red Hat
-Test Runner for Java, Microsoft
-Debugger for Java, Microsoft
-Project Manager for Java, Microsoft
-PlantUML
+    Language Support for Java, Red Hat
+    Test Runner for Java, Microsoft
+    Debugger for Java, Microsoft
+    Project Manager for Java, Microsoft
+    PlantUML
 
-PlantUML, estoy usandolo con servidor (necesito wifi), editado en configuración
-https://www.plantuml.com/plantuml/
+    PlantUML, estoy usandolo con servidor (necesito wifi), editado en configuración
+    https://www.plantuml.com/plantuml/
+
+
+instalación para Ruby:
+
+    extensiones:
+        Ruby Solargraph (Castwide)
+        ruby-rubocop (misogi)
+        Code Runner (Jun Han)
+
+    gemas correspondientes:
+        gem install solargraph
+        gem install rubocop
+
+
+    comandos (ChatGPT):
+
+        sudo apt update
+        sudo apt upgrade
+
+        sudo apt install -y curl gpg build-essential libssl-dev libreadline-dev libz-dev libffi-dev
+
+        \curl -sSL https://get.rvm.io | bash -s stable
+
+        source ~/.rvm/scripts/rvm
+
+        rvm -v
+
+        rvm install 3.3.5
+
+        ruby -v
+
+
 
 
 
 //////////////////////////////////////////////
+
+
+
+
 
 problema de compilación:
 
@@ -73,3 +109,14 @@ funciona si hago referencia desde src/...
 pero nofunciona de 20242Q/poo/...
 
 CONCLUSIÓN: uso package para incisos de ejercicios
+
+
+10/10/2024
+
+instalación de entorno de Ruby
+modifiqué el compilado de extensiones y comandos de arriba
+
+rbenv, sirve para gestión de versiones de Ruby
+no funcionó
+
+usé RVM para instalar Ruby
