@@ -24,6 +24,12 @@ instalación para Ruby:
         gem install solargraph
         gem install rubocop
 
+    edito la cantidad de espacios por tab para archivos .rb:
+        agregar lo siguiente en: settings->Editor: Ident SIze-> Edit in settings.json
+        "[ruby]": {
+            "editor.tabSize": 2,
+            "editor.insertSpaces": true
+        }
 
     comandos (ChatGPT):
 
