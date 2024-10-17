@@ -1,0 +1,10 @@
+
+require_relative 'counter'
+ 
+my_counter = Counter.new
+puts my_counter.count # Imprime 0
+my_counter.increment # Aumenta en 1
+my_counter.increment
+puts my_counter.count # Imprime 2
+my_counter.decrement # Disminuye en 1
+puts my_counter.count # Imprime 1
