@@ -1,0 +1,1 @@
+eliminé el directorio .svn de ./html
