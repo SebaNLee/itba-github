@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<biblioteca>
+
+	<libros>
+		<libro id="libro1">
+			<titulo>El Principito</titulo>
+			<autor>Antoine de Saint-Exupery</autor>
+			<isbn>8497700139</isbn>
+			<descripcion>
+				Se que en algun lugar del mundo, existe una rosa unica, distinta de todas las demas rosas, una cuya delicadeza, candor e 					inocencia, haran despertar de su letargo a mi alma, mi corazon y mis rinones. 
+
+				A esa rosa, donde quiera que este, dedico este trabajo, con la esperanza de hallarla algun dia, o de dejarme hallar por 				ella.
+
+				Existe... rodeada de amapolas multicolores, filtrando todo lo bello a traves de sus ojos aperlados, cristalinos y 					absolutamente hermosos...
+			</descripcion>
+		</libro>
+		<libro id="libro2">
+			<titulo>La ciencia de la educacion</titulo>
+			<autor>Alexander Bain</autor>
+			<isbn>9788497701280 </isbn>
+			<descripcion>
+				En esta obra se considera, tanto como es posible, el arte de ensenar bajo el punto de vista cientifico, es decir, 					apreciando y corrigiendo las maximas generalmente recibidas, relacionandolas con las leyes mejor demostradas de la 					inteligencia.
+			</descripcion>
+
+		</libro>
+		<libro id="libro3">
+			<titulo>Poesias y cartas</titulo>
+			<autor>Conde de Lautremont</autor>
+			<isbn>8470395521</isbn>
+			<descripcion>
+				La estructura en el que estos escritos se nos ofrecen recuerdan la del "Matrimonio del Cielo y el Infierno" de William 					Blake. Como aquel otro gran poeta, su autor destila un manifiesto revolucionario, una defensa a ultranza de la poesia como 					arte por encima de la prosa y quiza por sobre otra cosa del universo. Tras estos textos que revelan la textura de su alma y 					de su credo teorico, las cartas recortan tramos de una vida que nadie conoce
+				demasiado bien. Isidore Ducasse era uruguayo, (nacido durante el sitio de Montevideo) pero el destino y su talento lo 					hicieron parte de las letras francesas. Fue entonces el Conde de Lautreamont, tan grande y tan rebelde
+				como Baudelaire y Artaud. Una bocanada de su gloria, estas Poesias y Cartas del autor de Cantos de Maldoror.
+			</descripcion>
+		</libro>
+		<libro id="libro4">
+			<titulo>Orgullo y prejuicio</titulo>
+			<autor>Jane Austen</autor>
+			<isbn>8497930665</isbn>
+			<descripcion>
+				En su novela mas popular, y considerada por la mayor parte de los criticos como una obra maestra, la autora nos sumerge en 					una historia emocionante en la que ha creado a los personajes de manera tal que nos seran inolvidables.
+			</descripcion>
+		</libro>
+		<libro id="libro5">
+			<titulo>El Profeta</titulo>
+			<autor>Khalil Gibran</autor>
+			<isbn>8495599295</isbn>
+			<descripcion>
+				Khalil Gibran es, sin lugar duda, uno de los poetas mas leidos actualmente. Y esta obra, siguiendo las viejas tradiciones y 					ensenanzas orientales y en el verso lineal sencillo, es su forma de decirnos cosas que todos sabemos pero que es necesario 					que se nos recuerde de tanto en tanto.
+			</descripcion>
+		</libro>
+		<libro id="libro6">
+			<titulo>Corazon</titulo>
+			<autor>Edmundo de Amicis</autor>
+			<isbn>9788498863390</isbn>
+			<descripcion>
+				Corazon es el diario de Enrique, de tono moralizante y didactico, ademas de exponer cierto nacionalismo. Cuenta lo que 					sucede durante el ano escolar, detallando los actos pequenos y grandes, nobles o crueles que suceden en toda escuela. 					Tambien transcribe los cuentos que mensualmente narra el maestro a sus alumnos, algunos de ellos considerados clasicos de 					la literatura infantil.
+
+				La vision de los adultos de la epoca se refleja en las cartas que ocasionalmente le escriben su padre o su madre.
+
+				Para su comprension no debe olvidarse que Amicis vivio en un momento en que la unidad italiana estaba reconstruyendose. De 					ahi las referencias a los forjadores de esa unidad: el rey Victor Manuel II, el conde de Cavour y Giuseppe Garibaldi, 					ademas de la presencia de ninos venidos de distintos rincones italianos.
+
+				Corazon ha perdurado en el tiempo porque su autor supo cantar el mundo de la infancia, con sus alegrias y tristezas. 					Rescatando valores como la amistad, la solidaridad y el sacrificio de padres y maestros para darle un sentido integral a la 					vida de sus hijos y alumnos.
+			</descripcion>
+		</libro>
+		
+	</libros>
+
+	<usuarios>
+		<usuario id="usuario1">
+			<datos_personales>
+				<nombre>Juan Carlos Sanchez</nombre>
+				<direccion>Larrea 1721</direccion>
+				<telefono>4-824-7274</telefono>
+			</datos_personales>
+			<prestamos>
+				<prestamo>
+					<libro_prestado id="libro1"></libro_prestado>
+					<fecha_perstamo>2006-11-25</fecha_perstamo>
+					<fecha_devolucion>2006-12-06</fecha_devolucion>
+				</prestamo>
+				<prestamo>
+					<libro_prestado id="libro4"></libro_prestado>
+					<fecha_perstamo>2007-05-15</fecha_perstamo>
+				</prestamo>
+			</prestamos>
+		</usuario>
+		<usuario id="usuario2">
+			<datos_personales>
+				<nombre>Hector Ollega</nombre>
+				<direccion>Congreso de Tucuman 2978</direccion>
+				<telefono>4-742-7271</telefono>
+			</datos_personales>
+			<prestamos>
+				<prestamo>
+					<libro_prestado id="libro3"></libro_prestado>
+					<fecha_perstamo>2007-04-02</fecha_perstamo>
+				</prestamo>
+				<prestamo>
+					<libro_prestado id="libro1"></libro_prestado>
+					<fecha_perstamo>2006-01-12</fecha_perstamo>
+				</prestamo>
+			</prestamos>
+		</usuario>
+		<usuario id="usuario3">
+			<datos_personales>
+				<nombre>Alicia Aguirre</nombre>
+				<direccion>Virrey Olaguer y Feliu 825</direccion>
+				<telefono>15-5-771-1771</telefono>
+			</datos_personales>
+			<prestamos>
+				<prestamo>
+					<libro_prestado id="libro2"></libro_prestado>
+					<fecha_perstamo>2006-02-21</fecha_perstamo>
+				</prestamo>
+				<prestamo>
+					<libro_prestado id="libro3"></libro_prestado>
+					<fecha_perstamo>2008-08-08</fecha_perstamo>
+				</prestamo>
+			</prestamos>
+		</usuario>
+		<usuario id="usuario4">
+			<datos_personales>
+				<nombre>Luis Ramon</nombre>
+				<direccion>Las Heras 2739 3A</direccion>
+				<telefono>15-6-789-6789</telefono>
+			</datos_personales>
+			<prestamos>
+				<prestamo>
+					<libro_prestado id="libro6"></libro_prestado>
+					<fecha_perstamo>2008-11-25</fecha_perstamo>
+				</prestamo>
+				<prestamo>
+					<libro_prestado id="libro2"></libro_prestado>
+					<fecha_perstamo>2007-01-25</fecha_perstamo>
+					<fecha_devolucion>2008-04-16</fecha_devolucion>
+				</prestamo>
+			</prestamos>
+		</usuario>
+		<usuario id="usuario5">
+			<datos_personales>
+				<nombre>Carla Maria Potjnic</nombre>
+				<direccion>Ciudad de la Paz 2291</direccion>
+				<telefono>4-727-1939</telefono>
+			</datos_personales>
+			<prestamos>
+				<prestamo>
+					<libro_prestado id="libro5"></libro_prestado>
+					<fecha_perstamo>2007-12-21</fecha_perstamo>
+				</prestamo>
+				<prestamo>
+					<libro_prestado id="libro2"></libro_prestado>
+					<fecha_perstamo>2009-01-01</fecha_perstamo>
+				</prestamo>
+			</prestamos>
+		</usuario>
+	</usuarios>
+</biblioteca>

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<museosNavarra>
+	<museoNavarra>
+		<id>1</id>
+		<imagen>museo_de_navarra.png</imagen>
+		<nombre>MUSEO DE NAVARRA</nombre>
+		<localidad>Pamplona</localidad>
+		<tipo>Museo</tipo>
+		<direccion>Santo Domingo, 47</direccion>
+		<cp>31001</cp>
+		<telefono>+34 848426492 / +34 848426493</telefono>
+		<mail>museo@navarra.es</mail>
+		<web>www.museodenavarra.navarra.es</web>
+		<horario>Martes-sábado: 9:30-14:00 y 17:00-19:00.
+Domingo y festivos: 11:00-14:00.
+Semana Santa: 13, 14 y 16 abril: 11:00-14:00, 15 abril: 9:30-14:00 y 17:00-19:00, 17 abril, cerrado.
+San Fermín: 8-9 y 11-14  julio 11:00-14:00.
+Otros horarios especiales: consultar.
+Cerrado: lunes, 1 enero, 6, 7 y 10 julio, 25 diciembre. 24 y 31 de diciembre, a partir de las 14:00.</horario>
+		<precio>General 2 €. 
+Reducida  y gratuita,  consultar.
+Gratuita sábado tarde,  domingo y exposiciones temporales.
+</precio>
+		<descripcion>Tiene su sede en un antiguo hospital renacentista rehabilitado en su totalidad, donde pueden visitarse colecciones navarras de Arqueología y Bellas Artes desde la Prehistoria hasta el siglo XX, con piezas de valor internacional.</descripcion>
+		<exposiciones>-Microexposición: "Anatomía del grito. Federico Clavarino".  
+(11 de mayo - 24 de septiembre).
+
+-Exposición temporal: "FORMA70's. Abstracción y figuración en la colección de Fundación Caja Navarra"
+(15 de junio - 1 de octubre).
+
+-Visitas guiadas a exposición permanente y a temporal.
+
+-Actualidad: visite la página web del Museo.</exposiciones>
+		<latitud>42.81863</latitud>
+		<longitud>-1.644945</longitud>
+	</museoNavarra>
+	<museoNavarra>
+		<id>2</id>
+		<imagen>museo_del_carlismo.png</imagen>
+		<nombre>MUSEO DEL CARLISMO</nombre>
+		<localidad>Estella-Lizarra</localidad>
+		<tipo>Museo</tipo>
+		<direccion>La Rúa, 27-29</direccion>
+		<cp>31200</cp>
+		<telefono>+34 948552111</telefono>
+		<mail>museo.carlismo@navarra.es</mail>
+		<web>www.museodelcarlismo.navarra.es</web>
+		<horario>Martes-sábado: 10:00-14:00 y 16:00-19:00.
+Domingo, festivos, lunes 17 de abril y 4 de diciembre: 11:00-14:00.
+Cerrado: lunes (excepto festivos), 1 enero, 5 agosto (fiesta local) y 25 diciembre.</horario>
+		<precio>General 2 €. 
+Reducida y gratuita, consultar.
+Gratuita sábado tarde y domingo.
+</precio>
+		<descripcion>Ubicado en un edificio barroco conocido como palacio del Gobernador, refleja la historia del carlismo en Navarra y en España durante los siglos XIX y XX, como proceso político y social de carácter contrarrevolucionario.</descripcion>
+		<exposiciones>-Exposición temporal: "A través de la cámara oscura.Técnicas fotográficas en el entorno del carlismo"
+(17 de mayo - 5 de noviembre).
+
+- Visitas guiadas a exposición permanente.
+
+-Actualidad: visite la página web del Museo.</exposiciones>
+		<latitud>42.67002</latitud>
+		<longitud>-2.027959</longitud>
+	</museoNavarra>
+	<museoNavarra>
+		<id>3</id>
+		<imagen>museo_jorge_oteiza.png</imagen>
+		<nombre>FUNDACIÓN MUSEO JORGE OTEIZA-FUNDAZIO MUSEOA</nombre>
+		<localidad>Alzuza</localidad>
+		<tipo>Museo</tipo>
+		<direccion>De la Cuesta, 24</direccion>
+		<cp>31486</cp>
+		<telefono>+34 948332074</telefono>
+		<mail>info@museooteiza.org</mail>
+		<web>www.museooteiza.org</web>
+		<horario>Julio-agosto: martes-sábado 11:00-19:00, domingo y festivos 11:00-15:00. 
+Septiembre-junio: martes y miércoles, acceso con visita guiada previa reserva, jueves-viernes, 10:00-15:00, sábado 11:00-19:00, domingo y festivos 11:00-15:00.
+Cerrado: lunes (incluido festivos), 1 enero y 25 diciembre. 24 y 31 diciembre, a partir de las 13:00.</horario>
+		<precio>General 4 €. 
+Reducida y gratuita, consultar.
+Gratuita viernes salvo festivos.
+</precio>
+		<descripcion>En un edificio de Francisco Javier Sáenz de Oiza, el museo alberga la colección y el archivo personal del escultor Jorge Oteiza (Orio 1908-San Sebastián 2003), uno de los creadores más significativos de la escultura del siglo XX.</descripcion>
+		<exposiciones>-Exposición temporal: "José Ramón Anda. Causa formal y materia"
+(21 de junio - 1 de octubre).
+
+-Visitas guiadas a exposición permanente y a temporal.
+
+-Actualidad: visite la página web del Museo.</exposiciones>
+		<latitud>42.838764</latitud>
+		<longitud>-1.565766</longitud>
+	</museoNavarra>
+	<museoNavarra>
+		<id>4</id>
+		<imagen>museo_gustavo_de_maeztu.png</imagen>
+		<nombre>MUSEO GUSTAVO DE MAEZTU</nombre>
+		<localidad>Estella-Lizarra</localidad>
+		<tipo>Museo</tipo>
+		<direccion>San Nicolás, 1</direccion>
+		<cp>31200</cp>
+		<telefono>+34 948546037</telefono>
+		<mail>museogmaeztu@estella-lizarra.com</mail>
+		<web>www.museogustavodemaeztu.com</web>
+		<horario>1 enero-10 abril y 13 octubre-31 de diciembre: martes-sábado 9:30-13:30,  domingo y festivos 11:00-14:00.
+11 abril-12 octubre: martes-sábado 9:30-13:30 y 16:00-19:00, domingo y festivos 11:00-14:00.
+Cerrado: lunes.
+
+
+
+</horario>
+		<precio>Gratuito.</precio>
+		<descripcion>Instalado en el palacio románico de los Duques de Granada de Ega, presenta una importante colección de cuadros y dibujos que el artista Gustavo de Maeztu (Vitoria 1887-Estella 1947) legó a la ciudad de Estella.</descripcion>
+		<exposiciones>-Exposición temporal: "Mujer, maestras de la pintura y la escultura"
+(12 de mayo - 12 de julio).
+
+- Exposición temporal: "Diálogos Gustavo de Maeztu &amp; Itxaso Razquin"
+(8 de marzo - 31 de agosto).
+
+- Exposición temporal: "Carteles de Picasso"
+(21 de julio - 8 de octubre).
+
+-Visitas guiadas a exposición permanente.
+
+-Actualidad: visite la página web del Museo.</exposiciones>
+		<latitud>42.669523</latitud>
+		<longitud>-2.029016</longitud>
+	</museoNavarra>
+	<museoNavarra>
+		<id>5</id>
+		<imagen>museo_munoz_sola.png</imagen>
+		<nombre>MUSEO MUÑOZ SOLA DE ARTE MODERNO</nombre>
+		<localidad>Tudela</localidad>
+		<tipo>Museo</tipo>
+		<direccion>Plaza Vieja, 2</direccion>
+		<cp>31500</cp>
+		<telefono>+34 948402640</telefono>
+		<mail>museomunozsola@castelruiz.es</mail>
+		<web>www.castelruiz.es</web>
+		<horario>Miércoles-viernes (incluido festivos): 10:00-13:30 y 17:00-20:00.
+Sábado (incluido festivos): 10:00-14:00 y 17:00-20:00. 
+Domingo (incluido festivos): 10:00-14:00.
+Cerrado: lunes y martes (incluido festivos), 1 y 6 enero, 24-30 julio, 25 y 31 diciembre.
+</horario>
+		<precio>General 1 €. 
+Gratuita y grupos, consultar.
+</precio>
+		<descripcion>En un edificio emplazado en el centro histórico de la ciudad, se expone una colección de pintura francesa de los siglos XIX y XX reunida por César Muñoz Sola (Tudela 1921-Pamplona 2000), junto a una muestra representativa de su propia obra pictórica.</descripcion>
+		<exposiciones>-Visitas guiadas a exposición permanente.
+
+-Actualidad: visite la página web del Museo.</exposiciones>
+		<latitud>42.06399</latitud>
+		<longitud>-1.605898</longitud>
+	</museoNavarra>
+	<museoNavarra>
+		<id>6</id>
+		<imagen>museo_de_tudela.png</imagen>
+		<nombre>MUSEO DE TUDELA</nombre>
+		<localidad>Tudela</localidad>
+		<direccion>Roso, 2</direccion>
+		<cp>31500</cp>
+		<telefono>+34 948402161</telefono>
+		<mail>info@museodetudela.com</mail>
+		<web>www.museodetudela.com</web>
+		<horario>Lunes-sábado: 10:00-13:30 y 16:00-19:00.
+Festivos: 10:00-13:30. 
+Otros horarios: 4, 5, 7 y 8 de enero, 20-30 diciembre: 10:00-13:30.
+Cerrado: domingo, 1, 2 y 6 enero, 24-30 julio, 24-26 y 31 diciembre. </horario>
+		<precio>General 4 €. 
+Reducida, gratuita y grupos,  consultar.
+Gratuita miércoles 17:00-19:00.
+Visitas guiadas concertadas (Catedral y/o ciudad) para grupos todo el año.
+</precio>
+		<descripcion>Emplazado en la antigua sede de los deanes de la Catedral de Tudela, muestra piezas arqueológicas locales y de arte sacro procedentes de la merindad de Tudela, desde la Prehistoria hasta el  Barroco.  Incluye la visita a la Catedral.</descripcion>
+		<exposiciones>-Visitas guiadas a exposición permanente, dependencias catedralicias y otros lugares de interés cultural de la ciudad.
+
+-Actualidad: visite la página web del Museo.</exposiciones>
+		<latitud>42.063592</latitud>
+		<longitud>-1.605605</longitud>
+	</museoNavarra>
+	<museoNavarra>
+		<id>7</id>
+		<imagen>museo_de_tulebras.png</imagen>
+		<nombre>MUSEO DEL MONASTERIO DE TULEBRAS</nombre>
+		<localidad>Tulebras</localidad>
+		<direccion>Monasterio Cisterciense</direccion>
+		<cp>31522</cp>
+		<telefono>+34 948851475 / +34 676186734</telefono>
+		<mail>museo@monasteriodetulebras.com</mail>
+		<web>www.monasteriodetulebras.com</web>
+		<horario>Mayo-septiembre: martes-sábado 11:00-13:30 y 16:15-18:00, domingo 11:00-12:00 y 16:00-18:00.
+Octubre-abril: sábado y domingo 16:15-18:00.
+Grupos: consultar.
+Cerrado: lunes.</horario>
+		<precio>Gratuito.</precio>
+		<descripcion>Destaca por su colección de arte sacro de los siglos XVI al XVIII, que se completa con piezas de épocas romana y medieval relacionadas con la historia del Monasterio. La visita a la colección permanente concluye con un recorrido por otras dependencias monásticas.</descripcion>
+		<exposiciones>-Visitas guiadas a exposición permanente y otras dependencias del Monasterio.
+
+-Actualidad: visite la página web del Museo.</exposiciones>
+		<latitud>41.977175</latitud>
+		<longitud>-1.676402</longitud>
+	</museoNavarra>
+	<museoNavarra>
+		<id>8</id>
+		<imagen>museo_julian_gayarre.png</imagen>
+		<nombre>CASA-MUSEO JULIÁN GAYARRE</nombre>
+		<localidad>Roncal</localidad>
+		<direccion>Arana, 38</direccion>
+		<cp>31415</cp>
+		<telefono>+34 948475180</telefono>
+		<mail>info@juliangayarre.com</mail>
+		<web>www.juliangayarre.com</web>
+		<horario>Enero-marzo y octubre-diciembre: sábado 11:00-14:00 y 16:00-18:00, domingo: 11:00-14:00.
+Abril-septiembre: martes-sábado 11:00-14:00 y 17:00-19:00 (agosto tardes 17:00-20:00),  domingo 11:00-14:00.
+Grupos, previa cita, cualquier día de la semana.
+Cerrado: lunes.</horario>
+		<precio>General 2 €.
+Reducida, gratuita y grupos consultar.</precio>
+		<descripcion>En el solar de su casa natal se presenta una muestra de objetos y recuerdos del célebre tenor universal Julián Gayarre (Roncal 1844-Madrid 1890). El recorrido por la exposición permanente puede completarse visitando su mausoleo, en el cementerio de Roncal.</descripcion>
+		<exposiciones>-Visitas guiadas a exposición permanente, mausoleo de Julián Gayarre y villa.
+
+-Actualidad: visite la página web del Museo.</exposiciones>
+		<latitud>42.806642</latitud>
+		<longitud>-0.957162</longitud>
+	</museoNavarra>
+	<museoNavarra>
+		<id>9</id>
+		<imagen>ecomuseo_de_zubieta.png</imagen>
+		<nombre>ECOMUSEO ZUBIETAKO ERROTA-MOLINO DE ZUBIETA</nombre>
+		<localidad>Zubieta</localidad>
+		<direccion>Carretera Leiza</direccion>
+		<cp>31746</cp>
+		<telefono>+34 948451926</telefono>
+		<mail>zubietakoerrota@gmail.com</mail>
+		<web>www.zubietakoerrota.net</web>
+		<horario>Enero-junio: miércoles-domingo 11:00-14:00.
+Semaan Santa: 13-17 de abril: 11:00-14:00. Cerrado: 18 y 19 de abril.
+Julio: lunes-domingo 11:00-14:00.
+Agosto: lunes-domingo 11:00-14:00 y 17:00-20:00.
+Septiembre-diciembre: miércoles-domingo 11:00-14:00.</horario>
+		<precio>General 3 €. 
+Reducida, gratuita y grupos consultar.</precio>
+		<descripcion>Ubicado en el propio edificio original del molino (siglo XVIII), mantiene en funcionamiento la sala de molienda de maíz. A través de la exposición de una pequeña colección etnográfica local se da testimonio de la actividad cotidiana de las gentes de la localidad.</descripcion>
+		<exposiciones>-Visitas guiadas a exposición permanente.
+
+-Actualidad: visite la página web del Museo.</exposiciones>
+		<latitud>43.124323</latitud>
+		<longitud>-1.742792</longitud>
+	</museoNavarra>
+	<museoNavarra>
+		<id>10</id>
+		<imagen>las_eretas.png</imagen>
+		<nombre>MUSEO Y YACIMIENTO ARQUEOLÓGICO LAS ERETAS (BERBINZANA)</nombre>
+		<localidad>Berbinzana</localidad>
+		<direccion>Seretas, 2</direccion>
+		<cp>31252</cp>
+		<telefono>+34 948722176</telefono>
+		<mail>info@eretas.es</mail>
+		<web>www.eretas.es</web>
+		<horario>Sábado: 10:00-14:00, tardes abril-octubre: 17:00-19:30 y tardes noviembre- marzo: 16:00-18:00.
+Domingo y festivos: 10:00-14:00. 
+Semana Santa: 13-16 abril: 10:00-14:00 y 16:30-18:30; 17 abril: 10:00-14:00. 
+Puentes diciembre: 6 -8 diciembre: 10:00-14:00 y 16:00-18:00; 4 diciembre: a solicitud.
+Cerrado: lunes-viernes (excepto visitas concertadas grupos)  1 y 6 enero, 24-25 y 31 diciembre.</horario>
+		<precio>General 4 €. 
+Reducida, gratuita y grupos consultar.
+</precio>
+		<descripcion>Instalado en una antigua fábrica conservera rehabilitada, presenta los modos de vida en un poblado de la Edad del Hierro a través de la visita al yacimiento de Las Eretas (siglos VI-IV a.C.), parcialmente reconstruido con vivienda recreada y la exposición de piezas arqueológicas.</descripcion>
+		<exposiciones>-Visitas guiadas a exposición permanente y al yacimiento.
+
+-Actualidad: visite la página web del Museo.</exposiciones>
+		<latitud>42.528828</latitud>
+		<longitud>-1.83476</longitud>
+	</museoNavarra>
+</museosNavarra>

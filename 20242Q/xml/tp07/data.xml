@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<projects>
+		<project>
+			<name>Mas oportunidades</name>
+			<client name="Clarin"/>
+			<plataform name="Java"/>
+			<staff>
+				<person document="1"/>
+				<person document="3"/>
+				<person document="4"/>
+				<person document="7"/>
+			</staff>
+		</project>
+		<project>
+			<name>CRM YPF</name>
+			<client name="YPF"/>
+			<plataform name="PHP"/>
+			<staff>
+				<person document="1"/>
+			</staff>
+		</project>
+		<project>
+			<name>IOL2</name>
+			<client name="ITBA"/>
+			<plataform name="Java"/>
+			<staff>
+				<person document="2"/>
+				<person document="3"/>
+				<person document="6"/>
+				<person document="7"/>
+				<person document="8"/>
+			</staff>
+		</project>
+		<project>
+			<name>TN staff administration</name>
+			<client name="TN"/>
+			<plataform name=".Net"/>
+			<staff>
+				<person document="2"/>
+			</staff>
+		</project>
+		<project>
+			<name>confronte</name>
+			<client name="Clarin"/>
+			<plataform name="Java"/>
+			<staff>
+				<person document="1"/>
+			</staff>
+		</project>
+	</projects>
+	<persons>
+		<person>
+			<document>1</document>
+			<firstname>Matias</firstname>
+			<lastname>Soto</lastname>
+			<age>24</age>
+		</person>
+		<person>
+			<document>2</document>
+			<firstname>Sonia</firstname>
+			<lastname>Gomez</lastname>
+			<age>45</age>
+		</person>
+		<person>
+			<document>3</document>
+			<firstname>Juan</firstname>
+			<lastname>Vidal</lastname>
+			<age>33</age>
+		</person>
+		<person>
+			<document>4</document>
+			<firstname>Fernando</firstname>
+			<lastname>Perez</lastname>
+			<age>28</age>
+		</person>
+		<person>
+			<document>5</document>
+			<firstname>Micaela</firstname>
+			<lastname>Solari</lastname>
+			<age>30</age>
+		</person>
+		<person>
+			<document>6</document>
+			<firstname>Gabriel</firstname>
+			<lastname>Quiroga</lastname>
+			<age>55</age>
+		</person>
+		<person>
+			<document>7</document>
+			<firstname>Agustina</firstname>
+			<lastname>Spadari</lastname>
+			<age>50</age>
+		</person>
+		<person>
+			<document>8</document>
+			<firstname>Ignacio</firstname>
+			<lastname>Perez</lastname>
+			<age>26</age>
+		</person>
+		<person>
+			<document>9</document>
+			<firstname>Rodrigo</firstname>
+			<lastname>Santos</lastname>
+			<age>37</age>
+		</person>
+	</persons>
+	<clients>
+		<client>
+			<name>Clarin</name>
+		</client>
+		<client>
+			<name>YPF</name>
+		</client>
+		<client>
+			<name>ITBA</name>
+		</client>
+		<client>
+			<name>TN</name>
+		</client>
+		<client>
+			<name>Garbarino</name>
+		</client>
+	</clients>
+</data>
