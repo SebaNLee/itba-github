@@ -52,6 +52,9 @@ instalación para Ruby:
 
         ruby -v
 
+        gemas extra instaladas:
+            gem install sorted_set (para sorted_set, que no es biblioteca estándar)
+
 
 
 
