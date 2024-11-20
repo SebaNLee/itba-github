@@ -1,3 +1,6 @@
 [submodule "20241Q/pi/PI-2024-Q1"]
 	path = 20241Q/pi/PI-2024-Q1
 	url = https://github.com/tarcodaci/PI-2024-Q1
+[submodule "20242Q/xml/XML-2024-Q2"]
+	path = 20242Q/xml/XML-2024-Q2
+	url = https://github.com/tarcodaci/XML-2024-Q2.git
