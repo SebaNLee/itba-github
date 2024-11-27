@@ -14,3 +14,14 @@ https://www.youtube.com/watch?v=gSlXo2iLBro
 sería: "git submodule add <link>"
 al hacer esto, reconoce un subrepositorio
 si algo se llega a cambiar en el subrepositorio, no se puede hacer un commit en el repo principal antes de que se haga el commit en el submodulo
+
+
+
+//////////////////////////////////////////////
+
+26/11/2024
+
+truco para practicas:
+
+se pueden configurar colores para archivos .txt tocando abajo a la derecha en la detección de archivo
+
