@@ -1,0 +1,60 @@
+
+
+public enum EVChargerType { // se puede modificar
+    ENTRY(5), RAPID(10), SUPER(20);
+ 
+ 
+    private final double kWhCost;
+   
+    EVChargerType(double kWhCost) {
+        this.kWhCost = kWhCost;
+    }
+
+    // agrego
+    private computeCost(int hours) {
+        return kWhCost * hours;
+    }
+ }
+ 
+
+public class EVCentral {
+
+    private Map<String, SortedMap<LocalDateTime, EVChargerType>> collection = new HashMap<>();
+
+    // constructor default
+
+    public register(String name) {
+        validateName(name);
+        collection.put(name, null);
+    }
+
+    private void validateName(String name) {
+        if(!(collection.containsKey(name)) {
+            throw new IllegalArgumentException("Client is not registered");
+        }
+    }
+    
+    public balance(String name) {
+        validateName(name);
+        
+        double toReturn = 0;
+
+        for(Map.Entry<LocalDateTime, EVChargerType> entry : collection.get(name).entrySet()) {
+            entry. 
+            // !! acá encuentro problemas, pues tengo que guardar las horas atando en una clase valores anteriores, un embole 
+            // entonces es mejor crear un HashMap aparte que vaya registrando el total a medida que se use charge()
+        }
+    }
+
+    public charge() {
+
+    }
+
+    public getChargeDateTimes() {
+
+    }
+
+    public getChargerTypes() {
+
+    }
+}

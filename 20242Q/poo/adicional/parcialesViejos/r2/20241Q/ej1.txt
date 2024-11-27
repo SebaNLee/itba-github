@@ -1,0 +1,45 @@
+
+
+
+public class GroupMatchCollection<T> extends List<T> {
+
+    void addMatchPredicate(Predicate<T> predicate);
+    
+    Map<Integer, Collection<T>> groupingByMatches();
+}
+
+public class GroupMatchCollectionImpl<T> extends ArrayList<T> implements GroupMatchCollection<T> {
+
+    private List<Predicate<T>> predicates = new ArrayList<>();
+
+    // default constructor
+
+    public void addMatchPredicate(Predicate<T> predicate) {
+        predicates.add(predicate);
+    }
+
+    public Map<Integer, Collection<T>> groupingByMatches() {
+
+        Map<Integer, Collection<T>> toReturn = new HashMap<>();
+        
+        for(T elem : this) {
+            
+            int predCount = 0;
+            
+            for(Predicate<T> predicate : predicates) {
+                if(predicate.test(elem) == true) {
+                    elem += 1;
+                }
+            }
+
+            toReturn.putIfAbsent(predCount, new ArrayList<T>());
+            toReturn.get(predCount).add(elem);
+
+        }
+
+        return toReturn;
+    }
+
+}
+
+// bien
