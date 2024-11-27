@@ -1,0 +1,82 @@
+# no se puede modificar
+class ThemeParkPassholders
+  def initialize(visitor)
+    @visitor = visitor
+    @passes = SortedSet.new
+  end
+ 
+  def add_pass(theme_park, day)
+    raise 'Cannot add pass' unless add_pass?(theme_park, day)
+    @passes << ThemeParkPass.new(theme_park, day)
+  end
+ 
+  def add_pass?(theme_park, day)
+    theme_park.is_a?(String) && day.positive?
+  end
+
+  # agrego método que no estaba
+  def passes
+    @passes.to_a
+  end
+ 
+  attr_reader :visitor, :passes
+
+  private :add_pass?
+end
+
+
+class ThemeParkPass
+  def initialize(theme_park, day)
+    @theme_park = theme_park
+    @day = day
+  end
+
+  # para guardarlo en SortedSet
+  # es decendiente por día, entonces es other - this (al revés)
+  # y desempata por alfa
+  def <=>(other)
+    return nil unless other.is_a?(ThemeParkPass)
+    [other.day, other.theme_park] <=> [@day, @theme_park]
+  end
+
+  def to_s
+    "#{@theme_park} on day #{@day}"
+  end
+
+  protected attr_reader :day
+end
+
+
+class LimitedDaysPassHolders < ThemeParkPassholders
+  def initialize(visitor, limit_days)
+    super(visitor)
+    @limit_days = limit_days
+    @current_days = 0
+  end
+
+  def add_pass(theme_park, day)
+    raise 'Cannnot add pass' unless @current_days < @limit_days
+    super(theme_park, day)
+    @current_days += 1
+  end
+end
+
+
+class LimitedParksPassHolders < ThemeParkPassholders
+  def initialize(visitor, included_parks)
+    super(visitor)
+    @included_parks = included_parks
+  end
+
+  def add_pass(theme_park, day)
+    raise 'Cannot add pass' unless @included_parks.contains?(theme_park) && 
+
+    super(theme_park, day)
+  end
+end
+
+
+# A) LimitedDaysPassHolders
+# B) LimitedParksPassHolders
+
+# la idea general del ejercicio está bien, pero se debió haber sobreescrito add_pass? y no add_pass
