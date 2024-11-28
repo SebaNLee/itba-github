@@ -1,0 +1,73 @@
+
+
+
+
+
+public class ReviewManager {
+
+    private SortedMap<String, List<String>> reviews = new TreeMap<>();
+    
+    // quería inicialmente atar en una clase String y UserLevel, pero es mejor así para no tener que implementar compareTo y evitar complicaciones al buscar usuarios
+    private SortedSet<String, UserLevel> users = new TreeMap<>(Comparator.reversedOrder()); // !!
+    
+    // constructor default
+
+    public void adduser(String user, UserLevel type) {
+        if(users.containsKey(user)) {
+            throw new IllegalArgumentException("User already exists");
+        }
+        users.put(user, type);
+    }
+
+    public void addReview(String user, String product, String review) {
+        if(!(users.containsKey(user))) {
+            throw new IllegalArgumentException("User does not exists");
+        }
+
+        // !! importante agregar Array acá, pues podría dar NullPointerException en la siguiente validación
+        review.putIfAbsent(product, new ArrayList<String>());
+        int currentReviews = reviews.get(product).size();
+
+        if(users.get(user).canReview(currentReviews)) {
+            throw new IllegalArgumentException("User cannot review");
+        }
+
+        reviews.get(product).add(review);
+    }
+
+    public Collection<String> getReviews(String product) {
+        // !! getOrDefault, porque debe sí o sí devolver una colección
+        return reviews.getOrDefault(product, new ArrayList<String>());
+    }
+
+    public Collection<String> getProducts() {
+        return reviews.keySet();
+    }
+
+    public Collection<String> getUsers() {
+        return users.keySet();
+    }
+}
+
+
+
+public enum UserLevel {
+
+    GREEN(3),
+    GOLD(1),
+    BLACK(0);
+
+    private final int minReviews;
+
+    public UserLevel(int minReviews) {
+        this.minReviews = minReviews;
+    }
+
+    public canReview(int currentReviews) {
+        return currentReviews >= minReviews;
+    }
+}
+
+
+
+

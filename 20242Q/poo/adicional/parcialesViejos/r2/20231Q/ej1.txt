@@ -1,0 +1,91 @@
+
+class Hotel
+  
+  def initialize(name)
+    @name = name
+    @collection = {} # va a ser un mapa de 
+  end
+
+  def add_room(floor, room)
+    @collection[floor] = {} if collection[floor].empty?
+    @collection[floor] = Room.new(room)
+  end
+
+  def bookings
+    s = "Hotel #{@name}\n"
+    @rooms_by_floor.keys.sort.each do |floor|
+      s += "Floor #{floor}\n"
+      @rooms_by_floor[floor].values.sort.each do |room|
+        s += "#{room}\n"
+      end
+    end
+    s
+  end
+
+  def book(floor, room)
+    valid_room(floor, room)
+    @collection[floor][room].book
+  end
+
+  def cancel(floor, room)
+    valid_room(floor, room)
+    @collection[floor][room].cancel
+  end
+
+  # método privado para modularizar
+  private def valid_room(floor, room)
+    raise 'Invalid Floor' unless @collection.key?(floor)
+    raise 'Invalid Room' unless @collection[floor].key?(room)
+  end
+
+end
+
+
+class Room
+
+  # !! debe implementar <=> e incluir el Comparable para el .sort
+  include Comparable
+
+  def <=>(other)
+    return nil unless other.is_a?(Room)
+    @room <=> other.room
+  end
+
+
+  def initialize(room)
+    @room = room
+    @available_status = false
+  end
+
+  def book(floor, room)
+    raise 'Room is already booked' if @available_status == true
+    @available_status = true
+  end
+
+  def cancel(floor, room)
+    raise 'Room is already booked' if @available_status == false
+    @available_status = false
+  end
+  
+  def to_s
+    "Room #{@room} is #{@available_status ? 'Available' : 'Booked'}"
+  end
+
+
+  protected attr_reader :room
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
