@@ -1,0 +1,80 @@
+
+class WorldCup
+  def initialize
+    @groups = {}
+  end
+
+  def add_team(group, team)
+    @groups[group] = {} unless @groups.key?(group)
+    @groups[group][team] = TeamPosition.new(team)
+  end
+
+  def play_match(group, team_one, team_two, goals_one, goals_two)
+    # validaciones...
+
+
+  end
+
+  def to_s 
+
+  end
+end
+
+
+class Team
+  def initialize(team)
+    @team = team
+  end
+
+  def ==(other)
+    return false unless other.is_a?(Team)
+    @team == other.team
+  end
+
+  def hash
+    [@team].hash
+  end
+
+  alias_method :eql?, :==
+
+  protected attr_reader :team
+end
+
+class TeamPosition
+
+  include Comparable # ??
+
+  def initialize(team)
+    @team = team
+    @points = 0
+    @gf = 0
+    @gc = 0
+  end
+
+  def update_position(gf, gc)
+    if gf > gc
+      @points += 3
+    elsif gf == gc 
+      @points += 1
+    end
+    @gc += gc
+    @gf += gf
+  end
+
+  def to_s 
+    "#{@team.}\t#{@points}\t#{@gf}\t#{@gc}\n"
+  end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+

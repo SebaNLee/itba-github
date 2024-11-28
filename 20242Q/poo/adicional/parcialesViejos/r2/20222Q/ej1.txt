@@ -1,0 +1,50 @@
+
+public class Pair<A, B> {
+   private final A left;
+   private final B right;
+
+
+   public Pair(A left, B right) {
+       this.left = left;
+       this.right = right;
+   }
+
+
+   @Override
+   public String toString() {
+       return String.format("{ %s <> %s }", left, right);
+   }
+}
+
+
+public interface MysteryCollection<T extends Comparable<? super T>> extends SortedSet<T> {
+
+    <E extends Comparable<? super E>> Iterable<> zip(MysteryCollection<T> mc2);
+
+}
+
+public class MysteryCollectionImpl<T extends Comparable<? super T>> extends TreeSet<T> implements MysteryCollection<T> {
+
+    public MysteryCollectionImpl() {
+        super(Comparator.reversedOrder());
+    }
+
+    // !! defino E como genérico local
+    public <E extends Comparable<? super E>> Iterable<T, E> zip(MysteryCollection<E> mc2) {
+        Iterator<T> iter1 = this.iterator();
+        Iterator<E> iter2 = m2.iterator();
+
+        List<Pair<T, E>> toReturn = new ArrayList<>();
+
+        while(iter1.hasNext() && iter2.hasNext()) {
+            toReturn.add(new Pair<T, E>(iter1.next(), iter2.next()));
+        }
+
+        return toReturn;
+    }
+}
+
+
+
+// amarillo) first()
+// amarillo) last()

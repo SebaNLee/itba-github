@@ -1,0 +1,56 @@
+
+public enum Language {
+
+    ENGLISH, SPANISH, ITALIAN, FRENCH
+
+}
+
+public class MultilingualDictionary {
+
+    private final Language lang;
+    private Map<Language, Map<String, String>> collection;
+
+
+    public MultilingualDictionary(Language lang) {
+        this.lang = lang;
+        this.collection = new EnumMap<>(Language.class);
+    }
+
+    // method chaining
+    public MultilingualDictionary addtranslation(String word, Language toLang, String translation) {
+
+        if(toLang.equals(this.lang)) {
+            throw new IllegalArgumentException("Cannot add %s translations".formatted(this.lang));
+        }
+        collection.putIfAbsent(toLang, new HashMap<String, String>());
+        collection.get(toLang).put(word, translation);
+
+        return this;
+    }
+
+    public String getTranslation(String word, Language toLang) {
+        
+        if(!collection.getOrDefault(toLang, new HashMap<String, String>()).containsKey(word)) { // !! porque puede ser null, si no tiene traducciones
+            throw new IllegalArgumentException ...
+        }
+
+        return translation.get(toLang).get(word);
+    }
+
+    public int translationsCount(Language toLang) {
+        return collection.getOrDefault(toLang, new HashMap<>().size()); // !! ídem
+    }
+
+    public int removeTranslations(Language toLang) {
+        int toReturn = collection.getOrDefault(toLang, new HashMap<>()).size(); // !! ídem
+        collection.remove(toLang);
+
+        return toReturn;
+    }
+
+}
+
+
+
+
+
