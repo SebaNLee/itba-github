@@ -1,0 +1,45 @@
+
+
+public interface SpecialCollection<T extends Comparable<? super T>> extends SortedSet<T> {
+
+    int count(Predicate<T> predicate);
+
+    int count(Predicate<T> predicate, T from, T to);
+
+}
+
+public class SpecialCollectionImpl<T extends Comparable<? super T>> extends TreeSet<T> implements SpecialCollection<T> {
+
+    public int count(Predicate<T> predicate) {
+        return countGeneric(predicate, this.first(), this.last());
+    }
+
+    public int count(Predicate<T> predicate, T from, T to) {
+        return countGeneric(predicate, from, to);
+    }
+
+    private int countGeneric(Predicate<T> predicate, T from, T to) {
+        if(from.compareTo(to) > 0 ) { // !! ojo el comportamiento de compareTo y el >
+            return 0;
+        }
+
+        SortedSet<T> subSet = this.subSet(from, true, to, true);
+        int count = 0;
+
+        for(T iter : subSet) {
+            if(predicate.test(iter)) {
+                count += 1;
+            }
+        }
+
+        return count;
+    }
+
+
+} 
+
+
+
+
+
+
