@@ -62,8 +62,56 @@ instalación para Ruby:
 //////////////////////////////////////////////
 
 
+instalación de JavaFX
+
+para saber cuál arquitectura descargar usar: 
+    uname -m (WSL Ubuntu usa x86_64, entonces se descarga Linux/x64)
+
+la librería de JavaFX (lo descargado) lo ubico en usr/lib/jvm (buena práctica), pasos:
+
+    copiarlo a un <directorio temporal> en WSL (no se puede copiar directo en /usr/lib/jvm/)
+    
+    sudo mv <directorio temporal>/openjfx-22.0.2_linux-x64_bin-sdk.tar.gz /usr/lib/jvm/
+
+    cd /usr/lib/jvm/
+
+    sudo tar -xvzf openjfx-22.0.2_linux-x64_bin-sdk.tar.gz
+
+    sudo rm openjfx-22.0.2_linux-x64_bin-sdk.tar.gz
+
+    rm <direcotrio temporal>
 
 
+para usarlo en proyectos, se debe importar la librería:
+
+    agregar el directorio .vscode y agregarle estos dos archivos:
+
+        settings.json, con:
+            
+            {
+                "java.project.referencedLibraries": [
+                    "lib/**/*.jar",
+                    "/usr/lib/jvm/javafx-sdk-22.0.2/lib/*.jar"
+                ]
+            }
+
+        launch.json, con:
+
+            {
+                "version": "0.2.0",
+                "configurations": [
+                    {
+                        "type": "java",
+                        "name": "Run JavaFX",
+                        "request": "launch",
+                        "mainClass": "frontend.AppLauncher", // acá va la clase principal, usar . para directorios
+                        "vmArgs": "--module-path /usr/lib/jvm/javafx-sdk-22.0.2/lib --add-modules javafx.controls,javafx.fxml"
+                    }
+                ]
+            }
+
+
+//////////////////////////////////////////////
 
 problema de compilación:
 
