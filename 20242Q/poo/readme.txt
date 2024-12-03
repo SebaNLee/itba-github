@@ -63,6 +63,8 @@ instalación para Ruby:
 
 
 instalación de JavaFX
+video: https://www.youtube.com/watch?v=ombuBCzClzo
+chatgpt: https://chatgpt.com/c/674e6cc1-46b0-8009-9123-d91a2abdce9e 
 
 para saber cuál arquitectura descargar usar: 
     uname -m (WSL Ubuntu usa x86_64, entonces se descarga Linux/x64)
