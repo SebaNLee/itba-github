@@ -93,7 +93,7 @@ para usarlo en proyectos, se debe importar la librería:
             {
                 "java.project.referencedLibraries": [
                     "lib/**/*.jar",
-                    "/usr/lib/jvm/javafx-sdk-22.0.2/lib/*.jar"
+                    "/usr/lib/jvm/javafx-sdk-22.0.2/lib/*.jar" // esto importa toda la librería de JavaFX (se puede ver abajo a la derecha en Java Proyects, Referenced Libraries)
                 ]
             }
 
