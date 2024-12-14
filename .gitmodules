@@ -4,3 +4,6 @@
 [submodule "20242Q/xml/XML-2024-Q2"]
 	path = 20242Q/xml/XML-2024-Q2
 	url = https://github.com/tarcodaci/XML-2024-Q2.git
+[submodule "20242Q/poo/POO-2024-Q2"]
+	path = 20242Q/poo/POO-2024-Q2
+	url = https://github.com/tarcodaci/POO-2024-Q2.git
