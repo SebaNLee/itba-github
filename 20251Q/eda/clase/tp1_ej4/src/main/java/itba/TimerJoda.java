@@ -44,6 +44,12 @@ public class TimerJoda {
         return new Period(startTimeMillis, endTimeMillis);
     }
 
+    // agrego esto para testeos
+    public long getElapsedTime() {
+        Period p = timestamp();
+        return p.toStandardDuration().getMillis();
+    }
+
     @Override
     public String toString() {
 
