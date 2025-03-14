@@ -1,3 +1,5 @@
+package eda.clase.tp1_ej9.src;
+
 public class AlgoA {
 
     public static int max(int[] array) {

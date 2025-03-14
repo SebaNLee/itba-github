@@ -1,3 +1,5 @@
+package eda.tps.tp1.ej2.src;
+
 public class Tester {
 
     public static void main(String[] args) {
