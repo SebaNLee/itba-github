@@ -1,5 +1,3 @@
-package eda.clase.tp1_ej9.src;
-
 import java.util.Arrays;
 
 public class AlgoB {

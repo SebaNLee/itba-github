@@ -1,5 +1,3 @@
-package eda.clase.tp1_ej2.src;
-
 public class MyTimerV2 {
 
     public long start;

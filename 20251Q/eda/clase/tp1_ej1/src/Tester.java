@@ -1,5 +1,3 @@
-package eda.clase.tp1_ej1.src;
-
 public class Tester {
 
     public static void main(String[] args) {
