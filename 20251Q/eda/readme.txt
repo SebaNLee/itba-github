@@ -13,4 +13,8 @@ para ejecutar proyectos de Maven, compilar y ejecutar con (en el directorio root
     mvn exec:java -Dexec.mainClass="com.example.Main"
     mvn test
 
+para custom ram:
+    mvn exec:java -Dexec.mainClass="com.example.Main" -Dexec.args="-Xms256m -Xmx1024m"
+
+
 obs.: para dependencias locales, se debe tener el archivo del dependency en cuestión compilado
