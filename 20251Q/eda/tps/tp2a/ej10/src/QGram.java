@@ -1,5 +1,7 @@
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class QGram {
 
@@ -22,10 +24,24 @@ public class QGram {
         Map<String, Integer> map1 = getStringMap(str1);
         Map<String, Integer> map2 = getStringMap(str2);
 
+        float notSharedTrigrams = 0;
 
+        // me creo un set con solo los no repetidos de ambos
+        Set<String> uniqueTrigrams = new HashSet<>(map1.keySet());
+        uniqueTrigrams.addAll(map2.keySet());
 
+        // recorro una única vez para contar la cantidad de trigramas que tienen con el conjunto de no repetidos
+        int count1 = 0;
+        int count2 = 0;
+        for(String trigram : uniqueTrigrams) {
+            int temp1 = map1.getOrDefault(trigram, 0);
+            int temp2 = map2.getOrDefault(trigram, 0);
+            count1 += temp1;
+            count2 += temp2;
+            notSharedTrigrams += Math.abs(temp1 - temp2);
+        }
 
-        return 0; // TODO
+        return (count1 + count2 - notSharedTrigrams) / (count1 + count2);
     }
 
     private Map<String, Integer> getStringMap(String s) {
