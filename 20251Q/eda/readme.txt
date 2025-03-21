@@ -19,3 +19,4 @@ para custom ram:
 
 
 obs.: para dependencias locales, se debe tener el archivo del dependency en cuestión compilado
+obs.: para que Intellisense pueda recomendar librerías, primero compilar el código (ejecuta y descarga dependencias del pom)
