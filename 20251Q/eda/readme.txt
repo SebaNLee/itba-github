@@ -9,8 +9,9 @@ primero, los proyectos normales de java deben ser subproyectos de la carpeta itb
 esto se puede hacer primero todos los proyectos de Maven, e hacer un refresh del workspace de JAVA PROJECTS
 
 para ejecutar proyectos de Maven, compilar y ejecutar con (en el directorio root del proyecto):
-    mvn compile
-    mvn exec:java -Dexec.mainClass="com.example.Main"
+    mvn compile && mvn exec:java -Dexec.mainClass="com.example.Main"
+
+para testeos:
     mvn test
 
 para custom ram:
