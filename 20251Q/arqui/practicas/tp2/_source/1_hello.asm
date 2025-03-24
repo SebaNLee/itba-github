@@ -41,4 +41,7 @@ placeholder resb 128
 
 
 
+; nasm -f elf 1_hello.asm && ld -m elf_i386 1_hello.o -o 1_hello && ./1_hello
+
+
 

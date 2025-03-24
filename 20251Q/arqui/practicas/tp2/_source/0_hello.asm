@@ -27,11 +27,12 @@ _start:
 section .data
 
 cadena db "Hola Mundo!!", 10	; "Hola Mundo!!\n"
-longitud equ $-cadena
+longitud equ $ - cadena
 
 
 section .bss
 
-placeholder resb 10
+placeholder resb 2058
 
 
+; nasm -f elf 0_hello.asm && ld -m elf_i386 0_hello.o -o 0_hello && ./0_hello
