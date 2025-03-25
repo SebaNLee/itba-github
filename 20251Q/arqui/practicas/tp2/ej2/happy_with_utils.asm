@@ -36,4 +36,4 @@ section .data
     cadena db "h4ppy c0d1ng",10, 0
 
 
-; nasm -f elf happy_with_utils.asm && ld -m elf_i386 happy_with_utils.o ../../utils/print.o -o happy_with_utils && ./happy_with_utils
+; nasm -f elf happy_with_utils.asm && ld -m elf_i386 happy_with_utils.o ../../utils/utils.o -o happy_with_utils && ./happy_with_utils
