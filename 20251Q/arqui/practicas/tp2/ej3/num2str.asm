@@ -7,7 +7,7 @@ EXTERN print
 _start:
     ; parámetros para convert
     mov eax, placeholder
-    mov ebx, 123 ; defino acá el número
+    mov ebx, 1234 ; defino acá el número
     
     ; convert, returns the converted string in eax
     call convert
@@ -35,17 +35,17 @@ convert:
     mov edi, eax ; guardo placeholder en para conservar edi (necesito eax para dividir)
     mov eax, ebx ; guardo el número a dividir (y dividendo) en eax
     mov ebx, edi ; copio placeholder en ebx, para recorrer
+
+    mov ecx, 10 ; setteo divisor
     
 
 .cycle:
     ; consigo el resto de / 10
     mov edx, 0 ; reseteo resto a 0
-    mov ecx, 10 ; setteo divisor
     div ecx ; eax = eax / 10
 
-    mov cl, dl ; me guardo el resto en cl (desde dl, último byte de edx)
-    add cl, '0' ; convertir a ASCII
-    mov [ebx], cl
+    add dl, '0' ; converierto el resto (último byte de edx) a ASCII
+    mov [ebx], dl
     inc ebx
 
     cmp eax, 0
@@ -119,4 +119,4 @@ section .data
 
 ; !! obs.: en este caso, era totalmente innecesario hacer push y pop de ESP
 
-; nasm -f elf num2str.asm && ld -m elf_i386 num2str.o ../../utils/print.o -o num2str && ./num2str
+; nasm -f elf num2str.asm && ld -m elf_i386 num2str.o ../../utils/utils.o -o num2str && ./num2str
