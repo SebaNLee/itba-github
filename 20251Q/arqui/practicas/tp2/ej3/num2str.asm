@@ -117,16 +117,6 @@ section .data
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+; !! obs.: en este caso, era totalmente innecesario hacer push y pop de ESP
 
 ; nasm -f elf num2str.asm && ld -m elf_i386 num2str.o ../../utils/print.o -o num2str && ./num2str
