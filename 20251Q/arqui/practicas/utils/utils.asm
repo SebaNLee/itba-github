@@ -76,13 +76,12 @@ strlen:
 
 ; ===============================================================
 ; number_to_string: 
-;   - recibe un número y retorna su representación en string terminado con \0
+;   - recibe un entero positivo y retorna su representación en string terminado con \0
 ;   - es dinámico, se puede ejecutar con cualquier .bss resb, pero recorre 2 veces por string inverso
 ; parámetros:
-;   - EAX: dirección de memoria del placeholder donde guardar el número convertido (.bss resb, recomiendo 32)
-;   - EBX: dirección de memoria del placeholder donde guardar
+;   - EAX: dirección de memoria del placeholder con el entero positivo a convertir (.bss resb, recomiendo 32)
 ; retorna:
-;   - EAX: dirección de memoria del placeholder, con la representación del número en string terminado con \0 (sobreescribe)
+;   - EAX: dirección de memoria del placeholder, con la representación del entero positivo en string terminado con \0 (sobreescribe)
 ; obs.:
 ;   resb determina los bytes guardados y, por ende, los caracteres a poder guardarse, aunque de enteros se pueda guardar más
 ; ===============================================================
