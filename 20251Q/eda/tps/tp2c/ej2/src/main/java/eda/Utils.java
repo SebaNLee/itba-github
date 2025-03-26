@@ -79,3 +79,5 @@ public class Utils {
 	}
 
 }
+
+// mvn compile && mvn exec:java -Dexec.mainClass="eda.Utils"
