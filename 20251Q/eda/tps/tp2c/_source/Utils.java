@@ -1,4 +1,4 @@
-package core;
+package eda;
 
 import java.io.IOException;
 import java.nio.file.Files;

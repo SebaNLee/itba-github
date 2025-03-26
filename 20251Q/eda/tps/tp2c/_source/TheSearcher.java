@@ -1,4 +1,4 @@
-package core;
+package eda;
 
 import org.apache.lucene.search.Explanation;
 import org.apache.lucene.search.IndexSearcher;
