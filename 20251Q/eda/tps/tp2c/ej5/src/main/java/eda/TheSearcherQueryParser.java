@@ -40,7 +40,7 @@ public class TheSearcherQueryParser {
         	searcher.setSimilarity(new ClassicSimilarity());
         	
  	
-        	String queryStr= "content:game OR hola"; // !! LA QUERY ACÁ (ya no se usan instancias de API, sino )
+        	String queryStr= "content:game"; // !! LA QUERY ACÁ (ya no se usan instancias de API, sino )
         	
         	QueryParser queryparser = new QueryParser(null, new StandardAnalyzer() ); // !! EL ANALYZER ACÁ
          	Query query= queryparser.parse(queryStr);
@@ -73,8 +73,8 @@ public class TheSearcherQueryParser {
 				// obtain the stored fields
 				Document aDoc = searcher.doc(docID);
 				System.out.println("stored fields: " + aDoc);
-//				Explanation rta = searcher.explain(query, docID);
-//	            System.out.println(rta);
+				// Explanation rta = searcher.explain(query, docID);
+	            // System.out.println(rta);
 	         
 	            position++;
 	            System.out.println();
