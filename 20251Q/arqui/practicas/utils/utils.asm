@@ -7,6 +7,9 @@ GLOBAL print
 GLOBAL strlen
 GLOBAL number_to_string
 GLOBAL print_newline
+GLOBAL print_vector
+
+
 
 
 ; ===============================================================
@@ -179,6 +182,47 @@ print_newline:
     popad ; recupero registros
     ret
 
+; ===============================================================
+; print_vector: 
+;   - imprime por pantalla un vector de dwords
+; parámetros:
+;   - EAX: dirección de memoria al vector
+;   - EBX: entero dimensión del vector
+; ===============================================================
+print_vector:
+
+    push ecx
+    push edx
+
+    mov ecx, 0 ; ecx contador
+    mov edx, eax ; muevo dir de mem de veector a edx, eax lo uso para imprimir
+
+.cycle:
+    cmp ecx, ebx ; comparo contador con dimension
+    je .exit ; salgo si llegué al final
+
+    ; imprimo entero
+    push dword [edx] ; lo uso para number_to_string
+    mov eax, esp
+    call number_to_string
+    call print
+    add esp, 4 ; recupero el espacio usado
+    
+    push dword 32 ; 32 es ' ' en ASCII
+    mov eax, esp
+    call print
+    add esp, 4
+
+    inc ecx
+    add edx, 4 ; el siguiente son 4bytes por enteros
+    jmp .cycle
+
+.exit:
+    
+    ;add esp, 4 ; recupero el espacio del espaciado
+    pop edx
+    pop ecx
+    ret
 
 ; solo compilación:
 ; nasm -f elf utils.asm 
