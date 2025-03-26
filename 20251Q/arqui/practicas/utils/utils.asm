@@ -6,6 +6,7 @@ section .text
 GLOBAL print
 GLOBAL strlen
 GLOBAL number_to_string
+GLOBAL print_newline
 
 
 ; ===============================================================
@@ -152,6 +153,31 @@ number_to_string:
     pop edi
     ret 
 
+
+; ===============================================================
+; print_newline: 
+;   - imprime por pantalla '\n'
+; ===============================================================
+print_newline:
+    pushad ; backup de registros
+    pushf ; backup de flags
+
+    ; '\n' en stack
+    push dword 10 ; 4 bytes, es dword
+
+    ; imprimo
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, esp
+    mov edx, 1
+    int 80h
+
+    ; recupero stack
+    add esp, 4 ; del dword de '\n'
+
+    popf ; recupero flags
+    popad ; recupero registros
+    ret
 
 
 ; solo compilación:
