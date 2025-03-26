@@ -8,6 +8,7 @@ GLOBAL strlen
 GLOBAL number_to_string
 GLOBAL print_newline
 GLOBAL print_vector
+GLOBAL exit
 
 
 
@@ -223,6 +224,16 @@ print_vector:
     pop edx
     pop ecx
     ret
+
+
+; ===============================================================
+; exit: 
+;   - int80 y sale con código 0
+; ===============================================================
+exit:
+    mov eax, 1
+    mov ebx, 0
+    int 80h
 
 ; solo compilación:
 ; nasm -f elf utils.asm 
