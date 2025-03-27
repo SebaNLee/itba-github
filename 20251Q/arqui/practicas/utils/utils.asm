@@ -297,7 +297,7 @@ delay_seconds:
 
 
 section .bss
-    time_temp resb 4
+    time_temp resb 4 ; delay_seconds
 
 
 
