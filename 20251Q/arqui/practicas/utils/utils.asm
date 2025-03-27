@@ -94,7 +94,7 @@ strlen:
 ; ===============================================================
 number_to_string:
 
-    push edi ; me guardo esb por si las dudas, lo voy a usar para guardar
+    push edi ; me guardo edi por si las dudas, lo voy a usar para guardar
     push ebx ; me guardo ebx, lo voy a usar para recorrer
     push ecx ; me guardo ecx, lo necesito para el divisor
     push edx ; me guardo edx, lo necesito para el resto de DIV y convertir a ASCII
