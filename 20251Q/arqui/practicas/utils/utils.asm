@@ -10,6 +10,7 @@ GLOBAL print_newline
 GLOBAL print_vector
 GLOBAL exit
 GLOBAL print_integer
+GLOBAL delay_seconds
 
 
 
@@ -243,7 +244,6 @@ exit:
 ; parámetros:
 ;   - EAX: dword entero
 ; ===============================================================
-
 print_integer:
     push ebp ; stack frame
     mov ebp, esp
@@ -258,6 +258,48 @@ print_integer:
     mov esp, ebp
     pop ebp
     ret
+
+
+; ===============================================================
+; delay_seconds: 
+;   - delay de cantidad en segundos
+; parámetros:
+;   - EAX: entero cantidad de segundos
+; ===============================================================
+delay_seconds:
+    ; systemc call, sys_time (13)
+    ; guarda el tiempo actual en entero a la dirección apuntada por ebx
+    ; eax también va a guardar la dirección de ebx (donde está guardado el tiempo)
+
+    mov ecx, eax ; copio el delay a ecx
+
+    ; primero calculo objetivo
+    mov eax, 13
+    mov ebx, time_temp
+    int 80h ; devuelve el tiempo como entero en eax
+
+    ; calculo tiempo de finalización
+    add [time_temp], ecx ; le sumo el delay pedido
+    mov esi, [time_temp] ; guardo el tiempo de finalización en ebx
+
+.check:
+    mov eax, 13 ; !! tengo que reponer, porque modifica eax al retornar
+    int 80h ; !! eax = 13 y ebx = time_temp (ebx no se modifica durante ejecución)
+
+    cmp [time_temp], esi
+    jge .exit
+    
+    jmp .check 
+
+.exit:
+    mov eax, ecx ; dejo eax intacto (why not)
+    ret
+
+
+section .bss
+    time_temp resb 4
+
+
 
 ; solo compilación:
 ; nasm -f elf utils.asm 
