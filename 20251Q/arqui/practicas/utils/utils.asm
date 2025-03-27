@@ -245,18 +245,15 @@ exit:
 ;   - EAX: dword entero
 ; ===============================================================
 print_integer:
-    push ebp ; stack frame
-    mov ebp, esp
+    ; me creo un espacio temporal en .bss con 16bytes, esto me daría para cualquier entero
+    ; se podría hacer con stack
 
-    push dword eax ; guardo el entero en el stack
-    mov eax, esp ; guardo en eax la dirección donde está guardado el entero en el stack
+    mov [print_integer_temp], eax
+    mov eax, print_integer_temp
+
     call number_to_string
     call print
 
-    add esp, 4 ; recupero memoria del stack
-
-    mov esp, ebp
-    pop ebp
     ret
 
 
@@ -298,7 +295,7 @@ delay_seconds:
 
 section .bss
     time_temp resb 4 ; delay_seconds
-
+    print_integer_temp resb 16 ; print_integer
 
 
 ; solo compilación:
