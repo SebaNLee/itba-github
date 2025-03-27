@@ -9,6 +9,7 @@ GLOBAL number_to_string
 GLOBAL print_newline
 GLOBAL print_vector
 GLOBAL exit
+GLOBAL print_integer
 
 
 
@@ -234,6 +235,29 @@ exit:
     mov eax, 1
     mov ebx, 0
     int 80h
+
+
+; ===============================================================
+; print_integer: 
+;   - recibe un entero positivo y lo imprime
+; parámetros:
+;   - EAX: dword entero
+; ===============================================================
+
+print_integer:
+    push ebp ; stack frame
+    mov ebp, esp
+
+    push dword eax ; guardo el entero en el stack
+    mov eax, esp ; guardo en eax la dirección donde está guardado el entero en el stack
+    call number_to_string
+    call print
+
+    add esp, 4 ; recupero memoria del stack
+
+    mov esp, ebp
+    pop ebp
+    ret
 
 ; solo compilación:
 ; nasm -f elf utils.asm 
