@@ -13,6 +13,7 @@ _start:
     mov ebx, vector ; ebx para recorrer
     mov ecx, 0 ; ecx contador
     ; edx menor actual
+    ; esi dirección del menor actual
 
 .cycle_outer:
     cmp ecx, dim - 1 ; si ya se recorrió todo el vector
@@ -22,31 +23,41 @@ _start:
 
 .continue_cycle_outer:
     mov edx, [ebx] ; guardo el primer valor como el menor
+    mov esi, ebx ; guardo direccion del menor
     inc ecx ; incremento el contador
 
 .cycle_inner:
     cmp [ebx], edx ; comparo valor menor actual con valor de la iteración
-    jl .swap
+    jl .new_lowest
 
 .continue_cycle_inner:
     add ebx, 4 ; ebx apunta al siguiente (4bytes)
-    
-    
 
-
-    cmp ebx, vector + 4 * dim ; si el ciclo actual ya terminó ; !!!! esto anda, pero es muy cuestionable !!!!
-    je .cycle_outer ; salto al ciclo externo
+    cmp ebx, vector + 4 * dim  ; !!!! esto anda, pero es muy cuestionable !!!!
+    jne .cycle_inner ; si no recorrió todo, salto al ciclo interno (sigo recorriendo)
     
+    ; si recorrió todo, swappeo
+    push eax
+    push edx
+    
+    mov edi, [vector + 4 * (ecx - 1)] ; me guardo el valor del intercambiado
+    mov [vector + 4 * (ecx - 1)], edx ; piso el intercambiado con el menor
+    mov [esi], edi ; guardo en el menor el intercambiado
+    
+    pop edx
+    pop eax
 
-    jmp .cycle_inner ; si no, continuo en el ciclo interno
+.skip_swap:
+    jmp .cycle_outer ; siguiente iteración
 
     
-.swap:    
-    mov edx, [ebx]
-    ; falta código
+.new_lowest:
+    mov edx, [ebx] ; guardo valor del menor actual
+    mov esi, ebx ; guardo dirección del menor actual
+
     jmp .continue_cycle_inner
 
-.set_iteration_start:
+.set_iteration_start: ; esto se pudo haber hecho con [vector + 4 * counter] o similar
     push edx
     mov edx, 4 ; valor a multiplicar (4bytes, por integer)
     mov ebx, vector ; reseteo ebx
@@ -73,7 +84,7 @@ _start:
 
 
 section .data
-    vector dd 5, 2, 3, 4, 1
+    vector dd 3, 2, 5, 4, 1
     dim equ ($ - vector) / 4 ; /4 por dd (4bytes)
     debug db "OK", 10 ; debug
 
