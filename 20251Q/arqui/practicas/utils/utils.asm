@@ -11,6 +11,7 @@ GLOBAL print_vector
 GLOBAL exit
 GLOBAL print_integer
 GLOBAL delay_seconds
+GLOBAL to_upper
 
 
 
@@ -292,11 +293,56 @@ delay_seconds:
     mov eax, ecx ; dejo eax intacto (why not)
     ret
 
+; ===============================================================
+; to_upper: 
+;   - recibe una cadena de caracteres y lo pasa a mayúsculas
+; parámetros:
+;   - EAX: dirección de memoria de la cadena de caracteres termianada en \0
+; retorna:
+;   - EAX: dirección de memoria de la cadena de caracteres en mayúsuclas terminada en \0
+; ===============================================================
+to_upper:
+    pushad
+    pushf
+
+    mov edi, eax ; guardo en edi la dirección original para después retornar
+
+.cycle:
+    mov cl, [eax] ; copio 1byte a cl
+
+    cmp cl, 0 ; si es \0
+    je .exit ; salgo
+
+    cmp cl, 'a'
+    jl .nextletter
+
+    cmp cl, 'z'
+    jg .nextletter
+
+    sub cl, 'a' - 'A'
+    mov [eax], cl
+
+.nextletter:
+    inc eax
+    jmp .cycle
+    
+.exit:
+    mov eax, edi
+
+    popf
+    popad
+    ret
+
+
+
+
+
 
 section .bss
     time_temp resb 4 ; delay_seconds
     print_integer_temp resb 16 ; print_integer
 
+    
 
 ; solo compilación:
 ; nasm -f elf utils.asm 
