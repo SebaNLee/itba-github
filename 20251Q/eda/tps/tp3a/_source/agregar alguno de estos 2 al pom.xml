@@ -1,0 +1,38 @@
+<!-- version sin reflexion -->
+
+<dependency>
+
+<groupId>ar.edu.itba.eda</groupId>
+
+<artifactId>IndexWithArray</artifactId>
+
+<version>1</version>
+
+<scope>system</scope>
+
+<systemPath>c:/temp/IndexWithArray-1.jar</systemPath>
+
+</dependency>
+
+
+
+<!-- version con reflexion -->
+
+<!--
+
+	<dependency>
+
+ <groupId>ar.edu.itba.eda</groupId>
+
+ <artifactId>IndexWithArray</artifactId>
+
+ <version>1</version>
+
+ <scope>system</scope>
+
+ <systemPath>c:/temp/IndexWithArray-2.jar</systemPath>
+
+	</dependency>
+
+-->
+
