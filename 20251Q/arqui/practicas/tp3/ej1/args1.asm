@@ -62,4 +62,4 @@ main:
 ; 8 ARGC
 ; 12 ARGV
 
-; nasm -f elf32 main.asm && gcc -m32 main.o -o main && ./main hola como va
+; nasm -f elf32 args1.asm && gcc -m32 args1.o -o args1 && ./args1 hola como va
