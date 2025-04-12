@@ -11,15 +11,16 @@ public class EvaluatorInFijaBasicOperator {
 	// opcion 1
 
 	 private static Map<String, Integer> mapping = new HashMap<String, Integer>()
-	 {   { put("+", 0); put("-", 1); put("*", 2); put("/", 3); put("^", 4); }  
+	 {   { put("+", 0); put("-", 1); put("*", 2); put("/", 3); put("^", 4); put("(", 5); put(")", 6); }  
 	 };
 	 
 	private static boolean[][] precedenceMatriz= 
-	{   { true, true, false, false, false }, 
-		{ true, true, false, false, false }, 
-		{ true, true, true,  true,  false }, 
-		{ true, true, true,  true,  false }, 
-		{ true, true, true,  true,  false }
+	{   { true,  true,  false, false, false, false, true },
+		{ true,  true,  false, false, false, false, true },
+		{ true,  true,  true,  true,  false, false, true },
+		{ true,  true,  true,  true,  false, false, true },
+		{ true,  true,  true,  true,  false, false, true },
+		{ false, false, false, false, false, false, false }
 	};
 
 	private boolean getPrecedence(String tope, String current)
@@ -138,7 +139,7 @@ public class EvaluatorInFijaBasicOperator {
 			String token = scannerLine.next();
 			
 			// si es operador
-			if(token.matches("[+\\-*/^]")) {
+			if(token.matches("[+\\-*/^\\(]")) {
 				// si no está vacío y si la precedencia es mayor
 				while(!theStack.isEmpty() && getPrecedence(theStack.peek(), token)) {
 					postfija.append(theStack.pop());
@@ -147,6 +148,18 @@ public class EvaluatorInFijaBasicOperator {
 
 				theStack.push(token);
 			}
+			// manejo de ()s
+			else if(token.matches("\\)")) {
+				while(!theStack.isEmpty() && !theStack.peek().equals("(")) {
+					postfija.append(theStack.pop());
+					postfija.append(" ");
+				}
+				// saco el "("
+				if(!theStack.isEmpty()) {
+					theStack.pop();
+				}
+			}
+
 			// si es número
 			else if(token.matches("-?[0-9]+(\\.[0-9]*)?")) {
 				postfija.append(token);
@@ -185,6 +198,8 @@ public class EvaluatorInFijaBasicOperator {
 // 2 - 3 * -3
 // devuelve: 11
 
-
 // 5 ^ 2 ^ 3 - 1
 // devuelve: 390624
+
+// 3 * ( ( 5 - 10.2 ) / 0.5 ) - 2
+// devuelve: -33.19999
