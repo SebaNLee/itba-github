@@ -38,25 +38,25 @@ public class EvaluatorInFijaBasicOperator {
 
 	// opcion 2: asumo que _ no es parte de ningun operador posible
 
-	private static Map<String, Boolean> precendeceMap= new HashMap<String, Boolean>() 
-	{	{
-			put("+_+", true); put("+_-", true); put("+_*", false); put("+_/", false);
-			put("-_+", true); put("-_-", true); put("-_*", false); put("-_/", false);
-			put("*_+", true); put("*_-", true); put("*_*", true); put("*_/", true);
-			put("/_+", true); put("/_-", true); put("/_*", true); put("/_/", true);
-			put("^_+", true); put("^_-", true); put("^_*", true); put("^_/", true);
-		}  };
+	// private static Map<String, Boolean> precendeceMap= new HashMap<String, Boolean>() 
+	// {	{
+	// 		put("+_+", true); put("+_-", true); put("+_*", false); put("+_/", false);
+	// 		put("-_+", true); put("-_-", true); put("-_*", false); put("-_/", false);
+	// 		put("*_+", true); put("*_-", true); put("*_*", true); put("*_/", true);
+	// 		put("/_+", true); put("/_-", true); put("/_*", true); put("/_/", true);
+	// 		put("^_+", true); put("^_-", true); put("^_*", true); put("^_/", true);
+	// 	}  };
 		
-	private final static String extraSymbol= "_";
+	// private final static String extraSymbol= "_";
 
-	private boolean getPrecedence2(String tope, String current)
-	{
-		Boolean rta= precendeceMap.get(String.format("%s%s%s", tope, extraSymbol, current));
-		if (rta == null)
-			throw new RuntimeException(String.format("operator %s or %s not found", tope, current));
+	// private boolean getPrecedence2(String tope, String current)
+	// {
+	// 	Boolean rta= precendeceMap.get(String.format("%s%s%s", tope, extraSymbol, current));
+	// 	if (rta == null)
+	// 		throw new RuntimeException(String.format("operator %s or %s not found", tope, current));
 		
-		return rta;
-	}
+	// 	return rta;
+	// }
 
 
 	
@@ -163,7 +163,12 @@ public class EvaluatorInFijaBasicOperator {
 	public static void main(String[] args) {
 
 		EvaluatorInFijaBasicOperator e = new EvaluatorInFijaBasicOperator();
-		System.out.println(e.evaluate());
+
+
+		// !! modifico esto del main para que ande
+		String postfija = e.infijaToPostfija();
+		e.scannerLine = new Scanner(postfija).useDelimiter("\\s+");
+		System.out.println("Resultado: " + e.evaluate());
 
 
 	}
