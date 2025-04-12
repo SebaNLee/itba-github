@@ -11,14 +11,15 @@ public class EvaluatorInFijaBasicOperator {
 	// opcion 1
 
 	 private static Map<String, Integer> mapping = new HashMap<String, Integer>()
-	 {   { put("+", 0); put("-", 1); put("*", 2); put("/", 3); }  
+	 {   { put("+", 0); put("-", 1); put("*", 2); put("/", 3); put("^", 4); }  
 	 };
 	 
 	private static boolean[][] precedenceMatriz= 
-	{   { true,  true,  false, false }, 
-		{ true,  true,  false, false }, 
-		{ true,  true,  true,  true  }, 
-		{ true,  true,  true,  true }, 
+	{   { true, true, false, false, false }, 
+		{ true, true, false, false, false }, 
+		{ true, true, true,  true,  false }, 
+		{ true, true, true,  true,  false }, 
+		{ true, true, true,  true,  false }
 	};
 
 	private boolean getPrecedence(String tope, String current)
@@ -85,7 +86,7 @@ public class EvaluatorInFijaBasicOperator {
 			System.out.print(" ");
 
 			// chequeo si es operación
-			if(token.matches("[+\\-*/]")) {
+			if(token.matches("[+\\-*/^]")) {
 				Double b = auxi.pop(); // !! hay que popear en orden inverso
 				Double a = auxi.pop();
 
@@ -99,15 +100,20 @@ public class EvaluatorInFijaBasicOperator {
 						break;
 
 					case "/":
-					auxi.push(a / b);
+						auxi.push(a / b);
 						break;
 
 					case "*":
-					auxi.push(a * b);
+						auxi.push(a * b);
+						break;
+					
+					case "^":
+						auxi.push(Math.pow(a, b));
 						break;
 				}
 
 			}
+			// si es número
 			else if(token.matches("-?[0-9]+(\\.[0-9]*)?")) {
 				auxi.push(Double.parseDouble(token));
 			}
@@ -132,7 +138,7 @@ public class EvaluatorInFijaBasicOperator {
 			String token = scannerLine.next();
 			
 			// si es operador
-			if(token.matches("[+\\-*/]")) {
+			if(token.matches("[+\\-*/^]")) {
 				// si no está vacío y si la precedencia es mayor
 				while(!theStack.isEmpty() && getPrecedence(theStack.peek(), token)) {
 					postfija.append(theStack.pop());
@@ -178,3 +184,7 @@ public class EvaluatorInFijaBasicOperator {
 
 // 2 - 3 * -3
 // devuelve: 11
+
+
+// 5 ^ 2 ^ 3 - 1
+// devuelve: 390624
