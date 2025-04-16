@@ -21,3 +21,4 @@ int main(){
     return 0;
 }
 
+// nasm -f elf32 fiboASM.asm && gcc -c -m32 fiboC.c && gcc -c -m32 main.c && gcc -m32 main.o fiboC.o fiboASM.o -o main && ./main
