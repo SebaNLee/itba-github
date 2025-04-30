@@ -23,6 +23,11 @@ public class TimerJoda {
     }
 
     public void stop(long stopTimestamp) {
+
+        if (stopTimestamp < 0) {
+            throw new RuntimeException();
+        }
+
         if (isRunning) {
             endTimeMillis = new Instant(stopTimestamp);
             isRunning = false;

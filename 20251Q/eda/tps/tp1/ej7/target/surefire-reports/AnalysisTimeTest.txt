@@ -1,0 +1,24 @@
+-------------------------------------------------------------------------------
+Test set: AnalysisTimeTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 0.007 s <<< FAILURE! -- in AnalysisTimeTest
+AnalysisTimeTest.getStopExceptionTest -- Time elapsed: 0.002 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected java.lang.RuntimeException to be thrown, but nothing was thrown.
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3128)
+	at AnalysisTimeTest.getStopExceptionTest(AnalysisTimeTest.java:27)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+AnalysisTimeTest.getDurationTest -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.RuntimeException: Can't get timestamp of active timer
+	at eda.TimerJoda.timestamp(TimerJoda.java:43)
+	at eda.TimerJoda.getElapsedTime(TimerJoda.java:49)
+	at AnalysisTimeTest.getDurationTest(AnalysisTimeTest.java:20)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
