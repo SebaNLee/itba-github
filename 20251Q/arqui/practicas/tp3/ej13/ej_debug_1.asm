@@ -21,7 +21,10 @@ main:
     mov     ecx, dword[ebp+8] ; cantidad de argumentos
     mov     ebx,0   ; argv[ebx]
     mov     esi,[ebp+12]    ; argv  estamos pasando el arreglo
-    cld     ; autoincremento de ESI
+    
+    ; !! también funciona con ADD ESI, 4
+    cld     ; autoincremento de ESI 
+
 .loop:
     lodsd   ; eax = [ESI] y  ESI = ESI + 4
 
