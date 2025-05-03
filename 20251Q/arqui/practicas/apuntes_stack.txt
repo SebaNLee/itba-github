@@ -1,0 +1,38 @@
+
+Cómo se forma el stack al llamar diferentes funciones
+
+
+
+Main de C:
+
+Canary (si corresponde)
+Ebp
+Ret
+Argc
+Arv0.       path ejecución
+Argv1.    7
+Argv2.    +
+Argv3     5
+
+
+
+Función normalita sin nada (.asm):
+
+EBP
+RET
+argumento1
+argumento2
+...
+
+
+LO DE ARRIBA BIEN, CONFIRMADO
+
+Función _start llamada desde UNIX:
+
+cantidad de args
+path ejecución
+arg0
+arg1
+arg2
+...
+NULL  (0)
