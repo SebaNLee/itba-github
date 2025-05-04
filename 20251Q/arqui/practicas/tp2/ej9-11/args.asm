@@ -24,6 +24,7 @@ _start:
 
 .cycle:
     cmp ebx, edx ; si ya imprimió todo
+    ; o también: cmp dword [esp + ebx * 4], 0
     je .next ; paro de imprmir
 
     mov eax, [esp + ebx * 4] ; cargo el puntero del argumento a imprimir en eax
