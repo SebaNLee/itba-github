@@ -94,6 +94,10 @@ public class ExpTree implements ExpressionService {
 	public static void main(String[] args) {
 		ExpressionService myExp = new ExpTree();
 
+		myExp.preorder();
+		myExp.postorder();
+		myExp.inorder();
+
 	}
 
 } // end ExpTree class
