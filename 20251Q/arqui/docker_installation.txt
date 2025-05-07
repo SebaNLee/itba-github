@@ -1,0 +1,45 @@
+
+acá mando todos los comandos que usé para settear el entorno de desarrollo para el TPE
+
+
+instalación docker:
+    sudo apt update
+    sudo apt install docker.io
+
+permisos para docker (para no ahcer sudo todas la veces):
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
+    <reiniciar>
+
+instalación imagen TPE:
+    sudo docker pull agodio/itba-so:2.0
+
+instalación QEMU:
+    sudo apt install qemu-system-x86 qemu-utils 
+
+correr contenedor de la imagen descargada:
+    docker run -d -v ${PWD}:/root --security-opt seccomp:unconfined -it --name tpe agodio/itba-so:2.0 
+
+
+
+git clone https://github.com/alejoaquili/x64BareBones 
+
+
+
+
+compilación por fuera de Docker (recomendado):
+    docker start <NOMBRE>
+    docker exec -it <NOMBRE> make clean –C /root/Toolchain
+    docker exec -it <NOMBRE> make clean –C /root/
+    docker exec -it <NOMBRE> make –C /root/Toolchain
+    docker exec -it <NOMBRE> make –C /root/
+    docker stop <NOMBRE> 
+
+
+
+
+
+Comándos útiles:
+    docker images
+    docker container list -a
+    docker info
