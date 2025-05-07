@@ -193,9 +193,13 @@ public class ExpTree implements ExpressionService {
 	public static void main(String[] args) {
 		ExpressionService myExp = new ExpTree();
 
+		System.out.println();
+
 		myExp.preorder();
 		myExp.postorder();
 		myExp.inorder();
+
+		System.out.println();
 
 		System.out.println(myExp.eval());
 
