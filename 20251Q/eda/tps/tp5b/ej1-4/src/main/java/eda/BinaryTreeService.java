@@ -8,4 +8,6 @@ public interface BinaryTreeService {
 
 	void printHierarchy();
 
+	void toFile(String filename);
+
 }

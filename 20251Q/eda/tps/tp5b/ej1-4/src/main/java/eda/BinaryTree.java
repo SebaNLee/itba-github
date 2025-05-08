@@ -3,6 +3,7 @@ package eda;
 
 import java.io.FileNotFoundException;      
 import java.io.InputStream;
+import java.io.PrintWriter;
 import java.lang.reflect.InvocationTargetException;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -141,6 +142,31 @@ public class BinaryTree implements BinaryTreeService {
 	}
 
 
+
+	// ej4 TODO (anda mal)
+	@Override
+	public void toFile(String filename) {
+		try (PrintWriter writer = new PrintWriter(filename)) {
+			Queue<Node> queue = new LinkedList<>();
+			queue.add(root);
+
+			while (!queue.isEmpty()) {
+				Node current = queue.poll();
+
+				if (current == null || current.data == null) {
+					writer.print("? ");
+				} else {
+					writer.print(current.data + " ");
+					queue.add(current.left);
+					queue.add(current.right);
+				}
+			}
+		} catch (FileNotFoundException e) {
+			System.err.println("Error writing to file: " + e.getMessage());
+		}
+	}
+
+	
 	
 
 
@@ -209,6 +235,8 @@ public class BinaryTree implements BinaryTreeService {
 	
 		BinaryTreeService rta2 = new BinaryTree("data0_3");
 		rta2.printHierarchy();
+
+		rta2.toFile("salida.txt");
 	}
 
 }  
