@@ -6,4 +6,6 @@ public interface BinaryTreeService {
 
 	void postorder();
 
+	void printHierarchy();
+
 }

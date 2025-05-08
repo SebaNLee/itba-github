@@ -116,6 +116,30 @@ public class BinaryTree implements BinaryTreeService {
 		System.out.print(node.data + " ");
 	}
 
+	@Override
+	public void printHierarchy() {
+		printHierarchy(root, "");
+	}
+
+	private void printHierarchy(Node node, String prefix) {
+		if (node == null || node.data == null) {
+			System.out.println(prefix + "├── " + "null");
+			return;
+		}
+
+		// imprimo nodo actual (y bajo de renglón)
+		System.out.println(prefix + "├── " + node.data);
+
+		// le agrego espaciado
+		String newPrefix = prefix + "   ";
+
+		// Imprimir hijos
+		if (node.left != null || node.right != null) {
+			printHierarchy(node.left, newPrefix);
+			printHierarchy(node.right, newPrefix);
+		}
+	}
+
 
 	
 
@@ -178,11 +202,13 @@ public class BinaryTree implements BinaryTreeService {
 
 	
 	public static void main(String[] args) throws FileNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
+		
 		BinaryTreeService rta = new BinaryTree("data0_1");
 		rta.preorder();
 		rta.postorder();
 	
-			
+		BinaryTreeService rta2 = new BinaryTree("data0_3");
+		rta2.printHierarchy();
 	}
 
 }  
