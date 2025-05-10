@@ -15,14 +15,29 @@ instalación imagen TPE:
     sudo docker pull agodio/itba-so:2.0
 
 instalación QEMU:
-    sudo apt install qemu-system-x86 qemu-utils 
+    sudo apt install qemu-system-x86 qemu-utils
+
+instalación make:
+    sudo apt install make
+
+bajar el repo:
+    git clone https://github.com/alejoaquili/x64BareBones 
+
+
+
+...
+
 
 correr contenedor de la imagen descargada:
     docker run -d -v ${PWD}:/root --security-opt seccomp:unconfined -it --name tpe agodio/itba-so:2.0 
 
 
 
-git clone https://github.com/alejoaquili/x64BareBones 
+!! chequear: https://chatgpt.com/c/681fd545-f534-8009-9957-996033862ebe
+
+
+
+
 
 
 
