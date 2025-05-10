@@ -1,0 +1,24 @@
+
+acá mando todos los comandos que usé para settear el entorno de desarrollo para el TPE
+
+
+instalación requerimientos:
+    sudo apt update
+    sudo apt install qemu-system-x86 qemu-utils
+    sudo apt install make
+
+bajar el repo:
+    git clone https://github.com/alejoaquili/x64BareBones 
+
+compilar con make:
+    /x64BareBones/Toolchain/$ make
+    /x64BareBones/$ make
+
+ejecutar:
+    /x64BareBones/$ ./run.sh
+
+
+recompilar luego de cada cambio:
+    make clean
+    make
+    ./run.sh
