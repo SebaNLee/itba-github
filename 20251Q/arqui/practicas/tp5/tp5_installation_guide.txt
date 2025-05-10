@@ -17,6 +17,11 @@ compilar con make:
 ejecutar:
     /x64BareBones/$ ./run.sh
 
+borrar .git para que no cuente como submodule y pueda subirlo:
+    /x64BareBones/$ rm -rf .git
+
+
+
 
 recompilar luego de cada cambio:
     make clean
