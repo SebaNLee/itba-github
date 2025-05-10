@@ -23,7 +23,7 @@ borrar .git para que no cuente como submodule y pueda subirlo:
 
 
 
-recompilar luego de cada cambio:
+recompilar luego de cada cambio (en /x64BareBones/$ y /x64BareBones/Toolchain/$):
     make clean
     make
     ./run.sh
