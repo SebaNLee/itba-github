@@ -27,3 +27,8 @@ recompilar luego de cada cambio (en /x64BareBones/$ y /x64BareBones/Toolchain/$)
     make clean
     make
     ./run.sh
+
+alternativa:
+    /x64BareBones/$ make all
+    ./run.sh
+    
