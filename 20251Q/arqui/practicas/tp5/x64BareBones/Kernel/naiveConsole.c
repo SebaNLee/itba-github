@@ -31,6 +31,23 @@ void ncNewline()
 	while((uint64_t)(currentVideo - video) % (width * 2) != 0);
 }
 
+// Ej1 y Ej2
+// driver de video para imprimir en color
+void ncPrintColor(const char * string, uint8_t color)
+{
+	// coloreo según estándar VGA (IBM 1987)
+	// 1er byte: caracter
+	// 2do byte: color
+	// del 2do byte: 4 bits altos para color fondo, 4 bits bajos para color texto
+
+	while(*string) {
+		*currentVideo = *string++;
+		*(currentVideo + 1) = color;
+		currentVideo += 2;
+	}
+}
+//
+
 void ncPrintDec(uint64_t value)
 {
 	ncPrintBase(value, 10);

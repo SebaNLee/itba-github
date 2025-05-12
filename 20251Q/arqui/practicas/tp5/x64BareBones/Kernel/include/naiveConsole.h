@@ -12,4 +12,7 @@ void ncPrintBin(uint64_t value);
 void ncPrintBase(uint64_t value, uint32_t base);
 void ncClear();
 
+// Ej1 y Ej2
+void ncPrintColor(const char * String, uint8_t color);
+
 #endif

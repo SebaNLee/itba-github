@@ -99,6 +99,14 @@ int main()
 	ncPrint((char*)sampleDataModuleAddress);
 	ncNewline();
 
+
+	// Ej1
+	// 4 bits altos para color fondo, 4 bits bajos para color texto
+	// 15 para blanco, 10 para verde (0xEA)
+	ncPrintColor("Arquitectura de Computadoras", 0xFA); 
+	ncNewline();
+
+
 	ncPrint("[Finished]");
 	return 0;
 }
