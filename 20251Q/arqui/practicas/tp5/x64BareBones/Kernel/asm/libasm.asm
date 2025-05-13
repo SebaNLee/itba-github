@@ -1,8 +1,12 @@
 GLOBAL cpuVendor
+
 ; para Ej3
 GLOBAL _seconds
 GLOBAL _minutes
 GLOBAL _hours
+
+; para Ej4
+GLOBAL kbPooling
 
 section .text
 	
@@ -51,4 +55,18 @@ _hours:
 	ret
 
 
+; Ej4
+; !! esto se ejecuta por cada tecla presionada y soltada
+; y lo que devuelve no es ASCII, sino el scancode (QWERTY)
+kbPooling:
+	mov al, 0 ; reseteo al
+
+.loop:
+	in al, 64h ; cargo los 8 bits del puerto de información 
+	and al, 01h ; solo me interesa el último bit (me dice si hay para leer)
+	cmp al, 0 ; si no hay nada para leer
+	je .loop ; entonces espero
+
+	in al, 60h
+	ret
 
