@@ -46,7 +46,39 @@ void ncPrintColor(const char * string, uint8_t color)
 		currentVideo += 2;
 	}
 }
-//
+
+// Binary Coded Decimal a int
+int bcd_to_int(uint8_t binaryValue)
+{	
+	int decimal = binaryValue & 0xF0; // extraigo los 4 bits altos
+	decimal = decimal >> 4;
+	int unidad = binaryValue & 0x0F; // extraigo los 4 bits bajos
+
+	int to_return = decimal * 10 + unidad;
+
+	return to_return;
+}
+
+// Ej3
+// implemento auxiliares en asm/libasm.asm
+void ncPrintTime()
+{
+	// las funciones que llamo de asm devuelven las cosas en EAX (pero están en AL)
+	int seconds = bcd_to_int(_seconds());
+	int minutes = bcd_to_int(_minutes());
+	int hours = bcd_to_int(_hours());
+
+	ncPrint("Time: ");
+	
+
+	ncPrintDec(hours);
+	ncPrint(":");
+	ncPrintDec(minutes);
+	ncPrint(":");
+	ncPrintDec(seconds);
+
+	return;
+}
 
 void ncPrintDec(uint64_t value)
 {

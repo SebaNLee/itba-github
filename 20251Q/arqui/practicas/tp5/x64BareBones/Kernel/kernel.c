@@ -107,6 +107,11 @@ int main()
 	ncNewline();
 
 
+	// Ej3
+	ncPrintTime(); // marca UTC (Argentina es UTC-3)
+	ncNewline();
+
+
 	ncPrint("[Finished]");
 	return 0;
 }

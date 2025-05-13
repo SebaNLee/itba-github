@@ -15,4 +15,7 @@ void ncClear();
 // Ej1 y Ej2
 void ncPrintColor(const char * String, uint8_t color);
 
+// Ej3
+void ncPrintTime();
+
 #endif
