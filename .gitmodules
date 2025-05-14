@@ -7,6 +7,6 @@
 [submodule "20242Q/poo/POO-2024-Q2"]
 	path = 20242Q/poo/POO-2024-Q2
 	url = https://github.com/tarcodaci/POO-2024-Q2.git
-[submodule "Arqui-TPE-20251Q"]
-	path = Arqui-TPE-20251Q
+[submodule "20251Q/arqui/Arqui-TPE-20251Q"]
+	path = 20251Q/arqui/Arqui-TPE-20251Q
 	url = https://github.com/SebaNLee/Arqui-TPE-20251Q
