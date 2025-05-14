@@ -165,9 +165,41 @@ public class BinaryTree implements BinaryTreeService {
 			System.err.println("Error writing to file: " + e.getMessage());
 		}
 	}
+	
 
 	
+	// Ej5 TODO
+	private boolean equals(Node a, Node b) {
+	if (a == null && b == null) return true;
+	if (a == null || b == null) {
+		System.out.println("Uno de los nodos es null: " + a + ", " + b);
+		return false;
+	}
+	if (a.data == null && b.data == null) return true;
+	if (a.data == null || b.data == null || !a.data.equals(b.data)) {
+		System.out.println("Datos distintos: " + a.data + ", " + b.data);
+		return false;
+	}
+	return equals(a.left, b.left) && equals(a.right, b.right);
+	}
+
 	
+
+	public int getHeight() {
+		return getHeight(root);
+	}
+
+	private int getHeight(Node node) {
+		if (node == null || node.data == null)
+			return 0;
+
+		int leftHeight = getHeight(node.left);
+		int rightHeight = getHeight(node.right);
+
+		return Math.max(leftHeight, rightHeight);
+	}
+
+
 
 
 	// hasta el get() no se evalua
@@ -235,8 +267,14 @@ public class BinaryTree implements BinaryTreeService {
 	
 		BinaryTreeService rta2 = new BinaryTree("data0_3");
 		rta2.printHierarchy();
+		
+		System.out.println(rta2.getHeight());
 
 		rta2.toFile("salida.txt");
+
+		BinaryTreeService rta3 = new BinaryTree("data0_3");
+
+		System.out.println(rta2.equals(rta3));
 	}
 
 }  

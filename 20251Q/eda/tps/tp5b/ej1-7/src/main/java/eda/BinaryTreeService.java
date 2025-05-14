@@ -10,4 +10,6 @@ public interface BinaryTreeService {
 
 	void toFile(String filename);
 
+	int getHeight();
+
 }
