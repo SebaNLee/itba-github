@@ -12,4 +12,5 @@ public interface BinaryTreeService {
 
 	int getHeight();
 
+	boolean equals(BinaryTree other);
 }

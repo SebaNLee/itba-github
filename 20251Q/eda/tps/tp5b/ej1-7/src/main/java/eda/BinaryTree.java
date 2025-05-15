@@ -169,18 +169,22 @@ public class BinaryTree implements BinaryTreeService {
 
 	
 	// Ej5 TODO
+	@Override
+	public boolean equals(BinaryTree other) {
+		if (other == null) return false;
+		return equals(this.root, other.root);
+	}
+
 	private boolean equals(Node a, Node b) {
-	if (a == null && b == null) return true;
-	if (a == null || b == null) {
-		System.out.println("Uno de los nodos es null: " + a + ", " + b);
-		return false;
-	}
-	if (a.data == null && b.data == null) return true;
-	if (a.data == null || b.data == null || !a.data.equals(b.data)) {
-		System.out.println("Datos distintos: " + a.data + ", " + b.data);
-		return false;
-	}
-	return equals(a.left, b.left) && equals(a.right, b.right);
+		if (a == null && b == null) return true;
+		if (a == null || b == null) return false;
+
+		if (a.data == null && b.data == null) return true;
+		if (a.data == null || b.data == null) return false;
+
+		if (!a.data.equals(b.data)) return false;
+
+		return equals(a.left, b.left) && equals(a.right, b.right);
 	}
 
 	
@@ -191,12 +195,12 @@ public class BinaryTree implements BinaryTreeService {
 
 	private int getHeight(Node node) {
 		if (node == null || node.data == null)
-			return 0;
+			return -1; // porque el árbol solo con un root tiene altura 0 (nulo es -1)
 
 		int leftHeight = getHeight(node.left);
 		int rightHeight = getHeight(node.right);
 
-		return Math.max(leftHeight, rightHeight);
+		return Math.max(leftHeight, rightHeight) + 1;
 	}
 
 
@@ -261,20 +265,28 @@ public class BinaryTree implements BinaryTreeService {
 	
 	public static void main(String[] args) throws FileNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
 		
+		System.out.println("----------------------------------------");
 		BinaryTreeService rta = new BinaryTree("data0_1");
 		rta.preorder();
 		rta.postorder();
+		System.out.println("----------------------------------------");
+
 	
 		BinaryTreeService rta2 = new BinaryTree("data0_3");
 		rta2.printHierarchy();
+		System.out.println("----------------------------------------");
 		
 		System.out.println(rta2.getHeight());
+		System.out.println("----------------------------------------");
 
 		rta2.toFile("salida.txt");
 
 		BinaryTreeService rta3 = new BinaryTree("data0_3");
+		rta3.printHierarchy();
+		System.out.println("----------------------------------------");
 
-		System.out.println(rta2.equals(rta3));
+		System.out.println(((BinaryTree) rta2).equals((BinaryTree) rta3));
+		System.out.println("----------------------------------------");
 	}
 
 }  
