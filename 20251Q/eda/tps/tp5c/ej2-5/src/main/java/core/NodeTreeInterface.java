@@ -1,4 +1,4 @@
-package eda;
+package core;
 
 
 public interface NodeTreeInterface<T extends Comparable<? super T>> {

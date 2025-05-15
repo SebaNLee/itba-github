@@ -1,4 +1,4 @@
-package eda;
+package core;
 
 public class BST<T extends Comparable<? super T>> implements BSTreeInterface<T> {
 
@@ -155,4 +155,4 @@ public class BST<T extends Comparable<? super T>> implements BSTreeInterface<T> 
 }
 
 
-// mvn compile && mvn exec:java -Dexec.mainClass="eda.BST"
+// mvn compile && mvn exec:java -Dexec.mainClass="core.BST"
