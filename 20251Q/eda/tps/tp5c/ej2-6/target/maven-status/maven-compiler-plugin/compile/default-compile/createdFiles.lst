@@ -1,0 +1,8 @@
+core/BST.class
+controller/GraphicsTree.class
+shape/Circle.class
+core/NodeTreeInterface.class
+core/Person.class
+core/BSTreeInterface.class
+core/BST$Node.class
+shape/Line.class

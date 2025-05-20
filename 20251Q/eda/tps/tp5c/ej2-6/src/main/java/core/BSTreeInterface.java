@@ -15,4 +15,6 @@ public interface BSTreeInterface<T extends Comparable<? super T>> {
 	
 	int getHeight();
 
+	void delete(T myData);
+
 }

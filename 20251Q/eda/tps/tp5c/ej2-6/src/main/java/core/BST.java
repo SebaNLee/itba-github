@@ -41,6 +41,14 @@ public class BST<T extends Comparable<? super T>> implements BSTreeInterface<T> 
         return root.getHeight();
     }
 
+    @Override
+    public void delete(T myData) {
+        if(myData == null)
+            throw new RuntimeException();
+        
+        if(root != null)
+            root = root.delete(myData);
+    }
 
 
 
@@ -129,6 +137,35 @@ public class BST<T extends Comparable<? super T>> implements BSTreeInterface<T> 
 
             return s.toString();
         }
+
+        public Node<T> delete(T myData) {
+            if(myData.compareTo(data)<0) {
+                if (left != null)
+                    left = left.delete(myData);
+                return this;
+            }
+            if(myData.compareTo(data)>0) {
+                if (right != null)
+                    right = right.delete(myData);
+                return this;
+            }
+
+            if(left==null)
+                return right;
+            if(right==null)
+                return left;
+
+            this.data = lexiAdjacent(left);
+            left = left.delete(data);
+            return this;
+        }
+
+        private T lexiAdjacent(Node<T> candidate) {
+            Node<T> aux=candidate;
+            while(aux.right != null)
+                aux=aux.right;
+            return aux.data;
+        }
     }
 
     public static void main(String[] args) {
@@ -144,8 +181,14 @@ public class BST<T extends Comparable<? super T>> implements BSTreeInterface<T> 
         myTree.insert(40);
 
         myTree.inOrder();
-        myTree.preOrder();
         myTree.postOrder();
+        myTree.preOrder();
+        
+
+        System.out.println();
+        myTree.delete(50);
+        myTree.preOrder();
+
 
         // myTree.forEach(System.out::println);
         // System.out.println("---");
