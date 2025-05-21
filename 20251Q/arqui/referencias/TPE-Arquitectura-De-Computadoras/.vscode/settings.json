@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "libc.h": "c",
+        "syscalldispatcher.h": "c",
+        "videodriver.h": "c",
+        "compare": "cpp",
+        "time.h": "c",
+        "random.h": "c",
+        "libasm.h": "c",
+        "snake.h": "c",
+        "stdint.h": "c"
+    }
+}
