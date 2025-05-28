@@ -6,9 +6,9 @@ public class GraphDFSIterator<V, E> implements Iterator<V> {
     private final Set<V> visited = new HashSet<>();
     private final Stack<V> stack = new Stack<>();
 
-    public GraphDFSIterator(AdjacencyListGraph<V, E> graph, V initialVertex) {
-        this.graph = graph;
-        if (initialVertex == null || graph.getAdjacencyList().get(initialVertex) == null)
+    public GraphDFSIterator(AdjacencyListGraph<V, E> g2, V initialVertex) {
+        this.graph = g2;
+        if (initialVertex == null || g2.getAdjacencyList().get(initialVertex) == null)
             throw new RuntimeException("initial vertex no exist, u dum dum");
         stack.push(initialVertex);
         visited.add(initialVertex);

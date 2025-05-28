@@ -90,6 +90,10 @@ public interface GraphService<V,E> {
 	public void printBFS(V startNode);
 
 	public void printDFS(V startNode);
+
+	public Iterable<V> getDFS(V vertex);
+
+	public Iterable<V> getBFS(V vertex);
 	
 	// only for simple graph/digraph
 	// multi: throw exception

@@ -273,21 +273,21 @@ abstract public class AdjacencyListGraph<V, E> implements GraphService<V, E> {
 		}
 	}
 
-	// @Override
-	// public Iterable<V> getBFS(V vertex) {
-	// 	if(vertex == null || !adjacencyList.containsKey(vertex))
-	// 		throw new IllegalArgumentException(Messages.getString("vertexParamError"));
+	@Override
+	public Iterable<V> getBFS(V vertex) {
+		if(vertex == null || !adjacencyList.containsKey(vertex))
+			throw new IllegalArgumentException(Messages.getString("vertexParamError"));
 
-	// 	return () -> new GraphBFSIterator<V,E>(this, vertex);
-	// }
+		return () -> new GraphBFSIterator<V,E>(this, vertex);
+	}
 
-	// @Override
-	// public Iterable<V> getDFS(V vertex) {
-	// 	if(vertex == null || !adjacencyList.containsKey(vertex))
-	// 		throw new IllegalArgumentException(Messages.getString("vertexParamError"));
+	@Override
+	public Iterable<V> getDFS(V vertex) {
+		if(vertex == null || !adjacencyList.containsKey(vertex))
+			throw new IllegalArgumentException(Messages.getString("vertexParamError"));
 
-	// 	return () -> new GraphDFSIterator<V,E>(this, vertex);
-	// }
+		return () -> new GraphDFSIterator<V,E>(this, vertex);
+	}
 
 	// @Override
 	// public void printAllPaths(V start, V end) {

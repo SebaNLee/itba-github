@@ -1,4 +1,5 @@
 
+
 public class Tester {
     public static void main(String[] args) {
 
@@ -50,9 +51,29 @@ public class Tester {
         
         
         System.out.println("===============");
+        System.out.println("BFS");
         g2.printBFS('A');
 
         System.out.println("===============");
+        System.out.println("DFS");
         g2.printDFS('A');
+
+        System.out.println("===============");
+        System.out.println("Ahora con Iterables:");
+
+        System.out.println();
+        System.out.println("BFS");
+        Iterable<Character> iteratorBFS = g2.getBFS('A');
+        for (Character character : iteratorBFS) {
+            System.out.println(character);
+        }
+        
+
+        System.out.println();
+        System.out.println("DFS");
+        Iterable<Character> iteratorDFS = g2.getDFS('A');
+        for (Character character : iteratorDFS) {
+            System.out.println(character);
+        }
     }
 }
