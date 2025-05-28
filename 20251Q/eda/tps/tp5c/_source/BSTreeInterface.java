@@ -1,4 +1,3 @@
-package eda;
 
 
 public interface BSTreeInterface<T extends Comparable<? super T>> {
