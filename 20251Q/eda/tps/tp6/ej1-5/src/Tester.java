@@ -123,5 +123,10 @@ public class Tester {
         System.out.println("All paths");
 
         g.printAllPaths('A', 'C');
+
+
+        System.out.println();
+        System.out.println(g.isBipartite());
+        
     }
 }

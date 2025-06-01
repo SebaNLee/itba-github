@@ -100,5 +100,7 @@ public interface GraphService<V,E> {
 	public DijkstraPath<V,E> dijsktra(V source);
 
 	public void printAllPaths(V start, V end);
+
+	public boolean isBipartite();
 	
 }
