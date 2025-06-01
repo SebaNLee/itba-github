@@ -289,29 +289,29 @@ abstract public class AdjacencyListGraph<V, E> implements GraphService<V, E> {
 		return () -> new GraphDFSIterator<V,E>(this, vertex);
 	}
 
-	// @Override
-	// public void printAllPaths(V start, V end) {
-	// 	printAllPathsRec(start,end, new Stack<>(), new StringBuilder());
-	// }
+	@Override
+	public void printAllPaths(V start, V end) {
+		printAllPathsRec(start,end, new Stack<>(), new StringBuilder());
+	}
 
-	// private void printAllPathsRec(V start, V end, Stack<V> visited, StringBuilder s) {
-	// 	if(start.equals(end)) {
-	// 		System.out.println(s.toString() + end);
-	// 		return;
-	// 	}
+	private void printAllPathsRec(V start, V end, Stack<V> visited, StringBuilder s) {
+		if(start.equals(end)) {
+			System.out.println(s.toString() + end);
+			return;
+		}
 
-	// 	visited.add(start);
-	// 	s.append(start).append(" ");
+		visited.add(start);
+		s.append(start).append(" ");
 
-	// 	for(InternalEdge edge : adjacencyList.get(start)) {
-	// 		if(!visited.contains(edge.target)) {
-	// 			printAllPathsRec(edge.target, end, visited, s);
-	// 		}
-	// 	}
+		for(InternalEdge edge : adjacencyList.get(start)) {
+			if(!visited.contains(edge.target)) {
+				printAllPathsRec(edge.target, end, visited, s);
+			}
+		}
 
-	// 	s.deleteCharAt(s.length()-1).deleteCharAt(s.length()-1);
-	// 	visited.pop();
-	// }
+		s.deleteCharAt(s.length()-1).deleteCharAt(s.length()-1);
+		visited.pop();
+	}
 
 	public boolean isBipartite(){
 

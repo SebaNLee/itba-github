@@ -117,5 +117,11 @@ public class Tester {
 
         System.out.println(pathRta);
 
+        System.out.println("Test");
+
+        System.out.println();
+        System.out.println("All paths");
+
+        g.printAllPaths('A', 'C');
     }
 }
