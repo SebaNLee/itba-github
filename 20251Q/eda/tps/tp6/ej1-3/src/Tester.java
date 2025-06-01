@@ -1,9 +1,17 @@
+// import GraphService.EdgeMode;
+// import GraphService.Multiplicity;
+// import GraphService.SelfLoop;
+// import GraphService.Storage;
+// import GraphService.Weight;
+
+// import GraphService.*;
+// import GraphBuilder.*;
 
 
 public class Tester {
     public static void main(String[] args) {
 
-        GraphService<Character, EmptyEdgeProp> g1 = new GraphBuilder()
+        GraphService<Character, EmptyEdgeProp> g1 = new GraphBuilder<Character, EmptyEdgeProp>()
             .withAcceptSelfLoop(GraphService.SelfLoop.YES)
             .withAcceptWeight(GraphService.Weight.NO)
             .withDirected(GraphService.EdgeMode.UNDIRECTED)
@@ -75,5 +83,39 @@ public class Tester {
         for (Character character : iteratorDFS) {
             System.out.println(character);
         }
+
+
+
+        System.out.println("=================");
+        System.out.println("Dijkstra");
+        System.out.println();
+
+        // GraphService<Character, WeightedEdge> g = GraphFactory.create(GraphService.Multiplicity.SIMPLE, GraphService.EdgeMode.DIRECTED, GraphService.SelfLoop.NO, GraphService.Weight.YES, GraphService.Storage.SPARSE);
+        GraphService<Character,WeightedEdge> g = new GraphBuilder<Character, WeightedEdge>()
+                .withStorage(GraphService.Storage.SPARSE)
+                .withAcceptSelfLoop(GraphService.SelfLoop.NO)
+                .withAcceptWeight(GraphService.Weight.YES)
+                .withDirected(GraphService.EdgeMode.DIRECTED)
+                .withMultiplicity(GraphService.Multiplicity.SIMPLE)
+                .build();
+
+
+        g.addEdge('A', 'B', new WeightedEdge(10));
+        g.addEdge('A', 'C', new WeightedEdge(3));
+        g.addEdge('B', 'C', new WeightedEdge(1));
+        g.addEdge('B', 'D', new WeightedEdge(2));
+        g.addEdge('C', 'A', new WeightedEdge(1));
+        g.addEdge('C', 'B', new WeightedEdge(4));
+        g.addEdge('C', 'D', new WeightedEdge(8));
+        g.addEdge('C', 'E', new WeightedEdge(2));
+        g.addEdge('D', 'E', new WeightedEdge(7));
+        g.addEdge('E', 'D', new WeightedEdge(9));
+        g.addEdge('Z', 'K', new WeightedEdge(17));
+        g.addEdge('K', 'A', new WeightedEdge(19));
+
+        DijkstraPath<Character, WeightedEdge> pathRta = g.dijsktra('A');
+
+        System.out.println(pathRta);
+
     }
 }

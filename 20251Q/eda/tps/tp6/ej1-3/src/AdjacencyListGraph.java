@@ -395,81 +395,81 @@ abstract public class AdjacencyListGraph<V, E> implements GraphService<V, E> {
 	// 	return false;
 	// }
 
-	// @Override
-	// public DijkstraPath<V, E> dijsktra(V source) {
-	// 	if(!isWeighted)
-	// 		throw new RuntimeException("Edges needs to implements getWeight and this graph doesn't accept weight " +
-	// 				"edges");
+	@Override
+	public DijkstraPath<V, E> dijsktra(V source) {
+		if(!isWeighted)
+			throw new RuntimeException("Edges needs to implements getWeight and this graph doesn't accept weight " +
+					"edges");
 
-	// 	if(source == null)
-	// 		throw new RuntimeException("Source cannot be null");
-	// 	if(!adjacencyList.containsKey(source))
-	// 		throw new RuntimeException("Source doesn't exist");
+		if(source == null)
+			throw new RuntimeException("Source cannot be null");
+		if(!adjacencyList.containsKey(source))
+			throw new RuntimeException("Source doesn't exist");
 
-	// 	PriorityQueue<NodePQ> pq= new PriorityQueue<>();
+		PriorityQueue<NodePQ> pq= new PriorityQueue<>();
 
-	// 	//stores shortest distance from source to every vertex
-	// 	Map<V,Integer> costo = new HashMap<>();
-	// 	Map<V,V> prev= new HashMap<>();
+		//stores shortest distance from source to every vertex
+		Map<V,Integer> costo = new HashMap<>();
+		Map<V,V> prev= new HashMap<>();
 
-	// 	// empieza vacio
-	// 	Set<V> nodesVisited= new HashSet<>();
+		// empieza vacio
+		Set<V> nodesVisited= new HashSet<>();
 
-	// 	// inicializacion
-	// 	for(V aV: getAdjacencyList().keySet()) {
-	// 		costo.put(aV, Integer.MAX_VALUE);
-	// 		prev.put(aV, null);
-	// 	}
-	// 	pq.add(new NodePQ(source,0));
-	// 	costo.put(source,0);
+		// inicializacion
+		for(V aV: getAdjacencyList().keySet()) {
+			costo.put(aV, Integer.MAX_VALUE);
+			prev.put(aV, null);
+		}
+		pq.add(new NodePQ(source,0));
+		costo.put(source,0);
 
 
-	// 	while( ! pq.isEmpty()) {
-	// 		NodePQ current = pq.poll(); // el menor
+		while( ! pq.isEmpty()) {
+			NodePQ current = pq.poll(); // el menor
 
-	// 		if (nodesVisited.contains(current.vertex)) // ya lo procese
-	// 			continue;
+			if (nodesVisited.contains(current.vertex)) // ya lo procese
+				continue;
 
-	// 		nodesVisited.add(current.vertex); //sino lo agrego
+			nodesVisited.add(current.vertex); //sino lo agrego
 
-	// 		// ahora recorrer todos los ejes incidentes a current
-	// 		for(InternalEdge neighbor: getAdjacencyList().get(current.vertex)) {
-	// 			// si fue visitado seguir. Esto tambien excluye los self loops...
-	// 			if (nodesVisited.contains(neighbor.target)) {
-	// 				continue;
-	// 			}
+			// ahora recorrer todos los ejes incidentes a current
+			for(InternalEdge neighbor: getAdjacencyList().get(current.vertex)) {
+				// si fue visitado seguir. Esto tambien excluye los self loops...
+				if (nodesVisited.contains(neighbor.target)) {
+					continue;
+				}
 
-	// 			// invocando a getWeight (se ha validado en insercion)
+				// invocando a getWeight (se ha validado en insercion)
 
-	// 			int weight;
-	// 			// peso de ese eje?
-	// 			try {
-	// 				Method fn = neighbor.edge.getClass().getMethod("getWeight");
-	// 				weight = (int) fn.invoke(neighbor.edge);
-	// 			}
-	// 			catch (Exception e) {
-	// 				throw new RuntimeException(e);
-	// 			}
+				int weight;
+				// peso de ese eje?
+				try {
+					Method fn = neighbor.edge.getClass().getMethod("getWeight");
+					weight = (int) fn.invoke(neighbor.edge);
+				}
+				catch (Exception e) {
+					throw new RuntimeException(e);
+				}
 
-	// 			// verificacion
-	// 			if (weight < 0 )
-	// 				throw new IllegalArgumentException( String.format(Messages.getString("disjkstraWithNegativeWeight"),
-	// 								current.vertex, neighbor.target, weight));
+				// verificacion
+				if (weight < 0 )
+					throw new IllegalArgumentException( String.format(Messages.getString("disjkstraWithNegativeWeight"),
+									current.vertex, neighbor.target, weight));
 
-	// 			// cual seria el costo de neighbor viniendo desde current?
-	// 			int newCosto = costo.get(current.vertex) + weight;
-	// 			// es una mejora?
-	// 			if (newCosto < costo.get(neighbor.target) ) {
-	// 				// insertar neighbor con ese valor mejorado
-	// 				costo.put(neighbor.target, newCosto);
-	// 				pq.add(new NodePQ(neighbor.target, newCosto));
-	// 				// armar camino
-	// 				prev.put(neighbor.target, current.vertex);
-	// 			}
-	// 		}
-	// 	}
-	// 	return 	new DijkstraPath<>(costo, prev);
-	// }
+				// cual seria el costo de neighbor viniendo desde current?
+				int newCosto = costo.get(current.vertex) + weight;
+				// es una mejora?
+				if (newCosto < costo.get(neighbor.target) ) {
+					// insertar neighbor con ese valor mejorado
+					costo.put(neighbor.target, newCosto);
+					pq.add(new NodePQ(neighbor.target, newCosto));
+					// armar camino
+					prev.put(neighbor.target, current.vertex);
+				}
+			}
+		}
+		return 	new DijkstraPath<>(costo, prev);
+	}
 
 
 	// @Override
