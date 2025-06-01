@@ -8,6 +8,7 @@
         "random.h": "c",
         "libasm.h": "c",
         "snake.h": "c",
-        "stdint.h": "c"
+        "stdint.h": "c",
+        "idtloader.h": "c"
     }
 }
