@@ -1,0 +1,22 @@
+
+
+
+al querer insertar (8, "T") se tiene que hacer un resize, pues supera el Threshold de 0.75 (8 de 10 elementos, entonces 0.8)
+el resize deja la tabla con 15 posiciones
+se reinsertan todos los valores (con quadratic probing) y la tabla queda de esta manera:
+
+0 30, P
+1 39, Z 
+2
+3
+4 22, E
+5 25, D
+6 14, A
+7 36, B (bajó del 6)
+8 18, C (bajó del 4)
+9 8, T (bajó del 8)
+10
+11
+12
+13
+14
