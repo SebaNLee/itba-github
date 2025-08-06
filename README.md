@@ -16,6 +16,12 @@ al hacer esto, reconoce un subrepositorio
 si algo se llega a cambiar en el subrepositorio, no se puede hacer un commit en el repo principal antes de que se haga el commit en el submodulo
 
 
+para eliminar un submodule, se tiene que:
+    quitar de .gitmodules
+    quitar de .git/config
+    eliminar el subrepo
+
+
 
 //////////////////////////////////////////////
 
