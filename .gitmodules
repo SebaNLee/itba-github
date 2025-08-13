@@ -10,3 +10,6 @@
 [submodule "20251Q/arqui/Arqui-TPE-20251Q"]
 	path = 20251Q/arqui/Arqui-TPE-20251Q
 	url = https://github.com/SebaNLee/Arqui-TPE-20251Q
+[submodule "20252Q/so/SO-TP1-20252Q"]
+	path = 20252Q/so/SO-TP1-20252Q
+	url = https://github.com/SebaNLee/SO-TP1-20252Q.git
