@@ -13,3 +13,6 @@
 [submodule "20252Q/so/SO-TP1-20252Q"]
 	path = 20252Q/so/SO-TP1-20252Q
 	url = https://github.com/SebaNLee/SO-TP1-20252Q.git
+[submodule "20252Q/is1/node_thing"]
+	path = 20252Q/is1/node_thing
+	url = https://github.com/teofum/node_thing.git
