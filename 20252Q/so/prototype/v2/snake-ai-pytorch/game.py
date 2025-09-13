@@ -6,149 +6,149 @@ import numpy as np
 
 pygame.init()
 font = pygame.font.Font('arial.ttf', 25)
-#font = pygame.font.SysFont('arial', 25)
 
 class Direction(Enum):
     RIGHT = 1
     LEFT = 2
     UP = 3
     DOWN = 4
+    UP_LEFT = 5
+    UP_RIGHT = 6
+    DOWN_LEFT = 7
+    DOWN_RIGHT = 8
 
 Point = namedtuple('Point', 'x, y')
 
-# rgb colors
+# colores
 WHITE = (255, 255, 255)
 RED = (200,0,0)
 BLUE1 = (0, 0, 255)
-BLUE2 = (0, 100, 255)
 BLACK = (0,0,0)
 
 BLOCK_SIZE = 20
-SPEED = 40
+SPEED = 150
 
-class SnakeGameAI:
+class ChompChamps:
 
-    def __init__(self, w=640, h=480):
+    def __init__(self, w=400, h=400):
         self.w = w
         self.h = h
+        self.cols = w // BLOCK_SIZE
+        self.rows = h // BLOCK_SIZE
+
         # init display
         self.display = pygame.display.set_mode((self.w, self.h))
-        pygame.display.set_caption('Snake')
+        pygame.display.set_caption('ChompChamps')
         self.clock = pygame.time.Clock()
+
         self.reset()
 
-
     def reset(self):
-        # init game state
-        self.direction = Direction.RIGHT
-
-        self.head = Point(self.w/2, self.h/2)
-        self.snake = [self.head,
-                      Point(self.head.x-BLOCK_SIZE, self.head.y),
-                      Point(self.head.x-(2*BLOCK_SIZE), self.head.y)]
-
+        # posición inicial en el centro
+        self.player = Point(self.cols//2, self.rows//2)
         self.score = 0
-        self.food = None
-        self._place_food()
+        self.valid_moves = 0
+        self.invalid_moves = 0
         self.frame_iteration = 0
 
+        # grilla con recompensas 1-9
+        self.grid = np.random.randint(1, 10, size=(self.rows, self.cols))
 
-    def _place_food(self):
-        x = random.randint(0, (self.w-BLOCK_SIZE )//BLOCK_SIZE )*BLOCK_SIZE
-        y = random.randint(0, (self.h-BLOCK_SIZE )//BLOCK_SIZE )*BLOCK_SIZE
-        self.food = Point(x, y)
-        if self.food in self.snake:
-            self._place_food()
-
+        # la celda inicial no da puntos y queda ocupada
+        self.grid[self.player.y, self.player.x] = 0
 
     def play_step(self, action):
         self.frame_iteration += 1
-        # 1. collect user input
+
+        # eventos quit
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
-        
-        # 2. move
-        self._move(action) # update the head
-        self.snake.insert(0, self.head)
-        
-        # 3. check if game over
-        reward = 0
-        game_over = False
-        if self.is_collision() or self.frame_iteration > 100*len(self.snake):
-            game_over = True
-            reward = -10
-            return reward, game_over, self.score
 
-        # 4. place new food or just move
-        if self.head == self.food:
-            self.score += 1
-            reward = 10
-            self._place_food()
+        # 1. mover jugador según acción
+        old_pos = self.player
+        new_pos = self._move(action)
+
+        # 2. verificar validez del movimiento
+        if self._is_valid(new_pos):
+            self.player = new_pos
+            gained = self.grid[new_pos.y, new_pos.x]
+            self.score += gained
+            self.grid[new_pos.y, new_pos.x] = 0
+            reward = gained
+            self.valid_moves += 1
         else:
-            self.snake.pop()
-        
-        # 5. update ui and clock
+            reward = -1
+            self.invalid_moves += 1
+
+        # 3. condición de fin (sin celdas libres alrededor)
+        if not self._has_moves():
+            return reward, True, self.score
+
+        # 4. dibujar
         self._update_ui()
         self.clock.tick(SPEED)
-        # 6. return game over and score
-        return reward, game_over, self.score
 
+        return reward, False, self.score
 
-    def is_collision(self, pt=None):
-        if pt is None:
-            pt = self.head
-        # hits boundary
-        if pt.x > self.w - BLOCK_SIZE or pt.x < 0 or pt.y > self.h - BLOCK_SIZE or pt.y < 0:
-            return True
-        # hits itself
-        if pt in self.snake[1:]:
-            return True
+    def _is_valid(self, pos):
+        # adentro del tablero
+        if pos.x < 0 or pos.x >= self.cols or pos.y < 0 or pos.y >= self.rows:
+            return False
+        # celda ya capturada
+        if self.grid[pos.y, pos.x] == 0:
+            return False
+        return True
 
+    def _has_moves(self):
+        for dx in [-1,0,1]:
+            for dy in [-1,0,1]:
+                if dx == 0 and dy == 0:
+                    continue
+                if self._is_valid(Point(self.player.x+dx, self.player.y+dy)):
+                    return True
         return False
-
 
     def _update_ui(self):
         self.display.fill(BLACK)
 
-        for pt in self.snake:
-            pygame.draw.rect(self.display, BLUE1, pygame.Rect(pt.x, pt.y, BLOCK_SIZE, BLOCK_SIZE))
-            pygame.draw.rect(self.display, BLUE2, pygame.Rect(pt.x+4, pt.y+4, 12, 12))
+        # dibujar grilla
+        for y in range(self.rows):
+            for x in range(self.cols):
+                val = self.grid[y, x]
+                if val > 0:
+                    color = (50+val*20, 50, 50)  # intensidad según recompensa
+                    pygame.draw.rect(self.display, color,
+                        pygame.Rect(x*BLOCK_SIZE, y*BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE))
 
-        pygame.draw.rect(self.display, RED, pygame.Rect(self.food.x, self.food.y, BLOCK_SIZE, BLOCK_SIZE))
+        # jugador
+        pygame.draw.rect(self.display, BLUE1,
+            pygame.Rect(self.player.x*BLOCK_SIZE, self.player.y*BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE))
 
-        text = font.render("Score: " + str(self.score), True, WHITE)
+        # puntaje
+        text = font.render(f"Score: {self.score}", True, WHITE)
         self.display.blit(text, [0, 0])
+
         pygame.display.flip()
 
-
     def _move(self, action):
-        # [straight, right, left]
+        # acción = np.array one-hot de 8 direcciones
+        directions = [
+            Direction.UP, Direction.DOWN, Direction.LEFT, Direction.RIGHT,
+            Direction.UP_LEFT, Direction.UP_RIGHT, Direction.DOWN_LEFT, Direction.DOWN_RIGHT
+        ]
+        idx = np.argmax(action)
+        dir = directions[idx]
 
-        clock_wise = [Direction.RIGHT, Direction.DOWN, Direction.LEFT, Direction.UP]
-        idx = clock_wise.index(self.direction)
+        x, y = self.player.x, self.player.y
+        if dir == Direction.UP: y -= 1
+        elif dir == Direction.DOWN: y += 1
+        elif dir == Direction.LEFT: x -= 1
+        elif dir == Direction.RIGHT: x += 1
+        elif dir == Direction.UP_LEFT: x -= 1; y -= 1
+        elif dir == Direction.UP_RIGHT: x += 1; y -= 1
+        elif dir == Direction.DOWN_LEFT: x -= 1; y += 1
+        elif dir == Direction.DOWN_RIGHT: x += 1; y += 1
 
-        if np.array_equal(action, [1, 0, 0]):
-            new_dir = clock_wise[idx] # no change
-        elif np.array_equal(action, [0, 1, 0]):
-            next_idx = (idx + 1) % 4
-            new_dir = clock_wise[next_idx] # right turn r -> d -> l -> u
-        else: # [0, 0, 1]
-            next_idx = (idx - 1) % 4
-            new_dir = clock_wise[next_idx] # left turn r -> u -> l -> d
-
-        self.direction = new_dir
-
-        x = self.head.x
-        y = self.head.y
-        if self.direction == Direction.RIGHT:
-            x += BLOCK_SIZE
-        elif self.direction == Direction.LEFT:
-            x -= BLOCK_SIZE
-        elif self.direction == Direction.DOWN:
-            y += BLOCK_SIZE
-        elif self.direction == Direction.UP:
-            y -= BLOCK_SIZE
-
-        self.head = Point(x, y)
+        return Point(x, y)
