@@ -1,0 +1,94 @@
+CREATE TABLE DEPARTAMENTO
+(nombre varchar(10) NOT NULL, 
+ jefe varchar(10),
+ primary key(nombre)
+);
+
+
+CREATE TABLE EMPLEADO
+(nombre varchar(10) NOT NULL, 
+ sueldo integer,
+ trabaja_en varchar(10),
+ primary key(nombre),
+ foreign key(trabaja_en) references DEPARTAMENTO
+);
+
+CREATE TABLE PROVEEDOR
+(nombre varchar(20) NOT NULL, 
+ direccion varchar(20),
+ primary key(nombre)
+);
+
+
+CREATE TABLE ARTICULO
+(codigo int NOT NULL,
+ descripcion varchar(30), 
+ stock integer,
+ vendido_por varchar(20) check(vendido_por in ('Hardware', 'Software')),
+ primary key(codigo)
+);
+
+
+CREATE TABLE PROVEE
+(codigo int NOT NULL,
+ nombre varchar(20) NOT NULL, 
+precio integer,
+ primary key(codigo, nombre),
+ foreign key(codigo) references articulo,
+ foreign key(nombre) references proveedor
+);
+
+insert into departamento values ('RRHH', 'Ana');
+insert into departamento values ('Tesoreria', 'Jose');
+insert into departamento values ('Ventas', 'Sergio');
+insert into departamento values ('Hardware', 'Noemi');
+insert into departamento values ('Software', 'Hernan');
+commit;
+
+insert into empleado values ('Gladys', 1300, 'RRHH');
+insert into empleado values ('Jose', 1850, 'Tesoreria');
+insert into empleado values ('Claudio', 1930, 'Ventas');
+insert into empleado values ('Sergio', 2000, 'Ventas');
+insert into empleado values ('Pedro', 2200, 'Hardware');
+insert into empleado values ('Pablo', 1900, 'Hardware');
+insert into empleado values ('Noemi', 2500, 'Hardware');
+insert into empleado values ('Diego', 3500, NULL);
+insert into empleado values ('Ana', 1700, 'RRHH');
+insert into empleado values ('Juan', 1600, 'RRHH');
+insert into empleado values ('Clara', 1800, 'Software');
+insert into empleado values ('Hernan', 1950, 'Software');
+commit;
+
+
+insert into proveedor values ('CompuCompras', 'Cordoba 1200');
+insert into proveedor values ('CDMarket', 'Rivadavia 6585');
+insert into proveedor values ('Florida I', 'Florida 50');
+insert into proveedor values ('Compushow', 'Florida 537');
+insert into proveedor values ('IBM', 'Catalinas 1100');
+commit;
+
+insert into articulo values (10, 'visual age for smalltalk', 5, 'Software');
+insert into articulo values (20, 'visual age for c++', 3, 'Software');
+insert into articulo values (30, 'visual age for cobol', 1, 'Software');
+insert into articulo values (40, 'db2', 7, 'Software');
+insert into articulo values (60, 'pentium II', 3, 'Hardware');
+insert into articulo values (70, 'compaq presario', 2, 'Hardware');
+insert into articulo values (100, 'ibm 3709 notebook', 2, 'Hardware');
+insert into articulo values (550, 'monitor de cristal liquido', 0, 'Hardware');
+commit;
+
+
+insert into provee values (10, 'IBM', 350);
+insert into provee values (20, 'IBM', 370);
+insert into provee values (30, 'IBM', 270);
+insert into provee values (40, 'IBM', 1100);
+insert into provee values (60, 'CompuCompras', 1100);
+insert into provee values (60, 'CDMarket', 1099);
+insert into provee values (60, 'Florida I', 1200);
+insert into provee values (100, 'IBM', 2500);
+insert into provee values (100, 'CompuCompras', 2650);
+insert into provee values (100, 'CDMarket', 2550);
+insert into provee values (100, 'Florida I', 2700);
+insert into provee values (100, 'Compushow', 3200);
+insert into provee values (70, 'Florida I', 5200);
+commit;
