@@ -1,0 +1,117 @@
+execve("./ChompChamps_x86-64", ["./ChompChamps_x86-64", "-v", "./bin/view", "-p", "./bin/upper", "./bin/upper"], 0x7ffde33fd2d8 /* 8 vars */) = 0
+brk(NULL)                               = 0x55d13293f000
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb5a88ee000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=35914, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 35914, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fb5a88e5000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=907784, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 909560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fb5a8806000
+mmap(0x7fb5a8816000, 471040, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x10000) = 0x7fb5a8816000
+mmap(0x7fb5a8889000, 368640, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x83000) = 0x7fb5a8889000
+mmap(0x7fb5a88e3000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xdc000) = 0x7fb5a88e3000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20t\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=1922136, ...}, AT_EMPTY_PATH) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 1970000, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fb5a8625000
+mmap(0x7fb5a864b000, 1396736, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x26000) = 0x7fb5a864b000
+mmap(0x7fb5a87a0000, 339968, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x17b000) = 0x7fb5a87a0000
+mmap(0x7fb5a87f3000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1ce000) = 0x7fb5a87f3000
+mmap(0x7fb5a87f9000, 53072, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fb5a87f9000
+close(3)                                = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb5a8622000
+arch_prctl(ARCH_SET_FS, 0x7fb5a8622740) = 0
+set_tid_address(0x7fb5a8622a10)         = 469
+set_robust_list(0x7fb5a8622a20, 24)     = 0
+rseq(0x7fb5a8623060, 0x20, 0, 0x53053053) = 0
+mprotect(0x7fb5a87f3000, 16384, PROT_READ) = 0
+mprotect(0x7fb5a88e3000, 4096, PROT_READ) = 0
+mprotect(0x55d12b0db000, 4096, PROT_READ) = 0
+mprotect(0x7fb5a8920000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x7fb5a88e5000, 35914)           = 0
+rt_sigaction(SIGINT, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fb5a8661050}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGQUIT, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fb5a8661050}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+mmap(NULL, 36864, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fb5a88e5000
+rt_sigprocmask(SIG_BLOCK, ~[], [CHLD], 8) = 0
+clone3({flags=CLONE_VM|CLONE_VFORK, exit_signal=SIGCHLD, stack=0x7fb5a88e5000, stack_size=0x9000}, 88) = 470
+munmap(0x7fb5a88e5000, 36864)           = 0
+rt_sigprocmask(SIG_SETMASK, [CHLD], NULL, 8) = 0
+wait4(470, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 470
+rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fb5a8661050}, NULL, 8) = 0
+rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fb5a8661050}, NULL, 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=470, si_uid=0, si_status=0, si_utime=0, si_stime=0} ---
+newfstatat(1, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}, AT_EMPTY_PATH) = 0
+getrandom("\xa2\xa9\xf8\x65\xa0\x6a\xa7\x7b", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x55d13293f000
+brk(0x55d132960000)                     = 0x55d132960000
+write(1, "width: 10\n", 10)             = 10
+write(1, "height: 10\n", 11)            = 11
+write(1, "delay: 200\n", 11)            = 11
+write(1, "timeout: 10\n", 12)           = 12
+write(1, "seed: 1757464148\n", 17)      = 17
+write(1, "view: ./bin/view\n", 17)      = 17
+write(1, "num_players: 2\n", 15)        = 15
+write(1, "  ./bin/upper\n", 14)         = 14
+write(1, "  ./bin/upper\n", 14)         = 14
+clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=2, tv_nsec=0}, 0x7ffdb9a372b0) = 0
+rt_sigaction(SIGINT, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fb5a8661050}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fb5a8661050}, 8) = 0
+rt_sigaction(SIGQUIT, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fb5a8661050}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fb5a8661050}, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+mmap(NULL, 36864, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fb5a88e5000
+rt_sigprocmask(SIG_BLOCK, ~[], [CHLD], 8) = 0
+clone3({flags=CLONE_VM|CLONE_VFORK, exit_signal=SIGCHLD, stack=0x7fb5a88e5000, stack_size=0x9000}, 88) = 472
+munmap(0x7fb5a88e5000, 36864)           = 0
+rt_sigprocmask(SIG_SETMASK, [CHLD], NULL, 8) = 0
+wait4(472, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 472
+rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fb5a8661050}, NULL, 8) = 0
+rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fb5a8661050}, NULL, 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=472, si_uid=0, si_status=0, si_utime=0, si_stime=0} ---
+umask(000)                              = 022
+openat(AT_FDCWD, "/dev/shm/game_sync", O_RDWR|O_CREAT|O_NOFOLLOW|O_CLOEXEC, 0666) = 3
+ftruncate(3, 456)                       = 0
+mmap(NULL, 456, PROT_READ|PROT_WRITE, MAP_SHARED, 3, 0) = 0x7fb5a88ed000
+umask(022)                              = 000
+openat(AT_FDCWD, "/dev/shm/game_state", O_RDWR|O_CREAT|O_NOFOLLOW|O_CLOEXEC, 0644) = 4
+ftruncate(4, 772)                       = 0
+mmap(NULL, 772, PROT_READ|PROT_WRITE, MAP_SHARED, 4, 0) = 0x7fb5a88ec000
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7fb5a8622a10) = 474
+pipe2([5, 6], 0)                        = 0
+pipe2([7, 8], 0)                        = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7fb5a8622a10) = 475
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7fb5a8622a10) = 476
+close(6)                                = 0
+close(8)                                = 0
+futex(0x7fb5a88ed000, FUTEX_WAKE, 1)    = 1
+futex(0x7fb5a88ed020, FUTEX_WAIT_BITSET|FUTEX_CLOCK_REALTIME, 0, {tv_sec=1757464153, tv_nsec=996796790}, FUTEX_BITSET_MATCH_ANY) = 0
+clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=200000000}, NULL) = 0
+pselect6(8, [5 7], NULL, NULL, {tv_sec=9, tv_nsec=0}, NULL) = 0 (Timeout)
+futex(0x7fb5a88ed000, FUTEX_WAKE, 1)    = 1
+futex(0x7fb5a88ed020, FUTEX_WAIT_BITSET|FUTEX_CLOCK_REALTIME, 0, {tv_sec=1757464163, tv_nsec=207231063}, FUTEX_BITSET_MATCH_ANY) = 0
+clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=200000000}, NULL) = ? ERESTART_RESTARTBLOCK (Interrupted by signal)
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=474, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+restart_syscall(<... resuming interrupted clock_nanosleep ...>) = 0
+wait4(474, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 474
+write(1, "View exited (0)\n", 16)       = 16
+wait4(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 475
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=475, si_uid=1001, si_status=0, si_utime=0, si_stime=0} ---
+write(1, "Player upper (0) exited (0) with"..., 54) = 54
+wait4(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 476
+write(1, "Player upper (1) exited (0) with"..., 54) = 54
+munmap(0x7fb5a88ed000, 456)             = 0
+close(3)                                = 0
+unlink("/dev/shm/game_sync")            = 0
+munmap(0x7fb5a88ec000, 772)             = 0
+close(4)                                = 0
+unlink("/dev/shm/game_state")           = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
