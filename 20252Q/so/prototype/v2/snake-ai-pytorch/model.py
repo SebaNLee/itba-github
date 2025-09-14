@@ -32,11 +32,11 @@ class QTrainer:
         self.optimizer = optim.Adam(model.parameters(), lr=self.lr)
         self.criterion = nn.MSELoss()
 
-    def train_step(self, state, action, reward, next_state, done):
-        state = torch.tensor(state, dtype=torch.float)
-        next_state = torch.tensor(next_state, dtype=torch.float)
-        action = torch.tensor(action, dtype=torch.long)
-        reward = torch.tensor(reward, dtype=torch.float)
+    def train_step(self, state, action, reward, next_state, done, device):
+        state = torch.tensor(state, dtype=torch.float).to(device)
+        next_state = torch.tensor(next_state, dtype=torch.float).to(device)
+        action = torch.tensor(action, dtype=torch.long).to(device)
+        reward = torch.tensor(reward, dtype=torch.float).to(device)
         # (n, x)
 
         if len(state.shape) == 1:

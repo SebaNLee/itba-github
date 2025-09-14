@@ -10,6 +10,10 @@ MAX_MEMORY = 100_000
 BATCH_SIZE = 1000
 LR = 0.001
 
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+
 class Agent:
 
     def __init__(self):
@@ -18,7 +22,7 @@ class Agent:
         self.gamma = 0.9
         self.memory = deque(maxlen=MAX_MEMORY)
         # 16 entradas (8 validez + 8 recompensas), salida = 8 acciones
-        self.model = Linear_QNet(16, 256, 8)
+        self.model = Linear_QNet(16, 256, 8).to(device)
         self.trainer = QTrainer(self.model, lr=LR, gamma=self.gamma)
 
     def get_state(self, game: ChompChamps):
@@ -58,10 +62,10 @@ class Agent:
         else:
             mini_sample = self.memory
         states, actions, rewards, next_states, dones = zip(*mini_sample)
-        self.trainer.train_step(states, actions, rewards, next_states, dones)
+        self.trainer.train_step(states, actions, rewards, next_states, dones, device)
 
     def train_short_memory(self, state, action, reward, next_state, done):
-        self.trainer.train_step(state, action, reward, next_state, done)
+        self.trainer.train_step(state, action, reward, next_state, done, device)
 
     def get_action(self, state):
         self.epsilon = 80 - self.n_games
@@ -69,7 +73,7 @@ class Agent:
         if random.randint(0, 200) < self.epsilon:
             move = random.randint(0, 7)
         else:
-            state0 = torch.tensor(state, dtype=torch.float).to("cpu")
+            state0 = torch.tensor(state, dtype=torch.float).to(device)
             prediction = self.model(state0)
             move = torch.argmax(prediction).item()
         final_move[move] = 1
