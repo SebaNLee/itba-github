@@ -1,0 +1,95 @@
+
+
+(las copio de un drive)
+
+
+
+1. ¿Cuáles son las 2 principales funciones de un sistema operativo?
+
+Respuesta: Las dos principales funciones de un sistema operativo son por un lado administrar
+los recursos (suponemos que nos encontramos en un ambiente hostil donde todos los procesos 
+van a querer todos los recursos para ellos) y proveer un conjunto abstracto y limpio de los 
+recursos.
+
+2. Al usar cache, la memoria principal se divide en cache lines de 32 o 64 bytes generalmente.
+Siempre se almacena una cache line completa. ¿Qué ventajas hay respecto a almacenar de a 1
+byte?
+
+Respuesta: Como programamos secuencialmente, lo más probable es que la siguiente instrucción
+a ejecutar se encuentre en la dirección de memoria adyacente a la actual, por lo que la mayor
+venaja de traer la línea entera es hacer más eficiente la búsqueda de las instrucciones en 
+memoria.
+
+3. Las instrucciones relacionadas a I/O suelen ser privilegiadas ¿Por qué?
+
+Respuesta: Las instrucciones relacionadas a I/O suelen ser privilegiadas, en primer lugar,
+por motivos de seguridad. Permitir que cualquier proceso ejecute instrucciones de I/O podría 
+permitir a programas maliciosos acceder o manipular datos sensibles o interferir con otros 
+dispositivos. Algunos de estos dispositivos son críticos para el funcionamiento de la PC, 
+como por ejemplo interfaces de red, periféricos, discos, etc.
+
+4. ¿Cómo facilita el diseño de un SO disponer de 2 modos de ejecución (kernel / user)?
+
+Respuesta: El kernel tiene una serie de privilegios que el user no tiene. La primera ventaja 
+de esto es la seguridad y la segunda es que le permite al SO realmente administrar recursos. 
+Cuando se prende la computadora, el sistema operativo es el primer programa en ejecutarse y 
+se encuentra con la máquina “en cero”, es decir que es 100% configurable. Entonces lo primero 
+que hace es bloquear todo para los procesos que corran después. Incluso es él mismo el que 
+ejecuta los otros procesos.
+
+5. ¿Cuáles de las siguientes instrucciones debería estar permitida solo en kernel mode?
+a. Deshabilitar interrupciones
+b. Leer la hora
+c. Setear la hora
+d. Cambiar el mapeo de memoria
+
+Respuesta: En primer lugar, deshabilitar interrupciones debería estar solamente permitido en 
+kernel mode, porque hay algunas interrupciones que se encargan de responder a eventos críticos 
+e incluso de temas de seguridad, por lo que el user no debería deshabilitarlas.
+Leer la hora no es necesario que se ejecute en kernel mode, porque no pone en riesgo la
+seguirdad del sistema.
+Setear la hora sí debería poder hacerse sólo en kernel mode, porque puede comprometer muchos
+otros procesos que utilizan la hora para funcionar correctamente.
+Cambiar el mapeo de memoria también debería poder hacerse únicamente en kernel mode, porque
+podría utilizarse para ejecutar código malicioso. 
+
+6. Considere un sistema con 2 CPU y 2 threads por CPU (hyperthreading). Suponga que se inician 3
+programas con tiempos de ejecución de 5, 10 y 20 ms respectivamente. ¿Cuánto demora la ejecución 
+de estos programas? Los programas son 100% CPU bound, no se bloquean y no cambian de CPU.
+
+Respuesta: Como tenemos 2 CPU con 2 threads cada uno, vamos a tener un total de 4 threads. Como
+los programas son 100% CPU bound y no cambian de CPU, cada proceso se va a mantener en su thread
+y no será interrumpido. Entonces, nos queda:
+Thread 1: Programa 1 (5 ms)
+Thread 2: Programa 2 (10 ms)
+Thread 3: Programa 3 (20 ms)
+Thread 4: Sin asignar
+Notemos que el tiempo total será el tiempo de ejecución del Programa 3 que es el más largo. Por 
+lo tanto, el tiempo, el tiempo total de ejecución es de 20ms.
+
+7. ¿Qué es una instrucción TRAP? Explique su uso en sistemas operativos
+
+Respuesta: Una instrucción TRAP permite que un programa en modo usuario solicite servicios del 
+sistema operativo (que se ejecuta en modo kernel). Al ejecutarse, provoca una interrupción 
+controlada que transfiere el control del CPU al sistema operativo. En los SO, se utilizan para
+llamadas al sistema (syscalls), manejo de errores (excepciones) y para seguridad y protección. 
+El flujo para una instrucción TRAP es el siguiente:
+
+1. Solicitud del Programa Usuario: Un programa usuario necesita leer un archivo, por lo que 
+ejecuta una instrucción TRAP correspondiente a la llamada al sistema de lectura de archivos.
+2. Transición a Modo Kernel: La instrucción TRAP causa una interrupción que cambia el CPU a 
+modo kernel y transfiere el control al manejador de interrupciones del sistema operativo.
+3. Ejecución del Servicio del Sistema Operativo: El manejador de interrupciones del sistema 
+operativo identifica la solicitud de lectura de archivos, ejecuta la operación necesaria y 
+accede al disco para leer los datos solicitados.
+4. Retorno al Programa Usuario
+
+8. Desde el punto de vista del programador, una syscall es como una simple función. ¿Es 
+relevante para el programador conocer si una función resulta en una syscall?
+
+Respuesta: Si bien en cuanto al funcionamiento al programador no le va a importar si la función
+utiliza internamiente una syscall, sí le va a importar en términos de rendimiento, porque son
+costosas de invocar. Las syscalls tienen un overhead mayor en comparación con las funciones 
+normales debido al cambio de contexto entre modo usuario y modo kernel. 
+
+
