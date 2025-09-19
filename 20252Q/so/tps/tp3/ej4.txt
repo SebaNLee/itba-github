@@ -1,0 +1,14 @@
+
+
+básicamente varios procesos hacen con un mismo file:
+
+
+hacer 100 veces:
+    lectura valor actual
+    subir +1 valor actual
+
+
+se obtiene 100 si se ejecuta 1 vez
+pero al ejecutar, por ej, 4 procesos de estos no se obtiene 400
+esto porque se genera condición de carrera, se lee varias veces un mismo valor
+

@@ -1,0 +1,7 @@
+
+
+
+
+
+básicamente agregarle paridad
+agarrar izq o der según paridad del i-ésimo filósofo

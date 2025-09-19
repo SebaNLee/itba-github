@@ -1,0 +1,49 @@
+
+
+A: a1 y a2
+B: b1 y b2
+
+se quiere:
+a1 -> b2
+b1 -> a2
+
+syn con semáforos
+
+
+resuelvo:
+
+
+todos los casos posibles:
+
+a1 -> b1 -> a2 -> b2
+a1 -> b1 -> b2 -> a2
+b1 -> a1 -> a2 -> b2
+b1 -> a1 -> b2 -> a2
+
+
+
+
+sem_t * a1Done;
+*a1Done = 0;
+
+sem_t * b1Done;
+*b1Done = 0;
+
+
+void a()
+{
+    a1();
+    sem_post(a1Done);
+    
+    sem_wait(b1Done);
+    a2();
+}
+
+void b()
+{
+    b1();
+    sem_post(b1Done);
+    
+    sem_wait(a1Done);
+    b2();
+}
