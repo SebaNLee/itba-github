@@ -1,0 +1,13 @@
+
+(copio de drive)
+
+
+En el diagrama de estados de un proceso se presentan 3 estados, por tanto podrían existir 
+8 transiciones. Analice por qué no se presentan las transiciones faltantes.
+
+Respuesta: En primer lugar, no hay una transición de ready a blocked porque para poder
+bloquearse, el proceso debe estar ejecutandose, sino no hay manera de que suceda dicho
+acontecimiento. 
+Luego, no existe una transición de blocked a running porque para poder
+empezar a correr debe ser seleccionado por el scheduler, y si nunca se muestra como
+ready, esto nunca sucederá. 

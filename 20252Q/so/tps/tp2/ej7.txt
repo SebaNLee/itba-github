@@ -1,0 +1,9 @@
+
+
+(copiado de drive)
+
+Respuesta: Sabemos que la proporción del tiempo que pasan
+esperando es de p = 0,4 y que la cantidad de procesos es n = 6.
+Luego, la proporción del tiempo que el CPU pasa libre es de
+x = (0,4)^6 = 0,0041. Por lo tanto, la utilización del CPU es
+del 1 - 0,0041 = 0,9959, es decir, 99,6% aprox.

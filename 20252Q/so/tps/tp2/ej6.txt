@@ -1,0 +1,17 @@
+
+
+(copiado de drive)
+
+
+Respuesta: Queremos que la utilización sea del 99%, por lo que podemos
+plantear 0,99 = 1 - (p)^n, donde podemos calcular n según el espacio
+en memoria. Sabemos que en los 4GB, sacando el SO vamos a poder 
+guardar 4 programas por GB, es decir por 3, sumado a 2 programas para
+completar el GB del SO. Por lo tanto vamos a tener n = 14 progamas.
+Ahora podemos despejas p de la ecuación.
+
+0,99 = 1 - (p)^14 --> (p)^14 = 0,01 --> p = 0,7196
+
+Por lo tanto, la proporción máxima de tiempo que pueden esperar es del
+71,96%.
+

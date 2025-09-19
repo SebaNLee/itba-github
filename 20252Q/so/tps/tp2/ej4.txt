@@ -1,0 +1,122 @@
+
+
+(copio de drive)
+
+4. Investigue qué información puede encontrar en el directorio /proc. man proc 
+es un buen comienzo
+
+Respuesta: El directorio /proc es un pseudo-sistema de archivos en Linux que 
+proporciona información sobre el sistema y los procesos en ejecución. Es un 
+directorio virtual en el que los archivos y subdirectorios no existen en el 
+disco, sino que son generados dinámicamente por el kernel. Cada archivo o 
+subdirectorio en /proc contiene información sobre el estado del sistema, los 
+procesos en ejecución, la memoria, la CPU, y otros componentes del sistema 
+operativo.
+
+
+
+
+tree $home/proc -L 1
+
+/proc
+├── 1
+├── 11927
+├── 1850
+├── 1913
+├── 1914
+├── 1915
+├── 1918
+├── 1936
+├── 1942
+├── 199
+├── 19991
+├── 2
+├── 2023
+├── 2025
+├── 2058
+├── 228
+├── 2438
+├── 2439
+├── 2442
+├── 250
+├── 251
+├── 2510
+├── 2511
+├── 2518
+├── 25362
+├── 2589
+├── 3150
+├── 335
+├── 337
+├── 343
+├── 348
+├── 351
+├── 363
+├── 384
+├── 388
+├── 3884
+├── 405
+├── 415
+├── 459
+├── 4659
+├── 493
+├── 494
+├── 495
+├── 496
+├── 497
+├── 498
+├── 9
+├── acpi
+├── buddyinfo
+├── bus
+├── cgroups
+├── cmdline
+├── config.gz
+├── consoles
+├── cpuinfo
+├── crypto
+├── devices
+├── diskstats
+├── dma
+├── driver
+├── execdomains
+├── filesystems
+├── fs
+├── interrupts
+├── iomem
+├── ioports
+├── irq
+├── kallsyms
+├── kcore
+├── key-users
+├── keys
+├── kmsg
+├── kpagecgroup
+├── kpagecount
+├── kpageflags
+├── loadavg
+├── locks
+├── mdstat
+├── meminfo
+├── misc
+├── modules
+├── mounts -> self/mounts
+├── mtrr
+├── net -> self/net
+├── pagetypeinfo
+├── partitions
+├── schedstat
+├── self -> 25362
+├── softirqs
+├── stat
+├── swaps
+├── sys
+├── sysvipc
+├── thread-self -> 25362/task/25362
+├── timer_list
+├── tty
+├── uptime
+├── version
+├── vmallocinfo
+├── vmstat
+└── zoneinfo

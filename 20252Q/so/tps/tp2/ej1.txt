@@ -1,0 +1,41 @@
+
+
+(las copio de un drive, y relleno)
+
+1. El comando type nos indica el tipo de comando que se pasa como argumento. Los 
+posibles resultados son
+    - alias: alias de otros comandos
+    - keyword: palabras reservadas en el shell que tienen un significado especial 
+    y controlan el flujo de los scripts
+    - function: conjunto de comandos agrupados bajo un nombre
+    - builtin: comandos que están integrados directamente en el shell
+    - file: cualquier comando ejecutable que reside en el sistema de archivos
+
+a. Provea un ejemplo de cada uno. Por ejemplo, type es de tipo builtin
+
+Respuesta: Los ejemplos son:
+    - alias: l
+    - keyword: if, then, fi
+    - function: command_not_found_handle
+    - builtin: cd
+    - file: ls
+
+b. ¿Por qué el comando cd es builtin?
+
+Respuesta: El comando cd es builtin porque está integrado en la shell, no es de
+un programa externo. Además, porque es el encargado de cambiar el directorio de
+trabajo actual de la shell. Si cd fuera un programa externo, no podría cambiar 
+el directorio del shell desde el que se ejecutó porque cada comando en un shell 
+se ejecuta en un proceso hijo y los cambios en el proceso hijo no afectan al 
+proceso padre (en este caso, el shell).
+Aunque, agrego, tal vez se pueda usar algún IPC y hacer el manejo a partir de eso
+pero parece contraprudente. (era correcto, ver abajo)
+
+c. Si no fuera builtin, ¿qué modificaciones considera necesarias para proveer la 
+misma funcionalidad?
+
+Respuesta: Si cd no fuera un builtin, tendríamos que modificar el comportamiento 
+del shell de alguna manera para que pueda recibir la información de cambio de 
+directorio del proceso hijo y aplicarla al proceso padre (el shell). Esto podría
+realizarse por ejemplo a través de un pipe que comunique a los procesos hijos con 
+el padre.

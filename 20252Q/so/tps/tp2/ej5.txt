@@ -1,0 +1,17 @@
+
+
+(copio de drive)
+
+
+utilización del CPU: 1 - p^n
+, siendo: p = proporción del tiempo esperando I/O; n = cantidad procesos
+
+
+5. Una computadora particular puede alojar 5 procesos en su memoria principal.
+Estos procesos están bloqueados por I/O la mitad del tiempo. ¿Qué fracción del 
+tiempo de CPU es desperdiciada?
+
+Respuesta: Sabemos que cada proceso está bloqueado el 50% del tiempo. Entonces,
+como tenemos 5 procesos que están bloqueados la mitad del tiempo, la probabilidad
+de que los n estén esperando y la CPU quede libre (desperdiciada) es de (0.5)^5,
+es decir que el desperdicio es del 3,125%
