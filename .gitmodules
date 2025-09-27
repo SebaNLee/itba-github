@@ -19,6 +19,3 @@
 [submodule "20252Q/hci/tp-hci-web"]
 	path = 20252Q/hci/tp-hci-web
 	url = https://github.com/teofum/tp-hci-web.git
-[submodule "20252Q/so/referencias/TPE2-Sistemas-Operativos"]
-	path = 20252Q/so/referencias/TPE2-Sistemas-Operativos
-	url = https://github.com/NaPrado/TPE2-Sistemas-Operativos.git
