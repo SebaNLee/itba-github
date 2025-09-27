@@ -19,3 +19,6 @@
 [submodule "20252Q/hci/tp-hci-web"]
 	path = 20252Q/hci/tp-hci-web
 	url = https://github.com/teofum/tp-hci-web.git
+[submodule "20252Q/so/SO-TP2-20252Q"]
+	path = 20252Q/so/SO-TP2-20252Q
+	url = https://github.com/SebaNLee/SO-TP2-20252Q.git
