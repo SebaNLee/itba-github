@@ -1,0 +1,18 @@
+
+
+separo en filas empezando desde a:
+
+a.
+0, N1
+
+b.
+0, N1
+
+c.
+N1 x N2, N1 x N2
+
+d.
+N2, N1 + N2
+
+e.
+0, N1

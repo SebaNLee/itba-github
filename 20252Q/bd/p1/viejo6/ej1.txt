@@ -1,0 +1,14 @@
+
+
+1.1
+equivalentes
+
+1.2
+Q3 no compila, PELICULA.titulo unbounded
+Q4 no funciona, se busca titulo en actor
+
+1.3
+??
+
+
+
