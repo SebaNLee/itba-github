@@ -1,0 +1,15 @@
+-- ej 2.1
+-- estrategia: para cada país cuento la suma de qty y divido por cantidad de órdenes
+SELECT country, SUM(qty)::DECIMAL(10, 2) / COUNT(DISTINCT detailedorder.orderID) as avg
+FROM customer JOIN purchaseorder ON customer.custID = purchaseorder.custID RIGHT OUTER JOIN detailedorder ON purchaseorder.orderID = detailedorder.orderID
+GROUP BY country
+
+-- consulta final:
+-- wrappeo para ordenarlos como me lo pide la consigna
+SELECT country, avg
+FROM (
+	SELECT country, (SUM(qty)::DECIMAL(10, 2) / COUNT(DISTINCT detailedorder.orderID))::DECIMAL(10, 2) as avg
+	FROM customer JOIN purchaseorder ON customer.custID = purchaseorder.custID RIGHT OUTER JOIN detailedorder ON purchaseorder.orderID = detailedorder.orderID
+	GROUP BY country
+)
+ORDER BY avg DESC, country ASC

@@ -1,0 +1,17 @@
+-- ej 2.3
+
+-- uso right outer join para que desaparezcan los prodID ventas (salen con null)
+-- luego, el cálculo del promedio va a devolver null para prodIDs sin ventas
+SELECT product.prodID as prodid, stock / MAX(qty)::DECIMAL(10, 2) * 100 as stock_level
+FROM detailedorder RIGHT OUTER JOIN product ON product.prodID = detailedorder.prodID
+GROUP BY product.prodID
+
+-- consulta final:
+-- meto un COALESCE para los nulls
+SELECT prodid, COALESCE(stock_level::TEXT || '%', 'N/A')
+FROM(
+	SELECT product.prodID, (stock / MAX(qty)::DECIMAL(10, 2) * 100)::DECIMAL(10, 2) as stock_level
+	FROM detailedorder RIGHT OUTER JOIN product ON product.prodID = detailedorder.prodID
+	GROUP BY product.prodID
+)
+ORDER BY prodid

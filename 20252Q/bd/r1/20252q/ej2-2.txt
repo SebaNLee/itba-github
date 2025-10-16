@@ -1,0 +1,17 @@
+-- ej 2.2
+
+-- primero obtengo los datos pedidos sin filtrar
+SELECT prodid, COUNT(DISTINCT customer.custID) as customers, COUNT(DISTINCT detailedorder.orderID) as orders
+FROM customer JOIN purchaseorder ON customer.custID = purchaseorder.custID RIGHT OUTER JOIN detailedorder ON purchaseorder.orderID = detailedorder.orderID
+GROUP BY prodid
+
+-- consulta final:
+-- ahora los filtro
+SELECT prodid, customers, orders
+FROM (
+	SELECT prodid, COUNT(DISTINCT customer.custID) as customers, COUNT(DISTINCT detailedorder.orderID) as orders
+	FROM customer JOIN purchaseorder ON customer.custID = purchaseorder.custID RIGHT OUTER JOIN detailedorder ON purchaseorder.orderID = detailedorder.orderID
+	GROUP BY prodid
+)
+WHERE customers >= 2
+ORDER BY customers DESC, orders DESC
