@@ -1,0 +1,47 @@
+
+(copio de Drive)
+
+
+Ejercicio 2:
+
+Los procesos de un sistema particular tienen un tiempo de ejecución promedio T antes de bloquearse 
+por I/O. El tiempo necesario para un context switch es S, el cual se considera desperdiciado. Para 
+el algoritmo de scheduling Round-Robin con un quantum Q, provea una fórmula de la eficiencia del 
+CPU para cada una de las siguiente condiciones.
+
+1. Q = ∞
+2. Q > T
+3. S < Q < T
+4. Q = S
+5. Q cercano a 0
+
+
+
+
+
+
+
+Respuesta: La formula de eficiencia se debe pensar en tiempo que corre el programa sobre tiempo total
+de la ejecución. Si el proceso se bloquea, se cambia a otro proceso. 
+
+nota: es decir, me piden tiempo de ejecución de procs de CPU (restar lo desperdiciado por switch)
+
+(1) En este caso, el quantum debe ser demasiado grande y suponemos que el programa se corre sin 
+bloquearse. Por lo tanto, el único desperdicio viene del context switch. Podemos plantear la fórmula:
+eficiencia = T/(T + S)
+
+(2) Ahora queremos un Quantum mayor al tiempo de ejecución. En este caso sigue valiendo la fórmula
+anterior, porque el único desperdicio sigue siendo el primer context switch.
+
+(3) Para este caso, se requiere un quantum que sea menor al tiempo de ejecución pero mayor al context
+switch. Como el quantum es menor al tiempo de ejecucion, la eficiencia va a depender de la relación
+entre el quantum y el switch. Entonces podemos plantear:
+eficiencia = Q/(Q + S)
+
+(4) Si el quantum es igual que el context switch y asumimos que ambos son menores al tiempo de 
+ejecución, entonces podemos tomar la formula anterior y vemos que:
+eficiencia = Q/2Q = 0,5
+
+(5) Finalmente, para que el quantum sea cercano a cero la eficiencia debe tender a cero, dado que se
+está utilizando todo el tiempo para cambiar de contexto. Se podría ver en la fórmula del punto (3)
+haciendo tender Q a cero.

@@ -1,0 +1,64 @@
+
+(copio de Drive, y agrego notas)
+
+
+
+
+Ejercicio 1:
+
+5 trabajos (A-E) llegan al centro de cómputo casi al mismo tiempo. Los mismos tienen tiempos estimados 
+de ejecución de 10, 6, 2, 4 y 8 minutos respectivamente. Su prioridades (determinadas estáticamente) 
+son 3, 5, 2, 1 y 4 respectivamente, siendo 5 la máxima prioridad. Para cada uno de los siguientes 
+algoritmos de scheduling, determine el turnaround time medio.
+
+1. Round Robin
+2. Priority scheduling
+3. First-come, First-served (considerar el orden A B C D E)
+4. Shortest job first
+
+Para 1. asuma que el sistema es multiprogramado y que cada trabajo obtiene la misma proporción de CPU. 
+Para el resto asuma que solo 1 trabajo ejecuta hasta que termina sin interrupciones. Todos los trabajos 
+son CPU-bound. Ignore el tiempo necesario para el context switch.
+
+
+
+
+Respuesta: Sabemos que el turnaround time medio se mide a partir de un promedio. Veamos los casos.
+
+
+
+
+(1) Para el round robin, como se tiene una cola circular y se le va dando un poco de procesador a cada
+uno, vamos a asumir un quantum de 2 minutos. Si es así, notemos que:
+El proceso C termina en la primera "pasada", es decir a los 6mins (A -> B -> C, 2mins cada uno, C termina al toque)
+El proceso D termina en la segunda "pasada" y ya no se cuenta el C, es decir en 16mins
+El proceso B termina en la tercera "pasada" y ya no se cuenta el C ni D, es decir a los 22mins
+El proceso E termina en la cuarta "pasada" y ya no se cuenta el C, D ni B, es decir a los 28mins
+El proceso A termina en la quinta "pasada" y ya no se cuenta el C, D, B ni E, es decir a los 30mins
+Entonces, podemos calcular:
+(6 + 16 + 22 + 28 + 30)/5 = 20,4mins
+
+!! nota: turnaround time, desde que entra y sale
+
+
+
+(2) Ahora en este caso vamos a tomar en cuenta las prioridades. Como los procesos son CPU-bound y se
+ejecutan hasta al final, simplemente varía el orden:
+(B + (B + E) + (B + E + A) + (B + E + A + C) + (B + E + A + C + D))/5 = 
+(5B + 4E + 3A + 2C + D)/5 = 20mins
+
+nota: ídem, solo que con prioridades (5 -> 1)
+
+
+(3) Como funciona una cola, el calculo es según el orden que llegan sin importar la prioridad
+(A + (A + B) + (A + B + C) + (A + B + C + D) + (A + B + C + D + E))/5 = 
+(5A + 4B + 3C + 2D + E)/5 = 19,2mins
+
+
+
+(4) Para este algoritmo, se debe buscar repetir una mayor cantidad de veces los procesos mas cortos,
+sin importar la prioridad:
+(C + (C + D) + (C + D + B) + (C + D + B + E) + (C + D + B + E + A))/5 = 
+(5C + 4D + 3B + 2E + A)/5 = 14mins
+
+

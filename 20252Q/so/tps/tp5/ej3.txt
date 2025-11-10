@@ -1,0 +1,17 @@
+
+(copio de Drive)
+
+
+Ejercicio 3:
+
+5 trabajos están esperando para ser ejecutados. Sus tiempos de ejecución esperados son 9, 6, 3, 5 y 
+X. ¿En qué orden deben ejecutarse para minimizar el turnaround time?
+
+
+
+
+Respuesta: Sabemos que el turnaround time es el tiempo promedio de los proceos desde que están en 
+modo ready hasta que se terminan de ejecutar. 
+
+
+nota: acá mandaría shortest job next de schedulers batch. varíaría por el valor de X
