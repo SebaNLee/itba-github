@@ -1,0 +1,46 @@
+
+(copio de Drive y pongo notas)
+
+
+Considere la siguiente matriz bidimensional:
+
+int X[64][64]
+
+Suponga que un sistema tiene 4 PFs y cada uno tiene 128 palabras (un número entero ocupa una palabra). Los 
+programas que manipulan la matriz X caben exactamente en una página y siempre ocupan la página 0. Los datos 
+se intercambian dentro y fuera de los otros 3 PFs. La matriz X se almacena de manera tal que X[0][1] sigue 
+a X[0][0] en memoria. ¿Cuál de los dos fragmentos de código que se muestran a continuación generará la menor 
+cantidad de fallas de página? Explique y calcule el número total de faltas de página.
+
+//Fragmento A
+for (int j = 0; j < 64; j++)
+    for (int i = 0; i < 64; i++)
+        X[i][j] = 0;
+
+//Fragmento B
+for (int i = 0; i < 64; i++)
+    for (int j = 0; j < 64; j++)
+        X[i][j] = 0;
+
+
+
+        
+
+Respuesta: Dada la manera que se guarda la matriz, para tener una menor cantidad de page faults se debe 
+recorrer variando primero el segundo índice de la matriz, es decir las columnas, dado que los datos se 
+encuentran contiguos en memoria. Por lo tanto, el mejor algoritmo es el del fragmento B. Veamos los page
+faults totales para cada caso:
+
+Primero, notemos que cada página tiene 128 palabras, por lo que entran dos filas enteras de cada matriz.
+
+Fragmento A: Se carga la página donde se encuentra X[0][0]. Primer page fault. Luego se pasa a X[1][0]. 
+Como cada página contiene dos filas enteras, se encuentra el dato en la misma página. Luego para X[2][0]
+no se encuentra, por lo que se produce un page fault. Notemos que cada dos filas tendremos uno nuevo. Por
+lo tanto, para completar el ciclo interior en la primera iteración del exterior, se van a producir 32 
+page faults. Si lo multiplicamos por las 64 iteraciones del ciclo exterior, tenemos un total de 2048 page 
+faults.
+
+Fragmento B: Se carga la página donde se encuentra X[0][0], obteniendo el primer page fault. Notemos 
+ahora que se puede recorrer hasta el X[1][63] sin generar un page fault, dado que los datos se encuentran
+contiguos en memoria, como ya dijimos. Con esto hicimos dos iteraciones del ciclo exterior. Por lo tanto,
+el algoritmo genera en total 32 page faults.

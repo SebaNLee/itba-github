@@ -1,0 +1,32 @@
+
+(copio de Drive y pongo notas)
+
+
+Considere un sistema que tiene un EDV de 48 bits y un EDF de 32 bits
+Si las páginas son de 4KB
+- ¿Cuántas entradas tendrá la tabla de páginas si tiene 1 solo nivel?
+- ¿Cuánto ocupa esta tabla considerando entradas de 32 bits?
+
+Considerando que este sistema tiene una TLB de 32 entradas y ejecuta un programa cuyas instrucciones 
+caben en 1 página y lee secuencialmente un arreglo de enteros que abarca miles de páginas, ¿Qué tan 
+efectiva será la TLB para este caso?
+
+
+
+
+
+Respuesta: Como las páginas son de 4KB, el offset será de 12 bits. Entonces, podemos dividir el EDV
+entre el tamaño de cada página para obtener el número de páginas y por lo tanto de entradas de la
+tabla:
+2^48 / 2^12 = 2^36 entradas
+
+Si cada entrada tiene 32 bits, que es equivalente a 2^5, tenemos:
+2^5 * 2^36 = 2^1 * 2^40 = 2T
+Si lo pasamos a bytes, dividimos por 2^3 y tenemos:
+2^38B = 2^8 * 2^30B = 256GB
+
+En el caso planteado, la TLB no es efectiva porque se debe leer de un arreglo que ocupa muchas páginas.
+Esta tabla es muy eficiente en casos donde se tienen muchos accesos a la misma página, porque guarda la
+traducción.
+
+nota: aparte para este caso, sería eficiente si entrase todo el ciclo en la TLB

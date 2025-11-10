@@ -1,0 +1,32 @@
+
+(copio de Drive y pongo notas)
+
+
+
+Considere un sistema con 4 PF. El tiempo de carga, acceso y los bits R y M para cada página se presentan en la 
+tabla de la imagen (los tiempos están expresados en ticks del timer). ¿Qué página reemplazará cada uno de los 
+siguientes algoritmos?
+- NRU
+- FIFO
+- LRU
+- SC
+
+
+
+
+Respuesta: 
+(1) Tomamos el algoritmo NRU y tenemos los siguientes pasos:
+Page 0 --> R y ¬M --> Clase 2
+Page 1 --> ¬R y M --> Clase 1
+Page 2 --> ¬R y ¬M --> Clase 0
+Page 3 --> R y M --> Clase 3
+Como tenemos una página de clase 0, se la debe liberar.
+
+(2) Tomamos el algoritmo FIFO y, como la page 3 fue la primera cargada, es la que se debe liberar.
+
+(3) Tomamos el algoritmo LRU y, como la page 1 es la que se usó pasado el mayor tiempo, es la que se debe 
+liberar.
+
+(4) Para el algoritmo second chance (sc), primero se recorre y las páginas con bit R en 1 se resetean a cero.
+Como es una mejora del FIFO, de las dos que tienen bit R en cero tomamos la primera en ser cargada, es decir
+la página 2, y la liberamos.

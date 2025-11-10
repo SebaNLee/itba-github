@@ -1,0 +1,34 @@
+
+(copio de Drive y pongo notas)
+
+
+
+Usando el algoritmo de reemplazo de páginas FIFO en un sistema con 4 PF y 8 VP, ¿Cuántos page faults 
+ocurrirán para la siguiente secuencia de accesos a páginas: 0172327103 si los 4 PF están inicialmente 
+vacíos? ¿Y para LRU?
+
+
+
+
+Respuesta: Tomando el algoritmo FIFO, tendremos los siguientes pasos:
+(1) Se cargan en el siguiente orden: 0 1 7 2 --> Como no había ninguna, se producen 4 page faults.
+(2) Se requiere la página 3 --> No está --> Page Fault --> 1 7 2 3
+(3) Se requiere la página 2 --> Está 
+(4) Se requiere la página 7 --> Está
+(5) Se requiere la página 1 --> Está
+(6) Se requiere la página 0 --> No está --> Page Fault --> 7 2 3 0
+(7) Se requiere la página 3 --> Está 
+Por lo tanto, se obtuvieron 6 page fault.
+
+nota: !! page faults iniciales cuando está todo vacío, hay que traerlos
+
+Ahora tomamos el algoritmo LRU, los pasos quedan:
+(1) Se cargan y actualizan, por lo que quedan en el siguiente orden --> 2 7 1 0 --> Se produjeron 4 page
+faults dado que no estaban.
+(2) Se requiere la página 3 --> No está --> Page Fault --> 3 2 7 1
+(3) Se requiere la página 2 --> Está --> 2 3 7 1
+(4) Se requiere la página 7 --> Está --> 7 2 3 1
+(5) Se requiere la página 1 --> Está --> 1 7 2 3
+(6) Se requiere la página 0 --> No está --> Page Fault --> 0 1 7 2
+(7) Se requiere la página 3 --> No está --> Page Fault --> 3 0 1 7
+Por lo tanto, se obtuvieron 7 page faults, uno más que antes.

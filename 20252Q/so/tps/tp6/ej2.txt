@@ -1,0 +1,30 @@
+
+(copio de Drive y pongo notas)
+
+
+Considere un sistema de swapping en el cual la memoria posee los siguientes espacios libres (en orden): 10, 4, 20, 18, 7, 
+9, 12 y 15MB. ¿Qué espacio libre será ocupado por 3 solicitudes consecutivas de 12, 10 y 9 MB para cada una de los siguientes 
+algoritmos?
+
+(1) First fit
+(2) Best fit
+(3) Worst fit
+(4) Next fit
+
+
+
+
+
+Respuesta:
+
+(1) En el caso de First Fit, como se busca el primer bloque suficientemente grande,
+se toma el de 20MB primero, el de 10 luego y finalmente el de 18.
+
+(2) En el Best Fit, se toma primero el de 12MB, luego el de 10 y
+finalmente el de 9, pues se tienen los tamaños justos.
+
+(3) Para el Worst Fit, como se toma siempre el bloque más grande se asignaría
+primero el de 20MB, luego el de 18 y finalmente el de 15.
+
+(4) En el Next Fit, se va a tomar primero el de 20MB, donde entran los 12MB,
+y siguiendo de ahí toma el de 18. Finalmente toma  el de 9.

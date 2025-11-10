@@ -1,0 +1,61 @@
+
+(copio de Drive y pongo notas)
+
+
+Usando la tabla de páginas de la imagen, calcule la DF para cada una de las siguientes DVs
+(a) 20
+(b) 4100
+(c) 8300
+(d) 25345
+
+
+
+Respuesta: Vemos en primer lugar que las páginas son de 4K, por lo que el offset es de 12 bits.
+
+nota: y al haber 16 entradas en la tabla de DV serían 4bits para páginas
+
+
+(a) Pasamos a binario:
+20 --> 0001 0100
+
+Vemos que la entrada de la tabla es la 0, por lo que tomamos de allí el page frame de la dirección 8K
+y le agregamos el offset.
+  0010 0000 0000 0000
++ 0000 0000 0001 0100
+----------------------
+  0010 0000 0001 0100 --> 0x2014 
+
+
+
+(b) Pasamos a binario:
+4100 --> 0001 0000 0000 0100
+
+Vemos que la entrada de la tabla es la 1, por lo que tomamos de allí el page frame de la dirección 4K
+y le agregamos el offset.
+  0001 0000 0000 0000
++ 0000 0000 0000 0100
+----------------------
+  0001 0000 0000 0100 --> 0x1004
+
+
+
+(c) Pasamos a binario:
+8300 --> 0010 0000 0110 1100
+
+Vemos que la entrada de la tabla es la 2, por lo que tomamos de allí el page frame de la dirección 24K
+y le agregamos el offset.
+24K = 2*12*(2^10)
+24K = 3*(2^13)
+24K = 0x6000 
+
+  0110 0000 0000 0000
++ 0000 0000 0110 1100
+----------------------
+  0110 0000 0110 1100 --> 0x606C
+
+
+
+(d) Pasamos a binario:
+25345 --> 0110 0011 0000 0001
+
+Vemos que la entrada de la tabla es la 6, y que no esta mapeada, por lo que no se puede obtener la DF.

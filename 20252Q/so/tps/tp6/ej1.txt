@@ -1,0 +1,42 @@
+
+(copio de Drive y pongo notas)
+
+Para cada una de las siguientes direcciones físicas en base 10, calcule el PF y el offset considerando un tamaño 
+de página de 4 y 8 KB:
+(1) 20000
+(2) 32768
+(3) 60000
+
+
+
+
+
+
+Respuesta: El ejercicio está mal redactado, se está calculando el page frame number (valor en la tabla), no el 
+page frame. Si tomamos tamaño de página de 4KB, tenemos 12 bits de offset. Tenemos que pasar la dirección a 
+binario:
+
+(1) 20000 --> 0100 1110 0010 0000
+(2) 32768 --> 1000 0000 0000 0000
+(3) 60000 --> 1110 1010 0110 0000
+
+Separamos los 12 bits menos significativos y obtenemos los page frame numbers:
+
+0100 | 1110 0010 0000
+1000 | 0000 0000 0000
+1110 | 1010 0110 0000
+-----------------------
+0x4
+0x8  
+0xE   
+
+Si la página es de 8KB, vamos a tener los 13 bits menos significativos de offset, generando los siguientes page 
+frames numbers:
+
+010|0 1110 0010 0000
+100|0 0000 0000 0000
+111|0 1010 0110 0000
+-----------------------
+0x2
+0x4
+0x7
