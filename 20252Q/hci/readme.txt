@@ -11,3 +11,10 @@ instalación:
 nodejs, ir a la página oficial
 vue official extensions, es extensión de VSC
 vue.js devtools, es extensión de navegador
+
+
+
+
+tp-hci-android
+
+acceder desde windows (por Android Studio)
