@@ -25,3 +25,6 @@
 [submodule "20252Q/hci/tp-hci-android"]
 	path = 20252Q/hci/tp-hci-android
 	url = https://github.com/teofum/tp-hci-android.git
+[submodule "20252Q/bd/TPE_BDD_I_Nov_25"]
+	path = 20252Q/bd/TPE_BDD_I_Nov_25
+	url = https://github.com/andresgarbarz/TPE_BDD_I_Nov_25.git
