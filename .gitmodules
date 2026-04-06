@@ -28,3 +28,6 @@
 [submodule "20252Q/bd/TPE_BDD_I_Nov_25"]
 	path = 20252Q/bd/TPE_BDD_I_Nov_25
 	url = https://github.com/andresgarbarz/TPE_BDD_I_Nov_25.git
+[submodule "20261Q/tla/TLA-20261Q"]
+	path = 20261Q/tla/TLA-20261Q
+	url = https://github.com/SantiagoLifischtz/TLA-20261Q.git
