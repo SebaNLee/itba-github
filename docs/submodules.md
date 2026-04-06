@@ -1,0 +1,19 @@
+## Git Submodules
+
+
+Para subrepos se debe usar algo llamado submodules: https://www.youtube.com/watch?v=gSlXo2iLBro
+
+Para agregar un submodule: `git submodule add <link>`
+
+> Obs.: Al agregar, se agregan referencias subrepo en /.gitmodules y /.git/config
+
+> Obs.: Modificaciones en el subrepo solamente manejables en el subrepo, en repo general solamente commits de HEADs
+
+Para eliminar un submodule, se tiene que:
+- Quitar de .gitmodules
+- Quitar de .git/config
+- Eliminar el subrepo
+
+Otros comandos útiles:
+- `git submodule status`
+- `cat .git/config`
