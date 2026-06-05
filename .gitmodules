@@ -31,3 +31,6 @@
 [submodule "20261Q/tla/TLA-20261Q"]
 	path = 20261Q/tla/TLA-20261Q
 	url = https://github.com/SantiagoLifischtz/TLA-20261Q.git
+[submodule "20261Q/protos/Protos-TPE-20261Q"]
+	path = 20261Q/protos/Protos-TPE-20261Q
+	url = https://github.com/SebaNLee/Protos-TPE-20261Q.git
