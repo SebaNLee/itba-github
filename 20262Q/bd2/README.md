@@ -16,6 +16,8 @@ docker run --name MyMySql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=mydb -e 
 docker exec -it MyMySql bash
 ```
 
+> Nota: tener esto levantado y usar GUI desde W11 (DBeaver, MySQL Workspace, et al); con WSL networkingMode=mirrored
+
 #### Dentro del contenedor:
 
 ```
@@ -26,6 +28,7 @@ mysql -u root -p
 #### Extras:
 
 ```
+docker ps
 docker images
 docker container list
 docker exec -it <contenedor> bash
