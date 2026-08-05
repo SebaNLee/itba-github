@@ -25,6 +25,14 @@ docker exec -it MyMySql bash
 mysql -u root -p
 ```
 
+#### MySQL:
+
+```
+SHOW DATABASES;
+USE <db>;
+SHOW TABLES;
+```
+
 #### Extras:
 
 ```
