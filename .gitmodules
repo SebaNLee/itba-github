@@ -34,3 +34,6 @@
 [submodule "20261Q/protos/Protos-TPE-20261Q"]
 	path = 20261Q/protos/Protos-TPE-20261Q
 	url = https://github.com/SebaNLee/Protos-TPE-20261Q.git
+[submodule "20262Q/cgraf/cg7258"]
+	path = 20262Q/cgraf/cg7258
+	url = https://github.com/fedemarino31/cg7258
