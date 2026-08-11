@@ -36,10 +36,13 @@ export class SceneManager {
 		cube.position.set(-3, -3, 0);
 		scene.add(cube);
 
-		// base grass
 		this.generateGrass();
 		this.generateCastle();
 		this.generatePond();
+		this.generateTree(1, 1);
+		this.generateTree(1.5, 0.5);
+		this.generateTree(0.4, 0.5);
+
 	}
 
 	generateGrass() {
@@ -76,6 +79,19 @@ export class SceneManager {
 		let pond = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.1), new THREE.MeshPhongMaterial({ color: 0x3355aa }));
 		pond.position.set(0, 0, 2);
 		this.scene.add(pond)
+	}
+
+	generateTree(x, z) {
+		// tree trunk
+		let treeTunkHeight = 0.5
+		let treeTrunk = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, treeTunkHeight), new THREE.MeshPhongMaterial({ color: 0xaa4433 }));
+		treeTrunk.position.set(x, 0 + treeTunkHeight / 2, z);
+		this.scene.add(treeTrunk);
+
+		// tree leaves
+		let treeLeaf = new THREE.Mesh(new THREE.SphereGeometry(0.2), new THREE.MeshPhongMaterial({ color: 0x22ee44 }));
+		treeLeaf.position.set(x, treeTunkHeight, z);
+		this.scene.add(treeLeaf);
 	}
 
 	animate() {
