@@ -4,6 +4,8 @@ let torus, cube, cone;
 
 export class SceneManager {
 	constructor(scene) {
+		this.scene = scene;
+
 		const light = new THREE.DirectionalLight(0xffffff, 1);
 
 		light.position.set(1, 1, 1);
@@ -35,29 +37,45 @@ export class SceneManager {
 		scene.add(cube);
 
 		// base grass
+		this.generateGrass();
+		this.generateCastle();
+		this.generatePond();
+	}
+
+	generateGrass() {
 		let grass = new THREE.Mesh(new THREE.BoxGeometry(10, 1, 10), new THREE.MeshPhongMaterial({ color: 0x00ff00 }));
 		grass.position.set(0, -0.5, 0);
-		scene.add(grass);
+		this.scene.add(grass);
+	}
 
+	generateCastle() {
 		// castle base
-		let castleBase = new THREE.Mesh(new THREE.BoxGeometry(2, 1, 2), new THREE.MeshPhongMaterial({ color: 0xee9955 }));
+		let castleBase = new THREE.Mesh(new THREE.BoxGeometry(2, 1.5, 2), new THREE.MeshPhongMaterial({ color: 0xee9955 }));
 		castleBase.position.set(0, 0, -2);
-		scene.add(castleBase);
+		this.scene.add(castleBase);
 
-		// caste tower
+		this.generateTower(-1, -1);
+		this.generateTower(-1, -3);
+		this.generateTower(1, -1);
+		this.generateTower(1, -3);
+	}
+
+	generateTower(x, z) {
+		// tower base
 		let castleTower = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 1), new THREE.MeshPhongMaterial({ color: 0xee9955 }));
-		castleTower.position.set(-1, 0 + 1 / 2, -1);
-		scene.add(castleTower);
+		castleTower.position.set(x, 0 + 1 / 2, z);
+		this.scene.add(castleTower);
 
-		// caste tower cap
+		// tower cap
 		let castleTowerCap = new THREE.Mesh(new THREE.ConeGeometry(0.4, 0.5), new THREE.MeshPhongMaterial({ color: 0xee9955 }));
-		castleTowerCap.position.set(-1, 1 + 0.5 / 2, -1);
-		scene.add(castleTowerCap);
+		castleTowerCap.position.set(x, 1 + 0.5 / 2, z);
+		this.scene.add(castleTowerCap);
+	}
 
-		// pond
+	generatePond() {
 		let pond = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 0.1), new THREE.MeshPhongMaterial({ color: 0x3355aa }));
 		pond.position.set(0, 0, 2);
-		scene.add(pond)
+		this.scene.add(pond)
 	}
 
 	animate() {
