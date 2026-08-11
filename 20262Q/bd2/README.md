@@ -36,9 +36,8 @@ SHOW TABLES;
 #### Extras:
 
 ```
-docker ps
+docker ps -a
 docker images
-docker container list
 docker exec -it <contenedor> bash
 ```
 
