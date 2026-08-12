@@ -6,8 +6,11 @@ import ar.edu.itba.pod.concurrency.service.GenericServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -18,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class GenericServiceConcurrencyTest {
     private static final int VISITS_BY_THREAD = 1;
     private static final int THREAD_COUNT = 1;
-    private static final int EXPECTED_VISITS = 2;
+    private static final int EXPECTED_VISITS = VISITS_BY_THREAD * THREAD_COUNT;
 
     private GenericService service;
 
@@ -43,10 +46,19 @@ public class GenericServiceConcurrencyTest {
      */
     @Test
     public final void visit_count_with_thread_start() throws InterruptedException {
+        Thread[] threads = new Thread[THREAD_COUNT];
+        
         for (int i = 0; i < THREAD_COUNT; i++) {
             Thread thread = new Thread(visitor);
             thread.start();
+            threads[i] = thread;
         }
+
+        for (int i = 0; i < threads.length; i++) {
+            Thread thread = threads[i];
+            thread.join();
+        }
+        
         assertEquals(EXPECTED_VISITS, service.getVisitCount());
     }
 
@@ -56,12 +68,19 @@ public class GenericServiceConcurrencyTest {
      */
     @Test
     public final void visit_count_with_executor_submit() throws InterruptedException {
-        ExecutorService pool = Executors.newCachedThreadPool();
-        for (int i = 0; i < THREAD_COUNT; i++) {
-            pool.submit(visitor);
+        try (ExecutorService pool = Executors.newCachedThreadPool()) {
+            List<Future> futures = new LinkedList<>();
+            for (int i = 0; i < THREAD_COUNT; i++) {
+                futures.add(pool.submit(visitor));
+            }
+            for (Future future : futures) {
+                future.get();
+            }
+        
+            assertEquals(EXPECTED_VISITS, service.getVisitCount());
+        } catch (Exception e) {
+            throw new RuntimeException();
         }
-        assertEquals(EXPECTED_VISITS, service.getVisitCount());
-        pool.shutdown();
-        pool.awaitTermination(2, TimeUnit.SECONDS);
+        
     }
 }
