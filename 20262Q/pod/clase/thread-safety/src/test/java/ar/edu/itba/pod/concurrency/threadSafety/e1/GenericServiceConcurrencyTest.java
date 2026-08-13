@@ -19,8 +19,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Unit test for {@link GenericService} using {@link Thread}s
  */
 public class GenericServiceConcurrencyTest {
-    private static final int VISITS_BY_THREAD = 1;
-    private static final int THREAD_COUNT = 1;
+    private static final int VISITS_BY_THREAD = 5000;
+    private static final int THREAD_COUNT = 5000;
     private static final int EXPECTED_VISITS = VISITS_BY_THREAD * THREAD_COUNT;
 
     private GenericService service;
@@ -35,7 +35,10 @@ public class GenericServiceConcurrencyTest {
      */
     private final Runnable visitor = () -> {
         for (int i = 0; i < VISITS_BY_THREAD; i++) {
-            service.addVisit();
+            synchronized (this) { // se agrega mutex
+                service.addVisit();
+            }
+            
         }
     };
 
