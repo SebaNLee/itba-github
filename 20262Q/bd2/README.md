@@ -41,4 +41,12 @@ docker images
 docker exec -it <contenedor> bash
 ```
 
+#### Flujo normal:
+
+```
+docker start MyMySql
+docker exec -i MyMySql mysql -u root -proot mydb < script.sql
+```
+
+> Y tener DBeaver abierto...
 
