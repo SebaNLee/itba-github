@@ -100,8 +100,16 @@ function buildScene() {
 	const m1 = new THREE.Matrix4();
 	const m2 = new THREE.Matrix4();
 
+	// nota: recordar orden Escalado -> Rotación -> Translación
+
 	copy1.matrix.copy(matrix);
-	//scene.add(copy1);
+	copy1.matrix.makeScale(1, 0.5, 1);
+	copy1.matrix.makeRotationFromEuler(new THREE.Euler(0, Math.PI, 0));
+	// copy1.matrix.makeTranslation(1, 1, 1);
+	scene.add(copy1);
+
+	
+
 
 	// *************************************************************************************
 }
