@@ -39,3 +39,5 @@ public class SubscriberTest {
         ;
     }
 }
+
+// mvn test -Dtest=SubscriberTest
