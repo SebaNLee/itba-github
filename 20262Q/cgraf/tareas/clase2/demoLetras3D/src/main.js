@@ -95,20 +95,35 @@ function buildScene() {
 	//        las escalas son multiplos de 0.25
 	// *************************************************************************************
 
-	let copy1 = text.clone();
-	const matrix = new THREE.Matrix4();
-	const m1 = new THREE.Matrix4();
-	const m2 = new THREE.Matrix4();
-
 	// nota: recordar orden Escalado -> Rotación -> Translación
 
-	copy1.matrix.copy(matrix);
-	copy1.matrix.makeScale(1, 0.5, 1);
-	copy1.matrix.makeRotationFromEuler(new THREE.Euler(0, Math.PI, 0));
-	// copy1.matrix.makeTranslation(1, 1, 1);
+	let copy1 = text.clone();
+	const scale1 = new THREE.Matrix4().makeScale(1, 0.5, -1);
+	const rotation1 = new THREE.Matrix4().makeRotationFromEuler(new THREE.Euler(Math.PI * 7/4, Math.PI, 0));
+	const translation1 = new THREE.Matrix4().makeTranslation(2, 0, 0);
+	copy1.matrix.copy(translation1).multiply(rotation1).multiply(scale1);
 	scene.add(copy1);
 
-	
+	let copy2 = text.clone();
+	const scale2 = new THREE.Matrix4().makeScale(1, 2, 1);
+	const rotation2 = new THREE.Matrix4().makeRotationFromEuler(new THREE.Euler(0, Math.PI / 4, 0));
+	const translation2 = new THREE.Matrix4().makeTranslation(0, 0, -1);
+	copy2.matrix.copy(translation2).multiply(rotation2).multiply(scale2);
+	scene.add(copy2);
+
+	let copy3 = text.clone();
+	const scale3 = new THREE.Matrix4().makeScale(0.5, 1, 4);
+	const rotation3 = new THREE.Matrix4().makeRotationFromEuler(new THREE.Euler(0, Math.PI / 2, 0));
+	const translation3 = new THREE.Matrix4().makeTranslation(-1, 0, 1);
+	copy3.matrix.copy(translation3).multiply(rotation3).multiply(scale3);
+	scene.add(copy3);
+
+	let copy4 = text.clone();
+	const scale4 = new THREE.Matrix4().makeScale(2, 1, 1);
+	const rotation4 = new THREE.Matrix4().makeRotationFromEuler(new THREE.Euler(0, 0, Math.PI / 4));
+	const translation4 = new THREE.Matrix4().makeTranslation(-2, 0, 0);
+	copy4.matrix.copy(translation4).multiply(rotation4).multiply(scale4);
+	scene.add(copy4);
 
 
 	// *************************************************************************************
