@@ -41,3 +41,5 @@ public class PubSubTest {
         assertEquals(0, queue.size());
     }
 }
+
+// mvn test -Dtest=PubSubTest
