@@ -6,6 +6,7 @@ import java.util.function.Consumer;
 
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -16,9 +17,43 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class SortBenchmark {
 
-    @Test
-    public void benchmark_all() {
+    @RepeatedTest(4)
+    public void test_benchmark_all() {
+        final Consumer<int[]> serial = a -> Arrays.sort(a);
+        final Consumer<int[]> parallel = a -> Arrays.parallelSort(a);
+        final int multiplier = 100000;
+        final Random random = new Random();
 
+        final int[] small = generateArray(10 * multiplier, random);
+        final int[] med = generateArray(10 * multiplier, random);
+        final int[] large = generateArray(10 * multiplier, random);
+    
+        benchmark(small, serial, "Small serial");
+        benchmark(small, parallel, "Small parallel");
+        benchmark(med, serial, "med serial");
+        benchmark(med, parallel, "med parallel");
+        benchmark(large, serial, "large serial");
+        benchmark(large, parallel, "large parallel");
     }
 
+    private int[] generateArray(final int size, final Random random) {
+        final int[] array = new int[size];
+        for (int i = 0; i < size; i++) {
+            array[i] = random.nextInt();
+        }
+        return array;
+    }
+
+    private void benchmark(final int[] array, final Consumer<int[]> orderer, final String message) {
+        long accumulate = 0;
+        for (int i = 0; i < 4; i++) {
+            final long startTime = System.currentTimeMillis();
+            orderer.accept(Arrays.copyOf(array, array.length));
+            final long finishTime = System.currentTimeMillis();
+            accumulate += finishTime - startTime;
+        }
+        System.out.println(message + " took: " + (accumulate/ 4) + " ms");
+    }
 }
+
+// mvn test -Dtest=SortBenchmark -DfailIfNoTests=false
