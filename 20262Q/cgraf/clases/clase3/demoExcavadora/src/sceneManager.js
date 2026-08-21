@@ -174,6 +174,28 @@ export class SceneManager {
 
 		// completar a partir de aca ...
 
+		this.cabina.position.set(0, 25, 0);
+		this.vehiculo.add(this.cabina);
+
+		this.brazo.position.set(20, 20, -10);
+		this.cabina.add(this.brazo);
+
+		this.antebrazo.position.set(-102, 0, 0);
+		this.brazo.add(this.antebrazo);
+
+		this.pala.position.set(-60, 0, 0);
+		this.antebrazo.add(this.pala);
+
+		this.eje.position.set(20, 5, 0);
+		this.vehiculo.add(this.eje);
+
+		// let rueda1 = this.rueda.clone();
+		// this.rueda.position.set(0, 27, 0);
+		// this.eje.add(this.rueda);
+
+
+
+		
 		// ... hasta aca
 
 		//this._solve();
