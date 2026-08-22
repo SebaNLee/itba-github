@@ -189,12 +189,37 @@ export class SceneManager {
 		this.eje.position.set(20, 5, 0);
 		this.vehiculo.add(this.eje);
 
-		// let rueda1 = this.rueda.clone();
-		// this.rueda.position.set(0, 27, 0);
-		// this.eje.add(this.rueda);
+		let rueda = new THREE.Group();
+		
+		this.cubierta.position.set(0, 0, 0);
+		rueda.add(this.cubierta);
 
+		this.llanta.position.set(0, 0, 0);
+		rueda.add(this.llanta);
+		
+		for (let i = 0; i < 5; i++) {
+			let currTuerca = this.tuerca.clone();
+			const radius = 3;
+			currTuerca.position.set(radius * Math.cos((i * 2 * Math.PI) / 5), radius * Math.sin((i * 2 * Math.PI) / 5), 3);
+			rueda.add(currTuerca);
+		}
 
+		let rueda1 = rueda.clone();
+		let rueda2 = rueda.clone();
 
+		rueda1.position.set(0, 0, 27);
+		rueda2.position.set(0, 0, -27);
+		rueda2.setRotationFromEuler(new THREE.Euler(Math.PI, 0, 0));
+		this.eje.add(rueda1);
+		this.eje.add(rueda2);
+
+		// un asco esto pero bueno
+		let ejeFrontal = this.eje.clone();
+		ejeFrontal.position.set(-20, 5, 0);
+		this.vehiculo.add(ejeFrontal);
+
+		this.chasis.position.set(0, 0, 0);
+		this.vehiculo.add(this.chasis);
 		
 		// ... hasta aca
 
