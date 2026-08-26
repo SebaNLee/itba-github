@@ -1,5 +1,9 @@
 # Base de Datos 2 - 72.41
 
+## Estructura
+
+Uso `_source` tanto para código de cátedra como propios (inicializadores de DBs).
+
 ## Comandos útiles
 
 
