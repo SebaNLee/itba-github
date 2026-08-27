@@ -25,7 +25,8 @@ public class Client {
     // channel apunta a "cloud", definido en /resources/application.yml
     @Bean
     GreeterGrpc.GreeterBlockingStub greeterStub(GrpcChannelFactory channels) {
-        return GreeterGrpc.newBlockingStub(channels.createChannel("cloud"));
+        return GreeterGrpc.newBlockingStub(channels.createChannel("local")); // ej4
+        // return GreeterGrpc.newBlockingStub(channels.createChannel("cloud")); // ej3
     }
 
     // y acá se define el método del .proto

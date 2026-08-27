@@ -7,6 +7,8 @@ spring:
         cloud:
           address: grpc-greeter-demo-server.agreeablehill-c00cedd3.norwayeast.azurecontainerapps.io:443
           negotiation-type: tls
+    server:
+      port: 50051
 logging:
   level:
     root: info
