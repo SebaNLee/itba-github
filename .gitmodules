@@ -37,3 +37,6 @@
 [submodule "20262Q/cgraf/cg7258"]
 	path = 20262Q/cgraf/cg7258
 	url = https://github.com/fedemarino31/cg7258
+[submodule "20262Q/arqdm/2026s2"]
+	path = 20262Q/arqdm/2026s2
+	url = https://gitlab.com/itba-73-40-microservicios/alumnos/2026s2
