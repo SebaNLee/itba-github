@@ -5,6 +5,7 @@ import { TransformControls } from 'three/examples/jsm/controls/TransformControls
 import { createCylinder, createClosedCylinder } from './cylinder.js';
 
 import { VertexNormalsHelper } from 'three/addons/helpers/VertexNormalsHelper.js';
+import { createSphere } from './sphere.js';
 
 let scene, camera, renderer, container, sceneManager;
 
@@ -83,13 +84,17 @@ function buildScene() {
 	scene.add(cylinder);
 
 	// esfera
-	const sphereGeometry = new THREE.SphereGeometry(1, 16, 16);
+	// const sphereGeometry = new THREE.SphereGeometry(1, 16, 16);
+	const sphereGeometry = createSphere(1, 16, 16);
 	const sphereMaterial = new THREE.MeshPhongMaterial({ color: 0xff00ff, flatShading: false, wireframe: false });
 	const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
 
 	let sphereNormalHelper = new VertexNormalsHelper(sphere, 0.2, 0x00ff00, 1);
-	//scene.add(sphereNormalHelper);
-	//scene.add(sphere);
+	scene.add(sphereNormalHelper);
+	scene.add(sphere);
+
+	// plano
+	// TODO
 }
 
 function animate() {
