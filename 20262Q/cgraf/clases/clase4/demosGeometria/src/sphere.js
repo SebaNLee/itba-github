@@ -9,46 +9,26 @@ function buildSphere(buffers, radius, radialSegments, heightSegments) {
 	let normals = buffers.normals;
 	let uvs = buffers.uvs;
 
-    // TODO
+    let sphereCenterX = 0;
+    let spphereCenterY = radius;
+    let sphereCenterZ = 0;
 
-    // upper sphere
-    for (let i = 0; i < heightSegments / 2; i++) {
+    for (let i = 0; i < heightSegments; i++) {
         const y = i * heightStep;
         const v = i / heightSegments;
 
+        // nota (lo dibujé en paint):
+        // tomando desde el centro (0, radio, 0)
+        // sen(theta) = ringRadius / radius
+        // cos(theta) = |radio - step| / radius
+        // ringRadius = sen(arccos(|radio - step| / radius)) * radius
+        const ringRadius = Math.sin(Math.acos(Math.abs(radius - y) / radius)) * radius;
+
 		for (let j = 0; j <= radialSegments; j++) {
 			const angle = j * angleStep;
-			const x = (1 - v) * radius * Math.cos(angle);
-			const z = (1 - v) * radius * Math.sin(angle);
+			const x = ringRadius * Math.cos(angle);
+			const z = ringRadius * Math.sin(angle);
 			const u = j / radialSegments;
-			
-            positions.push(x, y, z);
-			normals.push(x, 0, z);
-			uvs.push(u, v);
-
-            if (i < heightSegments / 2 && j < radialSegments / 2) {
-                const a = i * (radialSegments + 1) + j;
-                const b = a + radialSegments + 1;
-                const c = a + radialSegments + 2;
-                const d = a + 1;
-
-                indices.push(a, b, d);
-                indices.push(b, c, d);
-            }
-        }
-    }
-
-
-    // lower sphere
-    for (let i = 0; i > - heightSegments / 2; i--) {
-        const y = i * heightStep;
-        const v = i / heightSegments;
-
-		for (let j = 0; j <= radialSegments; j++) {
-			const angle = j * angleStep;
-			const x = v * radius * Math.cos(angle);
-			const z = v * radius * Math.sin(angle);
-            const u = j / radialSegments;
 			
             positions.push(x, y, z);
 			normals.push(x, 0, z);

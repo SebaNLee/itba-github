@@ -79,9 +79,9 @@ function buildScene() {
 	const material = defaultMaterial; // normalMaterial, defaultMaterial;
 	const cylinder = new THREE.Mesh(geo, material);
 
-	let normalMeshHelper = new VertexNormalsHelper(cylinder, 0.2, 0x00ff00, 1);
-	scene.add(normalMeshHelper);
-	scene.add(cylinder);
+	// let normalMeshHelper = new VertexNormalsHelper(cylinder, 0.2, 0x00ff00, 1);
+	// scene.add(normalMeshHelper);
+	// scene.add(cylinder);
 
 	// esfera
 	// const sphereGeometry = new THREE.SphereGeometry(1, 16, 16);
