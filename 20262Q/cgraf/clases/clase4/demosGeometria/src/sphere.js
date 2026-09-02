@@ -1,3 +1,4 @@
+// @ts-nocheck
 import * as THREE from 'three';
 
 function buildSphere(buffers, radius, radialSegments, heightSegments) {
@@ -9,11 +10,7 @@ function buildSphere(buffers, radius, radialSegments, heightSegments) {
 	let normals = buffers.normals;
 	let uvs = buffers.uvs;
 
-    let sphereCenterX = 0;
-    let spphereCenterY = radius;
-    let sphereCenterZ = 0;
-
-    for (let i = 0; i < heightSegments; i++) {
+    for (let i = 0; i <= 2 * heightSegments; i++) {
         const y = i * heightStep;
         const v = i / heightSegments;
 
@@ -31,10 +28,10 @@ function buildSphere(buffers, radius, radialSegments, heightSegments) {
 			const u = j / radialSegments;
 			
             positions.push(x, y, z);
-			normals.push(x, 0, z);
+			normals.push(x, y - radius, z);
 			uvs.push(u, v);
 
-            if (i < heightSegments && j < radialSegments) {
+            if (i < 2 * heightSegments && j < 2 * radialSegments) {
                 const a = i * (radialSegments + 1) + j;
                 const b = a + radialSegments + 1;
                 const c = a + radialSegments + 2;

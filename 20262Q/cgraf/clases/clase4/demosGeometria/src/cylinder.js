@@ -1,3 +1,4 @@
+// @ts-nocheck
 import * as THREE from 'three';
 
 // Create the wall of the cylinder
