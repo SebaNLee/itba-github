@@ -7,6 +7,7 @@ import { createCylinder, createClosedCylinder } from './cylinder.js';
 
 import { VertexNormalsHelper } from 'three/addons/helpers/VertexNormalsHelper.js';
 import { createSphere } from './sphere.js';
+import { createPlane } from './plane.js';
 
 let scene, camera, renderer, container, sceneManager;
 
@@ -89,13 +90,17 @@ function buildScene() {
 	const sphereGeometry = createSphere(1, 16, 16);
 	const sphereMaterial = new THREE.MeshPhongMaterial({ color: 0xff00ff, flatShading: false, wireframe: false });
 	const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
-
 	let sphereNormalHelper = new VertexNormalsHelper(sphere, 0.2, 0x00ff00, 1);
-	scene.add(sphereNormalHelper);
-	scene.add(sphere);
+	//scene.add(sphereNormalHelper);
+	//scene.add(sphere);
 
 	// plano
-	// TODO
+	const planeGeometry = createPlane(4, 3, 16, 16);
+	const planeMaterial = new THREE.MeshPhongMaterial({ color: 0x221144, flatShading: false, wireframe: false });
+	const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+	let planeNormalHelper = new VertexNormalsHelper(plane, 0.2, 0x00ff00, 1);
+	scene.add(planeNormalHelper);
+	scene.add(plane);
 }
 
 function animate() {

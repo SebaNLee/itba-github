@@ -2,13 +2,13 @@
 import * as THREE from 'three';
 
 function buildSphere(buffers, radius, radialSegments, heightSegments) {
-    const angleStep = (2 * Math.PI) / radialSegments;
-	const heightStep = radius / heightSegments;
-
 	let positions = buffers.positions;
 	let indices = buffers.indices;
 	let normals = buffers.normals;
 	let uvs = buffers.uvs;
+    
+    const angleStep = (2 * Math.PI) / radialSegments;
+	const heightStep = radius / heightSegments;
 
     for (let i = 0; i <= 2 * heightSegments; i++) {
         const y = i * heightStep;
