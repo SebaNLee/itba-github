@@ -6,7 +6,12 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.grpc.client.ImportGrpcClients;
 
+import ar.edu.itba.pod.grpc.user.LoginInformation;
+import ar.edu.itba.pod.grpc.user.UserServiceGrpc;
+
+@ImportGrpcClients(target = "local", types = UserServiceGrpc.UserServiceBlockingStub.class)
 @SpringBootApplication
 public class Client {
 
@@ -17,9 +22,15 @@ public class Client {
     }
 
     @Bean
-    CommandLineRunner run() {
+    CommandLineRunner run(UserServiceGrpc.UserServiceBlockingStub stub) {
         return _ -> {
-            // TODO
+            var request = LoginInformation.newBuilder()
+                    .setUserName("foo")
+                    .setPassword("foopass")
+                    .build();
+            IO.println(stub.doLogin(request));
+
+            // TOOD uso de getRoles()...
         };
     }
 
