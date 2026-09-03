@@ -1,0 +1,21 @@
+# Env files con credenciales (usar .env.example como template)
+*.env
+!*.env.example
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+
+# Docker
+.docker/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+.vscode/
+*.swp

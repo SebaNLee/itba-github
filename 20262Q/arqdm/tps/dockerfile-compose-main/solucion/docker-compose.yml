@@ -1,0 +1,111 @@
+services:
+  gateway:
+    build:
+      context: ../gateway
+      dockerfile: ../solucion/gateway/Dockerfile
+    env_file:
+      - gateway.env
+    ports:
+      - 8000:8000
+    depends_on:
+      trips:
+        condition: service_healthy
+      airports:
+        condition: service_healthy
+    networks:
+      - backend
+      - default
+    develop:
+      watch:
+        - action: sync+restart
+          path: ../gateway
+          target: /usr/app
+          ignore:
+            - __pycache__/
+        - action: rebuild
+          path: ../gateway/requirements.txt
+
+  trips:
+    build:
+      context: ../trips
+      dockerfile: ../solucion/trips/Dockerfile
+    env_file:
+      - trips.env
+    depends_on:
+      redis-trips:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8001/ping')"]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+    networks:
+      - backend
+      - trips
+    develop:
+      watch:
+        - action: sync+restart
+          path: ../trips
+          target: /usr/app
+          ignore:
+            - __pycache__/
+        - action: rebuild
+          path: ../trips/requirements.txt
+
+  airports:
+    build:
+      context: ../airports
+      dockerfile: ../solucion/airports/Dockerfile
+    env_file:
+      - airports.env
+    depends_on:
+      redis-airports:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8002/ping')"]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+    networks:
+      - backend
+      - airports
+    develop:
+      watch:
+        - action: sync+restart
+          path: ../airports
+          target: /usr/app
+          ignore:
+            - __pycache__/
+        - action: rebuild
+          path: ../airports/requirements.txt
+
+  redis-trips:
+    image: redis:7-alpine
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+    networks:
+      - trips
+
+  redis-airports:
+    image: redis:7-alpine
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+    networks:
+      - airports
+
+networks:
+  backend:
+    driver: bridge
+    internal: true
+  trips:
+    driver: bridge
+    internal: true
+  airports:
+    driver: bridge
+    internal: true

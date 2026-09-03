@@ -1,0 +1,24 @@
+# Todo lo que esté acá se empaqueta y se envía al Docker engine ANTES
+# de que se ejecute la primera línea del Dockerfile. Lo que no haga falta
+# para construir la imagen, no debería viajar.
+
+# Artefactos de Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Secretos y config local
+*.env
+!*.env.example
+
+# Git y metadata del repo
+.git/
+.gitignore
+
+# Editores / SO
+.idea/
+.vscode/
+*.swp
+.DS_Store
