@@ -1,0 +1,28 @@
+
+services:
+  gateway:
+    build:
+      context: ./gateway
+    env_file:
+      - gateway.env
+    ports:
+      - 8000:8000
+  trips:
+    build:
+      context: ./trips
+    env_file:
+      - trips.env
+  redis-trips:
+    image: redis:7-alpine
+
+
+# docker compose up --build
+
+# curl --header "Content-Type: application/json" \
+#   --request POST \
+#   --data '{"airport_from":"EZE","airport_to":"CPC"}' \
+#   http://localhost:8000/trip
+
+
+# hecho hasta L257 del README.md, mejoras no toco y solo leo
+# leer docs, es muy similar: https://docs.docker.com/compose/gettingstarted/
