@@ -25,7 +25,7 @@ public class TicketServiceClient {
     private final TrainTicketServiceGrpc.TrainTicketServiceStub stub;
 
     public TicketServiceClient(TrainTicketServiceGrpc.TrainTicketServiceBlockingStub blockingStub,
-                               TrainTicketServiceGrpc.TrainTicketServiceStub stub) {
+            TrainTicketServiceGrpc.TrainTicketServiceStub stub) {
         this.blockingStub = blockingStub;
         this.stub = stub;
     }
@@ -48,9 +48,24 @@ public class TicketServiceClient {
         return toReturn;
     }
 
-    public Reservation addReservation(String train, SequencedCollection<String> names) {
-        // TODO
-        return null;
+    public Reservation addReservation(String train, SequencedCollection<String> names) throws InterruptedException, ExecutionException {
+        var responseFuture = new CompletableFuture<Reservation>();
+        var responseObserver = new StreamObserver<Reservation>() {
+            @Override public void onNext(Reservation r) { responseFuture.complete(r); }
+            @Override public void onError(Throwable throwable) { }
+            @Override public void onCompleted() { }
+        };
+        StreamObserver<Ticket> requestObserver = stub.purchaseTicket(responseObserver);
+        List.of("John", "Paul", "Ringo").forEach(name -> {
+            Ticket ticket = Ticket.newBuilder()
+                    .setId(UUID.randomUUID().toString())
+                    .setPassengerName(name).setTrainId(train).build();
+            requestObserver.onNext(ticket);
+        });
+        requestObserver.onCompleted();
+        Reservation reservation = responseFuture.get();
+
+        return reservation;
     }
 
     public SequencedCollection<Ticket> getTicketsFor(SequencedCollection<String> reservationIds) {

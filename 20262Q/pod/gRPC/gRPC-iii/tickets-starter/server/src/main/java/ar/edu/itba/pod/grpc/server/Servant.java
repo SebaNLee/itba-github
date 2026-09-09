@@ -5,6 +5,7 @@ import ar.edu.itba.pod.grpc.server.repository.TicketRepository;
 import ar.edu.itba.pod.grpc.trainTickets.*;
 import io.grpc.stub.StreamObserver;
 
+import java.util.ArrayList;
 import java.util.SequencedCollection;
 
 import org.slf4j.Logger;
@@ -51,4 +52,19 @@ public class Servant extends TrainTicketServiceGrpc.TrainTicketServiceImplBase {
         responseObserver.onCompleted();
     }
 
+    @Override
+    public StreamObserver<Ticket> purchaseTicket(StreamObserver<Reservation> responseObserver) {
+        return new StreamObserver<>() {
+            private final SequencedCollection<Ticket> tickets = new ArrayList<>();
+            @Override public void onNext(Ticket ticket) { tickets.add(ticket); }
+            @Override public void onError(Throwable throwable) { }
+            @Override public void onCompleted() {
+                var reservationId = ticketRepository.addReservation(tickets);
+                var reservation = Reservation.newBuilder()
+                        .setId(reservationId).setTicketCount(tickets.size()).build();
+                responseObserver.onNext(reservation);
+                responseObserver.onCompleted();
+            }
+        };
+    }
 }

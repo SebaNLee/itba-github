@@ -32,9 +32,9 @@ public class Client {
            SequencedCollection<Train> availability = client.getAvailability(destinations.getFirst());
            log.info("Availability:\n{}", availability);
 
-//            Reservation reservation = client.addReservation(availability.getFirst().getId(),
-//                    List.of("John", "Paul", "Ringo"));
-//            log.info("Reservation:\n{}", reservation);
+           Reservation reservation = client.addReservation(availability.getFirst().getId(),
+                   List.of("John", "Paul", "Ringo"));
+           log.info("Reservation:\n{}", reservation);
 
 //            SequencedCollection<Ticket> tickets = client.getTicketsFor(List.of(reservation.getId()));
 //            log.info("Tickets: {}", tickets);
