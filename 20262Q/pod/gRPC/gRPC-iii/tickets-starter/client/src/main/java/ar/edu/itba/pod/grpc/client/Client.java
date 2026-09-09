@@ -29,8 +29,8 @@ public class Client {
            SequencedCollection<String> destinations = client.getDestinations();
            log.info("Destinations:\n{}", destinations);
 
-//            SequencedCollection<Train> availability = client.getAvailability(destinations.getFirst());
-//            log.info("Availability:\n{}", availability);
+           SequencedCollection<Train> availability = client.getAvailability(destinations.getFirst());
+           log.info("Availability:\n{}", availability);
 
 //            Reservation reservation = client.addReservation(availability.getFirst().getId(),
 //                    List.of("John", "Paul", "Ringo"));

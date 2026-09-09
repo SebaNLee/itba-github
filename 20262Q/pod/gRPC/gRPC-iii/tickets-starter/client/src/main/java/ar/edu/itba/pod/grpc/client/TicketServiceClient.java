@@ -39,8 +39,13 @@ public class TicketServiceClient {
     }
 
     public SequencedCollection<Train> getAvailability(String destination) {
-        // TODO
-        return null;
+        var request = StringValue.of(destination); // o patrón builder
+
+        Iterator<Train> iterator = blockingStub.getTrainsForDestination(request);
+        List<Train> toReturn = new ArrayList<>();
+        iterator.forEachRemaining(toReturn::add);
+
+        return toReturn;
     }
 
     public Reservation addReservation(String train, SequencedCollection<String> names) {
