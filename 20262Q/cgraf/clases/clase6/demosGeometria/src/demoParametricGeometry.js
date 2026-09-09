@@ -8,7 +8,7 @@ import * as dat from 'dat.gui';
 let scene, camera, renderer, container, group;
 
 const params = {
-	currentSurface: 'tarea1',
+	currentSurface: 'tarea5',
 	showWireframe: false,
 };
 
@@ -128,8 +128,21 @@ function getParametricTarea4Function() {
 
 function getParametricTarea5Function() {
 	return function (u, v, target) {
+		let freq = 5;
+		let amplitude = 0.2;
+		let maxRadius = 5;
 
+		// uso polares
+		let angle = u * Math.PI * 2;
+		let currentRadius = v * maxRadius;
 
+		const x = Math.cos(angle) * currentRadius;
+		const z = Math.sin(angle) * currentRadius;
+
+		const y = (Math.sin(currentRadius * freq) * amplitude);
+
+		target.set(x, y, z);
+		
 	}
 }
 
@@ -181,7 +194,7 @@ function buildScene() {
 			// samplingFunction = getParametricTarea4Function();
 			break;
 		case 'tarea5':
-			// samplingFunction = getParametricTarea5Function();
+			samplingFunction = getParametricTarea5Function();
 			break;
 		case 'tarea6':
 			// samplingFunction = getParametricTarea6Function();
