@@ -8,7 +8,7 @@ import * as dat from 'dat.gui';
 let scene, camera, renderer, container, group;
 
 const params = {
-	currentSurface: 'torus', //plane, waves, torus
+	currentSurface: 'tarea1',
 	showWireframe: false,
 };
 
@@ -98,6 +98,48 @@ function getParametricTorusFunction(radio1, radio2, from = 0, to = Math.PI * 2, 
 	};
 }
 
+function getParametricTarea1Function() {
+	return function (u, v, target) {
+
+
+	}
+}
+
+function getParametricTarea2Function() {
+	return function (u, v, target) {
+
+
+	}
+}
+
+function getParametricTarea3Function() {
+	return function (u, v, target) {
+
+
+	}
+}
+
+function getParametricTarea4Function() {
+	return function (u, v, target) {
+
+
+	}
+}
+
+function getParametricTarea5Function() {
+	return function (u, v, target) {
+
+
+	}
+}
+
+function getParametricTarea6Function() {
+	return function (u, v, target) {
+
+
+	}
+}
+
 function buildScene() {
 	const map = new THREE.TextureLoader().load('https://threejs.org/examples/textures/uv_grid_opengl.jpg');
 	map.wrapS = map.wrapT = THREE.RepeatWrapping;
@@ -126,6 +168,24 @@ function buildScene() {
 			samplingFunction = getParametricTorusFunction(4, 1, 0, (2 * Math.PI * 3) / 4);
 			//samplingFunction = getParametricTorusFunction(4, 1, 0, (2 * Math.PI * 3) / 4, 40, 0.5);
 			break;
+		case 'tarea1':
+			samplingFunction = getParametricTarea1Function();
+			break;
+		case 'tarea2':
+			// samplingFunction = getParametricTarea2Function();
+			break;
+		case 'tarea3':
+			// samplingFunction = getParametricTarea3Function();
+			break;
+		case 'tarea4':
+			// samplingFunction = getParametricTarea4Function();
+			break;
+		case 'tarea5':
+			// samplingFunction = getParametricTarea5Function();
+			break;
+		case 'tarea6':
+			// samplingFunction = getParametricTarea6Function();
+			break;
 	}
 
 	if (group) scene.remove(group);
@@ -142,7 +202,7 @@ function buildScene() {
 function createUI() {
 	const gui = new dat.GUI();
 
-	gui.add(params, 'currentSurface', ['plane', 'waves',"torus"]).onChange((value) => {
+	gui.add(params, 'currentSurface', ['plane', 'waves','torus', 'tarea1', 'tarea2', 'tarea3', 'tarea4', 'tarea5', 'tarea6']).onChange((value) => {
 		buildScene();
 	});
 	gui.add(params, 'showWireframe').onChange((value) => {
