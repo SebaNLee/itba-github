@@ -22,12 +22,12 @@ public class Client {
     }
 
     @Bean
-    CommandLineRunner run() { // TODO
+    CommandLineRunner run(TicketServiceClient client) { // TODO
         return _ -> {
             // TODO
 
-//            SequencedCollection<String> destinations = client.getDestinations();
-//            log.info("Destinations:\n{}", destinations);
+           SequencedCollection<String> destinations = client.getDestinations();
+           log.info("Destinations:\n{}", destinations);
 
 //            SequencedCollection<Train> availability = client.getAvailability(destinations.getFirst());
 //            log.info("Availability:\n{}", availability);

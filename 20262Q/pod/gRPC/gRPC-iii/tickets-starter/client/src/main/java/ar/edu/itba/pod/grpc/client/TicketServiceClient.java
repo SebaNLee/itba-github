@@ -1,5 +1,6 @@
 package ar.edu.itba.pod.grpc.client;
 
+import ar.edu.itba.pod.grpc.trainTickets.Destinations;
 import ar.edu.itba.pod.grpc.trainTickets.Reservation;
 import ar.edu.itba.pod.grpc.trainTickets.Ticket;
 import ar.edu.itba.pod.grpc.trainTickets.Train;
@@ -30,8 +31,11 @@ public class TicketServiceClient {
     }
 
     public List<String> getDestinations() {
-        // TODO
-        return null;
+        var request = Empty.newBuilder().build();
+        Destinations response = blockingStub.getDestinations(request);
+        List<String> destinations = response.getDestinationsList();
+
+        return destinations;
     }
 
     public SequencedCollection<Train> getAvailability(String destination) {

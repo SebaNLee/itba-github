@@ -21,6 +21,21 @@ public class ClientConfig {
 		return channels.createChannel(TARGET);
 	}
 
+	@Bean
+	TrainTicketServiceGrpc.TrainTicketServiceBlockingStub blockingStub(ManagedChannel managedChannel) {
+		return TrainTicketServiceGrpc.newBlockingStub(managedChannel);
+	}
+
+	@Bean
+	TrainTicketServiceGrpc.TrainTicketServiceStub asyncStub(ManagedChannel managedChannel) {
+		return TrainTicketServiceGrpc.newStub(managedChannel);
+	}
+
+	@Bean
+	TicketServiceClient ticketServiceClient(TrainTicketServiceGrpc.TrainTicketServiceBlockingStub stub, TrainTicketServiceGrpc.TrainTicketServiceStub asyncStub) {
+		return new TicketServiceClient(stub, asyncStub);
+	}
+
 	// TODO
 
 //	@Bean
