@@ -8,7 +8,7 @@ import * as dat from 'dat.gui';
 let scene, camera, renderer, container, group;
 
 const params = {
-	currentSurface: 'tarea5',
+	currentSurface: 'tarea6',
 	showWireframe: false,
 };
 
@@ -102,28 +102,36 @@ function getParametricTarea1Function() {
 	return function (u, v, target) {
 
 
-	}
+	};
 }
 
 function getParametricTarea2Function() {
 	return function (u, v, target) {
 
 
-	}
+	};
 }
 
 function getParametricTarea3Function() {
 	return function (u, v, target) {
+		let width = 10;
+		let height = 10;
+		let freq = 35;
+		let amplitude = 0.2;
 
+		const x = -width / 2 + u * width;
+		const z = -height / 2 + v * height;
 
-	}
+		const y = (Math.sin(u * freq) * amplitude);
+		target.set(x, y, z);
+	};
 }
 
 function getParametricTarea4Function() {
 	return function (u, v, target) {
 
 
-	}
+	};
 }
 
 function getParametricTarea5Function() {
@@ -141,16 +149,38 @@ function getParametricTarea5Function() {
 
 		const y = (Math.sin(currentRadius * freq) * amplitude);
 
-		target.set(x, y, z);
-		
-	}
+		target.set(x, y, z);	
+	};
 }
 
 function getParametricTarea6Function() {
 	return function (u, v, target) {
+		let radius = 2;
+		let depth = 10;
+		let segments = 6;
+
+		// parte cilíndrica
+		if (v <= 0.5) {
+			const x = radius * Math.sin(u * Math.PI * 2);
+			const y = radius * Math.cos(u * Math.PI * 2);
+			const z = -depth / 2 + v * depth;
+
+			target.set(x, y, z);			
+		}
+		// parte hexagonal
+		else {
+			const x = radius * Math.sin(u * Math.PI * 2);
+			const y = radius * Math.cos(u * Math.PI * 2);
+			const z = -depth / 2 + v * depth;
+
+			target.set(x, y, z);
 
 
-	}
+			// TODO
+		}
+
+
+	};
 }
 
 function buildScene() {
@@ -185,19 +215,19 @@ function buildScene() {
 			samplingFunction = getParametricTarea1Function();
 			break;
 		case 'tarea2':
-			// samplingFunction = getParametricTarea2Function();
+			samplingFunction = getParametricTarea2Function();
 			break;
 		case 'tarea3':
-			// samplingFunction = getParametricTarea3Function();
+			samplingFunction = getParametricTarea3Function();
 			break;
 		case 'tarea4':
-			// samplingFunction = getParametricTarea4Function();
+			samplingFunction = getParametricTarea4Function();
 			break;
 		case 'tarea5':
 			samplingFunction = getParametricTarea5Function();
 			break;
 		case 'tarea6':
-			// samplingFunction = getParametricTarea6Function();
+			samplingFunction = getParametricTarea6Function();
 			break;
 	}
 
