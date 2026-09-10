@@ -43,3 +43,6 @@
 [submodule "20262Q/arqdm/tpe-figuritas-g05"]
 	path = 20262Q/arqdm/tpe-figuritas-g05
 	url = git@gitlab.com:itba-73-40-microservicios/alumnos/2026-s2/grupo-05/tpe-figuritas-g05.git
+[submodule "20262Q/pod/tpe1-26Q2-g4"]
+	path = 20262Q/pod/tpe1-26Q2-g4
+	url = git@github.com:SebaNLee/tpe1-26Q2-g4.git
