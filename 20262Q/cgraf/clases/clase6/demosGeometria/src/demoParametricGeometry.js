@@ -8,7 +8,7 @@ import * as dat from 'dat.gui';
 let scene, camera, renderer, container, group;
 
 const params = {
-	currentSurface: 'tarea6',
+	currentSurface: 'tarea1',
 	showWireframe: false,
 };
 
@@ -99,10 +99,39 @@ function getParametricTorusFunction(radio1, radio2, from = 0, to = Math.PI * 2, 
 }
 
 function getParametricTarea1Function() {
+	const shape = new THREE.Shape();
+	shape.moveTo(0, 0);
+	shape.bezierCurveTo(1, 1, 0, 0, 4, 0);
+	shape.bezierCurveTo(1, 1, 0, 0, 4, 4);
+
+	shape.closePath();
+
 	return function (u, v, target) {
 
-
 	};
+
+
+	// let points = [];
+	// points.push(new THREE.Vector2(0, 0));
+	// points.push(new THREE.Vector2(4, 0));
+	// points.push(new THREE.Vector2(5, 4));
+	// points.push(new THREE.Vector2(3, 6));
+	// points.push(new THREE.Vector2(3, 8));
+
+	// const lathe = new THREE.LatheGeometry(points);
+
+	// return function (u, v, target) {
+	// 	const index = Math.floor(v * (points.length - 1));
+	// 	const point = points[index];
+
+	// 	const angle = u * Math.PI * 2;
+		
+	// 	target.set(
+	// 		point.x * Math.cos(angle),
+	// 		point.y,
+	// 		point.x * Math.sin(angle)
+	// 	);
+	// };
 }
 
 function getParametricTarea2Function() {
@@ -154,11 +183,20 @@ function getParametricTarea5Function() {
 }
 
 function getParametricTarea6Function() {
-	return function (u, v, target) {
-		let radius = 2;
-		let depth = 10;
-		let segments = 6;
+	let radius = 2;
+	let depth = 10;
 
+	const hexShape = new THREE.Shape();
+	hexShape.moveTo(0, Math.sin(Math.PI * (2/6)) * radius);
+	hexShape.lineTo(Math.cos(Math.PI * (2/6)) * radius, Math.sin(Math.PI * (2/6)) * radius);
+	hexShape.lineTo(Math.cos(Math.PI * (12/6)) * radius, Math.sin(Math.PI * (12/6)) * radius);
+	hexShape.lineTo(Math.cos(Math.PI * (10/6)) * radius, Math.sin(Math.PI * (10/6)) * radius);
+	hexShape.lineTo(Math.cos(Math.PI * (8/6)) * radius, Math.sin(Math.PI * (8/6)) * radius);
+	hexShape.lineTo(Math.cos(Math.PI * (6/6)) * radius, Math.sin(Math.PI * (6/6)) * radius);
+	hexShape.lineTo(Math.cos(Math.PI * (4/6)) * radius, Math.sin(Math.PI * (4/6)) * radius);
+	hexShape.lineTo(0, Math.sin(Math.PI * (2/6)) * radius);
+
+	return function (u, v, target) {
 		// parte cilíndrica
 		if (v <= 0.5) {
 			const x = radius * Math.sin(u * Math.PI * 2);
@@ -169,17 +207,11 @@ function getParametricTarea6Function() {
 		}
 		// parte hexagonal
 		else {
-			const x = radius * Math.sin(u * Math.PI * 2);
-			const y = radius * Math.cos(u * Math.PI * 2);
-			const z = -depth / 2 + v * depth;
-
-			target.set(x, y, z);
-
-
-			// TODO
+			let currPoint = new THREE.Vector2();
+			hexShape.getPointAt(u, currPoint);
+			
+			target.set(currPoint.x, currPoint.y, -depth / 2 + v * depth);
 		}
-
-
 	};
 }
 
