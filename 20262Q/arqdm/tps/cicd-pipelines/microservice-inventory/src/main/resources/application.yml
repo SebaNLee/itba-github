@@ -1,0 +1,57 @@
+server:
+  port: 8082
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://db:3306/saga_inventory?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: example
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    open-in-view: false
+    generate-ddl: false
+    properties:
+      hibernate.format_sql: false
+  flyway:
+    enabled: true
+    group: true
+    sql-migration-prefix: V
+    sql-migration-separator: __
+    sql-migration-suffixes: .sql
+    schemas: saga_inventory
+    locations: classpath:db/migration
+  kafka:
+    bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    consumer:
+      group-id: ${spring.application.name}
+      auto-offset-reset: earliest
+      properties:
+        spring.json.trusted.packages: "*"
+        spring.json.use.type.headers: true
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+# Application name (useful for consumer group-id)
+spring.application.name: inventory-service
+
+# Logging configuration
+logging:
+  level:
+    root: INFO
+    org.springframework.kafka: WARN
+    org.apache.kafka: WARN
+
+# Actuator endpoints for monitoring (optional)
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  health:
+    kafka:
+      enabled: true

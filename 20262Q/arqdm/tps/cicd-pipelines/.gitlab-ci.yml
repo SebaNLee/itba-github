@@ -1,0 +1,229 @@
+# Imagen de base para todos los jobs
+image: openjdk:17-jdk-slim
+
+# Manifiestos provistos por gitlab que extienden los stages del actual
+include:
+  - template: Security/SAST.gitlab-ci.yml
+  - template: Security/Dependency-Scanning.gitlab-ci.yml
+
+# Variables globales de entorno
+variables:
+  GITLAB_ADVANCED_SAST_ENABLED: "true"
+  SEARCH_MAX_DEPTH: 20
+  SAST_JAVA_VERSION: "17"
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+  MICROSERVICE_SALE: "microservice-sale"
+  MICROSERVICE_INVENTORY: "microservice-inventory"
+  MICROSERVICE_PAYMENT: "microservice-payment"
+  ENVIRONMENT_NAME: "produccion"
+
+stages:
+  - test
+  - build
+  - package
+  - release
+  - deploy
+
+# Plantillas de jobs
+.maven-job:
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - .m2/repository
+
+.unit-test:
+  extends: .maven-job
+  stage: test
+  script:
+    - cd ${SERVICE_NAME}
+    - "./mvnw test"
+  artifacts:
+    reports:
+      junit: ${SERVICE_NAME}/target/surefire-reports/TEST-*.xml
+  rules:
+    - if: $CI_COMMIT_TAG =~ /^v\d+\.\d+\.\d+$/ # Podemos usar regex para matchear tags
+      when: never
+    - when: always
+
+.build:
+  extends: .maven-job
+  stage: build
+  script:
+    - cd ${SERVICE_NAME}
+    - "./mvnw package -DskipTests"
+  artifacts:
+    paths:
+      - ${SERVICE_NAME}/target/*.jar
+    expire_in: 30 days
+  rules:
+    - when: always
+
+.package:
+  stage: package
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    # Existe una lista de variables de entorno que gitlab nos ofrece
+    # https://docs.gitlab.com/ci/variables/predefined_variables/
+    - docker build -t $CI_REGISTRY_IMAGE/${SERVICE_NAME}:$CI_COMMIT_SHA -f ${SERVICE_NAME}/Dockerfile ${SERVICE_NAME}
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker push $CI_REGISTRY_IMAGE/${SERVICE_NAME}:$CI_COMMIT_SHA
+  rules:
+    - if: $CI_MERGE_REQUEST_ID
+      when: never
+    - if: $CI_COMMIT_TAG =~ /^v\d+\.\d+\.\d+$/
+      when: never
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      when: always
+
+.release:
+  stage: release
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - echo "===== SIMULANDO RELEASE DEL MICROSERVICIO ${SERVICE_NAME} ====="
+    - echo "Creando imagen Docker para ${SERVICE_NAME}"
+    - echo "docker build -t $CI_REGISTRY_IMAGE/${SERVICE_NAME}:${CI_COMMIT_SHA} ..."
+    - echo "docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY"
+    - echo "docker push $CI_REGISTRY_IMAGE/${SERVICE_NAME}:${CI_COMMIT_SHA}"
+    - echo "docker tag $CI_REGISTRY_IMAGE/${SERVICE_NAME}:${CI_COMMIT_SHA} $CI_REGISTRY_IMAGE/${SERVICE_NAME}:latest"
+    - echo "docker push $CI_REGISTRY_IMAGE/${SERVICE_NAME}:latest"
+    - echo "===== RELEASE DE ${SERVICE_NAME} COMPLETADO CON ÉXITO ====="
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      when: on_success
+    - if: $CI_COMMIT_TAG =~ /^v\d+\.\d+\.\d+$/
+      when: on_success
+      variables:
+        IMAGE_TAG: ${CI_COMMIT_TAG}
+
+.deploy:
+  stage: deploy
+  image: bitnami/kubectl:latest
+  environment:
+    name: $ENVIRONMENT_NAME
+    action: start
+  script:
+    - echo "===== SIMULANDO DEPLOY DEL MICROSERVICIO ${SERVICE_NAME} EN ${ENVIRONMENT_NAME} ====="
+    - |
+      if [ ! -z "${IMAGE_TAG}" ]; then
+        IMAGE="${CI_REGISTRY_IMAGE}/${SERVICE_NAME}:${IMAGE_TAG}"
+      else
+        IMAGE="${CI_REGISTRY_IMAGE}/${SERVICE_NAME}:latest"
+      fi
+    - echo "Actualizando deployment para ${SERVICE_NAME} con imagen ${IMAGE}"
+    - echo "kubectl set image deployment/${SERVICE_NAME} ${SERVICE_NAME}=${IMAGE}"
+    - echo "kubectl rollout status deployment/${SERVICE_NAME}"
+    - echo "===== DEPLOY DE ${SERVICE_NAME} EN ${ENVIRONMENT_NAME} COMPLETADO CON ÉXITO ====="
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      when: on_success
+    - if: $CI_COMMIT_TAG =~ /^v\d+\.\d+\.\d+$/
+      when: on_success
+      variables:
+        IMAGE_TAG: ${CI_COMMIT_TAG}
+
+# SAST jobs
+semgrep-sast:
+  rules:
+    - if: $CI_COMMIT_TAG =~ /^v\d+\.\d+\.\d+$/
+      when: never
+    - when: always
+
+# Jobs específicos de cada microservicio
+# Los templates me permiten evitar repetir codigo.
+# Definir variables permiten modificar el comportamiento del template
+inventory-unit-tests:
+  extends: .unit-test
+  variables:
+    SERVICE_NAME: $MICROSERVICE_INVENTORY
+
+sale-unit-tests:
+  extends: .unit-test
+  variables:
+    SERVICE_NAME: $MICROSERVICE_SALE
+
+payment-unit-tests:
+  extends: .unit-test
+  variables:
+    SERVICE_NAME: $MICROSERVICE_PAYMENT
+
+inventory-build:
+  extends: .build
+  variables:
+    SERVICE_NAME: $MICROSERVICE_INVENTORY
+
+sale-build:
+  extends: .build
+  variables:
+    SERVICE_NAME: $MICROSERVICE_SALE
+
+payment-build:
+  extends: .build
+  variables:
+    SERVICE_NAME: $MICROSERVICE_PAYMENT
+
+inventory-package:
+  extends: .package
+  variables:
+    SERVICE_NAME: $MICROSERVICE_INVENTORY
+
+sale-package:
+  extends: .package
+  variables:
+    SERVICE_NAME: $MICROSERVICE_SALE
+
+payment-package:
+  extends: .package
+  variables:
+    SERVICE_NAME: $MICROSERVICE_PAYMENT
+
+inventory-release:
+  extends: .release
+  variables:
+    SERVICE_NAME: $MICROSERVICE_INVENTORY
+  needs:
+    - job: inventory-package
+      optional: false
+
+sale-release:
+  extends: .release
+  variables:
+    SERVICE_NAME: $MICROSERVICE_SALE
+  needs:
+    - job: sale-package
+      optional: false
+
+payment-release:
+  extends: .release
+  variables:
+    SERVICE_NAME: $MICROSERVICE_PAYMENT
+  needs:
+    - job: payment-package
+      optional: false
+
+inventory-deploy:
+  extends: .deploy
+  variables:
+    SERVICE_NAME: $MICROSERVICE_INVENTORY
+  needs:
+    - job: inventory-release
+      optional: false
+
+sale-deploy:
+  extends: .deploy
+  variables:
+    SERVICE_NAME: $MICROSERVICE_SALE
+  needs:
+    - job: sale-release
+      optional: false
+
+payment-deploy:
+  extends: .deploy
+  variables:
+    SERVICE_NAME: $MICROSERVICE_PAYMENT
+  needs:
+    - job: payment-release
+      optional: false
