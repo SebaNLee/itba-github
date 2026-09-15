@@ -8,7 +8,7 @@ import * as dat from 'dat.gui';
 let scene, camera, renderer, container, group;
 
 const params = {
-	currentSurface: 'tarea1',
+	currentSurface: 'tarea4',
 	showWireframe: false,
 };
 
@@ -101,42 +101,32 @@ function getParametricTorusFunction(radio1, radio2, from = 0, to = Math.PI * 2, 
 function getParametricTarea1Function() {
 	const shape = new THREE.Shape();
 	shape.moveTo(0, 0);
-	shape.bezierCurveTo(1, 1, 0, 0, 4, 0);
-	shape.bezierCurveTo(1, 1, 0, 0, 4, 4);
-
-	shape.closePath();
+	shape.lineTo(1, 0); // base
+	shape.lineTo(1, 1.5); // pared
+	shape.bezierCurveTo(0.75, 2, 0.3, 1.5, 0.3, 2.5); // pico
 
 	return function (u, v, target) {
+		const point = shape.getPoint(v);
+		const theta = u * Math.PI * 2;
+		target.set(point.x * Math.cos(theta), point.y, point.x * Math.sin(theta));
 
 	};
-
-
-	// let points = [];
-	// points.push(new THREE.Vector2(0, 0));
-	// points.push(new THREE.Vector2(4, 0));
-	// points.push(new THREE.Vector2(5, 4));
-	// points.push(new THREE.Vector2(3, 6));
-	// points.push(new THREE.Vector2(3, 8));
-
-	// const lathe = new THREE.LatheGeometry(points);
-
-	// return function (u, v, target) {
-	// 	const index = Math.floor(v * (points.length - 1));
-	// 	const point = points[index];
-
-	// 	const angle = u * Math.PI * 2;
-		
-	// 	target.set(
-	// 		point.x * Math.cos(angle),
-	// 		point.y,
-	// 		point.x * Math.sin(angle)
-	// 	);
-	// };
 }
 
 function getParametricTarea2Function() {
-	return function (u, v, target) {
+	const shape = new THREE.Shape();
+	shape.moveTo(0, 0);
+	shape.lineTo(0.7, 0); // base
+	shape.lineTo(1, 1.3); // pared
+	shape.lineTo(1.1, 1.3); // fold
+	shape.lineTo(1.1, 1.6); // fold
+	shape.lineTo(1, 1.6); // fold
+	shape.lineTo(1, 1.3); // fold cierre
 
+	return function (u, v, target) {
+		const point = shape.getPoint(v);
+		const theta = u * Math.PI * 2;
+		target.set(point.x * Math.cos(theta), point.y, point.x * Math.sin(theta));
 
 	};
 }
@@ -157,9 +147,25 @@ function getParametricTarea3Function() {
 }
 
 function getParametricTarea4Function() {
+	// lo pienso como un triángulo con aristas cóncavas para adentro
+	const shape = new THREE.Shape();
+	shape.moveTo(0, 0);
+	shape.quadraticCurveTo(0.5 / 2, 0.866 / 2, 1, 0);
+	shape.quadraticCurveTo(0.5 / 2, 0.866 / 2, 0.5, 0.866); // triángulo equilátero
+	shape.quadraticCurveTo(0.5 / 2, 0.866 / 2, 0, 0);
+
 	return function (u, v, target) {
+		const point = shape.getPoint(v);
+		const theta = u * Math.PI * 2;
+		
+		// centro triángulo equilátero = (0.5, 0.289)
+		const rotations = 3;
+		const currRotPos = rotations * theta;
+		const rotationX = (point.x - 0.5) * Math.cos(currRotPos) - (point.y - 0.289) * Math.sin(currRotPos);
+		const rotationY = (point.x - 0.5) * Math.sin(currRotPos) + (point.y - 0.289) * Math.cos(currRotPos);
+		const ringRadius = 2;
 
-
+		target.set((ringRadius + rotationX) * Math.cos(theta), rotationY, (ringRadius + rotationX) * Math.sin(theta));
 	};
 }
 
