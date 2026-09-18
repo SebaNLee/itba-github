@@ -10,4 +10,7 @@ Dejo también en cada guía un `rtas.md` con notas propias y resúmenes de cada 
 
 | Clase | Guía |
 |-------|------|
-|   3   | /linux-containers |
+| 3 | /linux-containers |
+| 4 | /dockerfile-compose-main |
+| 6 | /cicd-pipelines |
+| 6 | /graphql |
