@@ -1,3 +1,19 @@
+
+---
+
+## Notas personales:
+
+Es necesario ejecutar con Java 21, usar:
+
+```
+JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64 ./rebuild_microservices.sh
+```
+
+Pero parece que está deprecated openjdk:17-jdk-slim en DockerHub
+
+
+---
+
 # Laboratorio de Pipelines CI/CD con GitLab
 
 **Introducción**
