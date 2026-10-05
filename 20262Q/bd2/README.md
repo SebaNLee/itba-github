@@ -7,7 +7,9 @@ Uso `_source` tanto para código de cátedra como propios (inicializadores de DB
 ## Comandos útiles
 
 
-#### Dev env:
+### Dev env:
+
+#### MySQL
 
 ```
 # Bajar imagen de Docker
@@ -18,34 +20,19 @@ docker run --name MyMySql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=mydb -e 
 
 # Entrar al contenedor
 docker exec -it MyMySql bash
-```
 
-> Nota: tener esto levantado y usar GUI desde W11 (DBeaver, MySQL Workspace, et al); con WSL networkingMode=mirrored
-
-#### Dentro del contenedor:
-
-```
 # Acceder a MySQL
 mysql -u root -p
-```
 
-#### MySQL:
-
-```
+# Comandos útiles
 SHOW DATABASES;
 USE <db>;
 SHOW TABLES;
 ```
 
-#### Extras:
+> Nota: tener esto levantado y usar GUI desde W11 (DBeaver, MySQL Workspace, et al); con WSL networkingMode=mirrored
 
-```
-docker ps -a
-docker images
-docker exec -it <contenedor> bash
-```
-
-#### Flujo normal:
+Flujo normal:
 
 ```
 docker start MyMySql
@@ -54,3 +41,36 @@ docker exec -i MyMySql mysql -u root -proot mydb < script.sql
 
 > Y tener DBeaver abierto...
 
+#### MongoDB
+
+```
+# Bajar imagen de Docker
+docker pull mongo:9.0.2
+
+# Levantar contenedor
+docker run --name Mymongo -p 27017:27017 -d mongo
+
+# Entrar al contenedor
+docker exec -it Mymongo bash
+
+# Acceder a Mongo
+mongosh
+
+# Comandos útiles
+db.getCollectionNames()
+```
+
+Flujo normal:
+
+```
+docker start Mymongo
+docker exec -i Mymongo mongosh mydb < script.mongodb
+```
+
+### Extras:
+
+```
+docker ps -a
+docker images
+docker exec -it <contenedor> bash
+```
