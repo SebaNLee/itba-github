@@ -1,0 +1,186 @@
+// @ts-nocheck
+
+db.bands.drop();
+
+// copiado de Drive
+db.bands.insertOne({
+    name:'VER K BITCH',
+    genre:'INSTRUMENTAL',
+    insc: new Date(2018, 1, 20),
+    discs:[
+        {name:'DIOS AGUJERO NEGRO',
+        year:2008},
+        {name:'APICHONADOS',
+        year:2007},
+        {name:'MERIDIANO',
+        year:2006},
+        {name:'CAUSALIDADES',
+        year:2005},
+        {name:'PLANETA ESMERALDA',
+        year:2001}
+    ],
+    neigh:'VERSALLES',
+    members:1
+})
+
+db.bands.insertOne({
+    name:'TROTAMUNDOS',
+    genre:'INDIE',
+    insc: new Date(2017,11,30),
+    discs:[
+        {name:'HECHO BOLITA',
+        year:2014}
+    ],
+    neigh:'VILLA LURO',
+    members:4
+})
+
+db.bands.insertOne({
+    name:'EFECTO ALFONS',
+    genre:'ROCK',
+    style:'POWER TRIO',
+    insc: new Date(2017,11,27),
+    discs:[
+        {name:'EFECTO ALFONS',
+        year:2000}
+    ],
+    neigh:'BARRACAS',
+    members:3
+})
+
+db.bands.insertOne({
+    name:'MARCELO GIULLITTI',
+    genre:'SOLISTA',
+    insc: new Date(2017,11,26),
+    neigh:'AGRONOMIA',
+    members:1
+})
+
+db.bands.insertOne({
+    name:'AFTERLIFE',
+    genre:'ROCK',
+    style:'ROCK ALTERNATIVO',
+    insc: new Date(2017,11,14),
+    neigh:'BALVANERA',
+    members:5
+})
+
+db.bands.insertOne({
+    name:'VIRGINIA FERREYRA',
+    genre:'ROCK',
+    style:'ROCK POP',
+    insc: new Date(2017,11,14),
+    neigh:'VILLA DEL PARQUE',
+    members:1
+})
+
+db.bands.insertOne({
+    name:'LMV',
+    genre:'POP',
+    insc: new Date(2017,11,10),
+    neigh:'LA LUCILA',
+    members:6
+})
+
+db.bands.insertOne({
+    name:'EFECTO ALFONS',
+    genre:'ROCK',
+    style:'POWER TRIO',
+    insc: new Date(2017,11,6),
+    discs:[
+        {name:'EFECTO ALFONS',
+        year:1995}
+    ],
+    neigh:'BARRACAS',
+    members:3
+})
+
+db.bands.insertOne({
+    name:'TANTAS PREGUNTAS',
+    genre:'PUNK',
+    style:'PUNK ROCK',
+    insc: new Date(2017,10,27),
+    discs:[
+        {name:'DESPUES DE TODO',
+        year:2006},
+        {name:'LIBRE ALBEDRIO',
+        year:2006}
+    ],
+    neigh:'MORENO',
+    members:3
+})
+
+db.bands.insertOne({
+    name:'TAL VEZ DE PASO',
+    genre:'POP',
+    style:'POP ROCK',
+    insc: new Date(2017,10,26),
+    neigh:'PUERTO MADERO',
+    members:4
+})
+
+db.bands.insertOne({
+    name:'LA SURTIDA FOLCK',
+    genre:'FOLKLORE',
+    insc: new Date(2017,10,25),
+    neigh:'BERAZATEGUI',
+    members:7
+})
+
+db.bands.insertOne({
+    name:'JAYDEE M',
+    genre:'HIP HOP / RAP',
+    insc: new Date(2017,10,24),
+    neigh:'BARRACAS',
+    members:1
+})
+
+db.bands.find();
+print("==================");
+
+print("ej1.2");
+db.bands.find({}).sort({members: -1});
+
+print("ej1.3");
+db.bands.find().sort({members: -1}).limit(1); // solo uno, podría haber varios (guardar en var supongo o concatenado)
+
+print("ej1.4");
+db.bands.updateMany({}, {$inc: {members: 1}});
+db.bands.find().sort({members: -1}).limit(1);
+
+print("ej1.5");
+db.bands.find({genre: 'ROCK' });
+
+print("ej1.6");
+db.bands.find({$or: [{genre: 'ROCK' }, {style: {$regex: /ROCK/ }}]});
+
+print("ej1.7");
+db.bands.find({'discs.year': 2006});
+
+print("ej1.8");
+db.bands.find({'discs.year': {$gt: 2010}});
+
+print("ej1.9");
+db.bands.find({neigh: 'BARRACAS'}).count();
+
+print("ej1.10");
+db.createView(
+    'bandas_resumen',
+    'bands',
+    [
+        {
+            $project: {
+              _id: 0,
+              name: 1,
+              genre: 1,
+              neigh: 1,
+              members: 1
+            }
+        }
+    ]
+);
+
+db.bandas_resumen.aggregate({$group: {_id: '$genre', avgMembers:{$avg: '$members'}, bands: {$sum: 1}}});
+
+print("ej1.11");
+db.bandas_resumen.aggregate([{$group: {_id: '$neigh', totalBands: {$sum: 1}}}, {$sort: {totalBands: -1, _id: 1}}]);

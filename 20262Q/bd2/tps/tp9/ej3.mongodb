@@ -1,0 +1,47 @@
+// @ts-nocheck
+
+db.bands.find({}).explain();
+
+
+// algo un toque más detallado de SQL xd
+
+// mydb> {
+//   explainVersion: '1',
+//   queryPlanner: {
+//     namespace: 'mydb.bands',
+//     parsedQuery: {},
+//     indexFilterSet: false,
+//     queryHash: '0F20F9A9',
+//     planCacheShapeHash: '0F20F9A9',
+//     planCacheKey: '8CEEBFD3',
+//     optimizationTimeMillis: 11,
+//     optimizationTimeMicros: 11307,
+//     maxIndexedOrSolutionsReached: false,
+//     maxIndexedAndSolutionsReached: false,
+//     maxScansToExplodeReached: false,
+//     prunedSimilarIndexes: false,
+//     winningPlan: {
+//       isCached: false,
+//       stage: 'COLLSCAN',
+//       nss: 'mydb.bands',
+//       direction: 'forward'
+//     },
+//     rejectedPlans: []
+//   },
+//   queryShapeHash: '16344FE419171C451469A3D681113BBF563A3C253F02B54ADD940BBDEB00C71D',
+//   command: { find: 'bands', filter: {}, '$db': 'mydb' },
+//   serverInfo: {
+//     host: '7fd5dfa68ac5',
+//     port: 27017,
+//     version: '9.0.2',
+//     gitVersion: 'c4d309807b94ac30edcca32e35e88a9598eadfc8'
+//   },
+//   serverParameters: {
+//     internalQueryFacetMaxOutputDocSizeBytes: 104857600,
+//     internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,
+//     internalQueryProhibitBlockingMergeOnMongoS: 0,
+//     internalQueryFrameworkControl: 'trySbeRestricted',
+//     internalQueryPlannerIgnoreIndexWithCollationForRegex: 1
+//   },
+//   ok: 1
+// }
