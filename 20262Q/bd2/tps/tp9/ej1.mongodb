@@ -1,9 +1,6 @@
 // @ts-nocheck
 
-
 db.bands.drop();
-
-// ej1
 
 // copiado de Drive
 db.bands.insertOne({
@@ -152,18 +149,38 @@ db.bands.updateMany({}, {$inc: {members: 1}});
 db.bands.find().sort({members: -1}).limit(1);
 
 print("ej1.5");
-db.bands.find({genre: {$regex: /ROCK/ }});
+db.bands.find({genre: 'ROCK' });
 
 print("ej1.6");
+db.bands.find({$or: [{genre: 'ROCK' }, {style: {$regex: /ROCK/ }}]});
 
 print("ej1.7");
+db.bands.find({'discs.year': 2006});
 
 print("ej1.8");
+db.bands.find({'discs.year': {$gt: 2010}});
 
 print("ej1.9");
+db.bands.find({neigh: 'BARRACAS'}).count();
 
 print("ej1.10");
+db.createView(
+    'bandas_resumen',
+    'bands',
+    [
+        {
+            $project: {
+              _id: 0,
+              name: 1,
+              genre: 1,
+              neigh: 1,
+              members: 1
+            }
+        }
+    ]
+);
+
+db.bandas_resumen.aggregate({$group: {_id: '$genre', avgMembers:{$avg: '$members'}, bands: {$sum: 1}}});
 
 print("ej1.11");
-
-// ej2
+db.bandas_resumen.aggregate([{$group: {_id: '$neigh', totalBands: {$sum: 1}}}, {$sort: {totalBands: -1, _id: 1}}]);
