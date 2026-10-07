@@ -1,0 +1,16 @@
+// @ts-nocheck
+
+// docker cp tps/tp9/_source/mongoCities_fixed.json Mymongo:/mongoCities_fixed.json
+// docker exec -it Mymongo bash
+// mongoimport --db geo --collection cities --file /mongoCities_fixed.json --legacy
+
+use geo;
+db.cities.createIndex({location: "2d"});
+
+db.cities.find({
+  location: {
+    $geoWithin: {
+      $centerSphere:[[-0.1278, 51.5074], 50/3963.2]
+    }
+  }
+});
