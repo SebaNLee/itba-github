@@ -67,10 +67,50 @@ docker start Mymongo
 docker exec -i Mymongo mongosh mydb < script.mongodb
 ```
 
+#### Cassandra
+
+```
+# Bajar imagen de Docker
+docker pull cassandra:latest
+
+# Crear network
+docker network create network-cassandra
+
+# Levantar contenedor
+docker run --name Mycassandra --network network-cassandra -d cassandra
+
+# Entrar al contenedor
+docker exec -it Mycassandra bash
+
+# Acceder a Cassandra
+cqlsh
+```
+
+Para usar DataGrip:
+
+```
+# Necesario exponer puerto 9042
+docker run --name Mycassandra -p 9042:9042 -d cassandra
+```
+
+> User: cassandra; Password: cassandra
+
+Flujo normal:
+
+```
+docker start Mycassandra
+docker exec -i Mycassandra cqlsh < <script>
+```
+
 ### Extras:
 
 ```
+# General
 docker ps -a
 docker images
 docker exec -it <contenedor> bash
+
+# Network
+docker network list
+docker network inspect <network>
 ```
