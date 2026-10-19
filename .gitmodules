@@ -49,3 +49,6 @@
 [submodule "20262Q/cgraf/orbital-shipyard"]
 	path = 20262Q/cgraf/orbital-shipyard
 	url = git@github.com:SebaNLee/orbital-shipyard.git
+[submodule "20262Q/cripto/cripto-steganography-bmp"]
+	path = 20262Q/cripto/cripto-steganography-bmp
+	url = https://github.com/SebaNLee/cripto-steganography-bmp
