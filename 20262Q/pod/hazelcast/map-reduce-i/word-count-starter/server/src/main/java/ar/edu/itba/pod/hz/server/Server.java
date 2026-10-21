@@ -20,7 +20,7 @@ public class Server {
         Config config = new Config();
 
         // Group Config
-        GroupConfig groupConfig = new GroupConfig().setName("l12345").setPassword("l12345-pass");
+        GroupConfig groupConfig = new GroupConfig().setName("l64675").setPassword("l64675-pass");
         config.setGroupConfig(groupConfig);
 
         // Network Config

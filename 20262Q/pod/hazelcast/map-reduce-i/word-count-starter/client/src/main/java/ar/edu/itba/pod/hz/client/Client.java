@@ -5,10 +5,15 @@ import com.hazelcast.client.config.ClientConfig;
 import com.hazelcast.client.config.ClientNetworkConfig;
 import com.hazelcast.config.GroupConfig;
 import com.hazelcast.core.HazelcastInstance;
+import com.hazelcast.core.ICompletableFuture;
 import com.hazelcast.core.IMap;
 import com.hazelcast.mapreduce.Job;
 import com.hazelcast.mapreduce.JobTracker;
 import com.hazelcast.mapreduce.KeyValueSource;
+
+import ar.edu.itba.pod.hz.api.TokenizerMapper;
+import ar.edu.itba.pod.hz.api.WordCountReducerFactory;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,6 +21,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
@@ -29,7 +35,7 @@ public class Client {
 
 		try {
 			// Group Config
-			GroupConfig groupConfig = new GroupConfig().setName("l12345").setPassword("l12345-pass");
+			GroupConfig groupConfig = new GroupConfig().setName("l64675").setPassword("l64675-pass");
 
 			// Client Network Config
 			ClientNetworkConfig clientNetworkConfig = new ClientNetworkConfig();
@@ -60,18 +66,18 @@ public class Client {
 
 			// MapReduce Job
 			Job<String, String> job = jobTracker.newJob(wordsKeyValueSource);
-//			ICompletableFuture<Map<String, Long>> future = job
-//					.mapper(new TokenizerMapper())
-//					.reducer(new WordCountReducerFactory())
-//					.submit();
+			ICompletableFuture<Map<String, Long>> future = job
+					.mapper(new TokenizerMapper())
+					.reducer(new WordCountReducerFactory())
+					.submit();
 
 			// Wait and retrieve the result
-//			Map<String, Long> result = future.get();
+			Map<String, Long> result = future.get();
 
 			// Sort entries ascending by count and print
-//			result.entrySet().stream()
-//					.sorted((Map.Entry.comparingByValue()))
-//					.forEach(IO::println);
+			result.entrySet().stream()
+					.sorted((Map.Entry.comparingByValue()))
+					.forEach(IO::println);
 
 			//
 			// Clase 11: Ejercicio 2
