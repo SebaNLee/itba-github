@@ -1,0 +1,28 @@
+meta {
+  name: checkout
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/checkout
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "productId": 1,
+    "userId": 1,
+    "unitPrice": 10.00,
+    "amount": 10.00,
+    "quantity": 1
+  }
+}
+
+script:post-response {
+  if (res && res.body && res.body.orderId) {
+    bru.setVar("checkoutOrderId", res.body.orderId);
+    console.log("Captured orderId:", res.body.orderId);
+  }
+}

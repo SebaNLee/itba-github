@@ -1,0 +1,41 @@
+[project]
+name = "redis-cache-aside"
+version = "0.1.0"
+description = "Cache-aside lab: Valkey + PostgreSQL + Strawberry GraphQL."
+requires-python = ">=3.11"
+readme = "README.md"
+dependencies = [
+    "asgi-lifespan>=2.1",
+    "asyncpg>=0.29",
+    "httpx>=0.27",
+    "redis>=5.0",
+    "rich>=13.0",
+    "starlette>=0.38",
+    "strawberry-graphql>=0.253",
+    "uvicorn[standard]>=0.30",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.24"]
+
+[project.scripts]
+redis-cache-aside = "redis_cache_aside.__main__:main"
+redis-cache-aside-demo = "redis_cache_aside.demo:main"
+redis-cache-aside-visual-eval = "redis_cache_aside.visual_eval:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["redis_cache_aside*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = ["-ra"]
+asyncio_mode = "auto"
+markers = [
+    "integration: needs Valkey + Postgres (use docker compose run test)",
+]

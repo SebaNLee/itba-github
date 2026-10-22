@@ -1,0 +1,58 @@
+# GitLab CI — see specs/01-gitlab-service-ci.md
+# Parent pipeline: compliance + generator. Service Docker jobs run in a **child pipeline**
+# whose YAML is produced by ci/prepare_child_pipeline.py from a git diff against
+# origin/$CI_DEFAULT_BRANCH (see docs in that script).
+#
+# Requires: GitLab with Docker runners (docker + docker:dind), child pipelines enabled.
+
+stages:
+  - validate
+  - prepare
+  - services
+
+variables:
+  DOCKER_TLS_CERTDIR: "/certs"
+
+# ---------------------------------------------------------------------------
+# Structural compliance (repo root): no Docker, no network beyond pip/PyPI.
+# ---------------------------------------------------------------------------
+compliance:
+  stage: validate
+  image: python:3.12-bookworm
+  rules:
+    - when: always
+  script:
+    - python -m pip install --disable-pip-version-check -q pytest
+    - pytest tests/
+
+# ---------------------------------------------------------------------------
+# Emit child-pipeline.yml (build/test only for services selected vs default branch).
+# Runs in parallel with compliance; trigger waits for both.
+# ---------------------------------------------------------------------------
+prepare-child-pipeline:
+  stage: prepare
+  image: python:3.12-bookworm
+  variables:
+    GIT_DEPTH: "0"
+  before_script:
+    - apt-get update -qq && apt-get install -y -qq git
+  script:
+    - python3 ci/prepare_child_pipeline.py --output child-pipeline.yml
+  artifacts:
+    paths:
+      - child-pipeline.yml
+
+# ---------------------------------------------------------------------------
+# Child pipeline: Docker + Compose v2 per selected service.
+# ---------------------------------------------------------------------------
+trigger-service-pipelines:
+  stage: services
+  needs:
+    - job: compliance
+    - job: prepare-child-pipeline
+      artifacts: true
+  trigger:
+    include:
+      - artifact: child-pipeline.yml
+        job: prepare-child-pipeline
+    strategy: depend

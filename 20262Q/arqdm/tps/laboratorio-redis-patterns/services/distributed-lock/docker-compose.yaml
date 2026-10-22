@@ -1,0 +1,136 @@
+# Lab: Flash Sale Inventory Guard (Redlock + Valkey).
+# CI builder/test: docker compose run --rm builder | test
+# Simulation: docker compose up --build --scale consumer=5
+services:
+  valkey-1:
+    image: valkey/valkey:7.2
+    healthcheck:
+      test: ["CMD", "valkey-cli", "ping"]
+      interval: 3s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
+    deploy:
+      resources:
+        limits:
+          memory: 128m
+
+  valkey-2:
+    image: valkey/valkey:7.2
+    healthcheck:
+      test: ["CMD", "valkey-cli", "ping"]
+      interval: 3s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
+    deploy:
+      resources:
+        limits:
+          memory: 128m
+
+  valkey-3:
+    image: valkey/valkey:7.2
+    healthcheck:
+      test: ["CMD", "valkey-cli", "ping"]
+      interval: 3s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
+    deploy:
+      resources:
+        limits:
+          memory: 128m
+
+  inventory-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+    image: distributed-lock:local
+    command: ["python", "-m", "distributed_lock", "inventory-server"]
+    environment:
+      PRODUCT_IDS: ${PRODUCT_IDS:-flash-sale-001,flash-sale-002,flash-sale-003,flash-sale-004,flash-sale-005}
+      INITIAL_STOCK: ${INITIAL_STOCK:-100}
+      PORT: "8000"
+    ports:
+      - "58000:8000"
+    depends_on:
+      valkey-1:
+        condition: service_healthy
+      valkey-2:
+        condition: service_healthy
+      valkey-3:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')",
+        ]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
+    deploy:
+      resources:
+        limits:
+          memory: 128m
+
+  consumer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+    image: distributed-lock:local
+    command: ["python", "-m", "distributed_lock", "inventory-consumer"]
+    environment:
+      REDLOCK_VALKEY_URLS: redis://valkey-1:6379/0,redis://valkey-2:6379/0,redis://valkey-3:6379/0
+      INVENTORY_URL: http://inventory-server:8000
+      PRODUCT_IDS: ${PRODUCT_IDS:-flash-sale-001,flash-sale-002,flash-sale-003,flash-sale-004,flash-sale-005}
+      LOCK_TTL_MS: ${LOCK_TTL_MS:-10000}
+      MAX_ITERATIONS: ${MAX_ITERATIONS:-1000}
+      ACQUIRE_RETRY_DELAY_MS_MIN: ${ACQUIRE_RETRY_DELAY_MS_MIN:-50}
+      ACQUIRE_RETRY_DELAY_MS_MAX: ${ACQUIRE_RETRY_DELAY_MS_MAX:-200}
+    depends_on:
+      inventory-server:
+        condition: service_healthy
+      valkey-1:
+        condition: service_healthy
+      valkey-2:
+        condition: service_healthy
+      valkey-3:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 128m
+
+  builder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+    image: distributed-lock:local
+    container_name: distributed-lock-builder
+    command:
+      - python
+      - -c
+      - 'import distributed_lock; print("distributed-lock: builder ok")'
+
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: test
+    image: distributed-lock:test
+    container_name: distributed-lock-test
+    command: ["pytest", "-q"]
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      DOCKER_HOST: unix:///var/run/docker.sock
+      TESTCONTAINERS_HOST_OVERRIDE: host.docker.internal

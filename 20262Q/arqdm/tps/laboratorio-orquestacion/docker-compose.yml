@@ -1,0 +1,414 @@
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.0
+    hostname: zookeeper
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    healthcheck:
+      test: ["CMD", "bash", "-c", "echo ruok | nc localhost 2181 | grep imok"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - microservices-net
+
+  kafka:
+    image: confluentinc/cp-kafka:7.5.0
+    hostname: kafka
+    container_name: kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+    healthcheck:
+      test: ["CMD", "kafka-topics", "--bootstrap-server", "kafka:29092", "--list"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+    networks:
+      - microservices-net
+
+  postgres-checkout:
+    image: postgres:16-alpine
+    container_name: postgres-checkout
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: checkout_db
+      POSTGRES_USER: checkout_user
+      POSTGRES_PASSWORD: checkout_password
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_checkout_data:/var/lib/postgresql/data
+      - ./init-scripts/checkout:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U checkout_user -d checkout_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    command: >
+      postgres
+      -c max_connections=100
+      -c shared_buffers=256MB
+      -c effective_cache_size=1GB
+      -c maintenance_work_mem=64MB
+      -c checkpoint_completion_target=0.9
+      -c wal_buffers=16MB
+      -c default_statistics_target=100
+      -c random_page_cost=1.1
+      -c effective_io_concurrency=200
+    networks:
+      - microservices-net
+
+  postgres-sales:
+    image: postgres:16-alpine
+    container_name: postgres-sales
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: sales_db
+      POSTGRES_USER: sales_user
+      POSTGRES_PASSWORD: sales_password
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_sales_data:/var/lib/postgresql/data
+      - ./init-scripts/sales:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sales_user -d sales_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    command: >
+      postgres
+      -c max_connections=100
+      -c shared_buffers=256MB
+      -c effective_cache_size=1GB
+      -c maintenance_work_mem=64MB
+      -c checkpoint_completion_target=0.9
+      -c wal_buffers=16MB
+      -c default_statistics_target=100
+      -c random_page_cost=1.1
+      -c effective_io_concurrency=200
+    networks:
+      - microservices-net
+
+  postgres-payment:
+    image: postgres:16-alpine
+    container_name: postgres-payment
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: payment_db
+      POSTGRES_USER: payment_user
+      POSTGRES_PASSWORD: payment_password
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres_payment_data:/var/lib/postgresql/data
+      - ./init-scripts/payment:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U payment_user -d payment_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    command: >
+      postgres
+      -c max_connections=100
+      -c shared_buffers=256MB
+      -c effective_cache_size=1GB
+      -c maintenance_work_mem=64MB
+      -c checkpoint_completion_target=0.9
+      -c wal_buffers=16MB
+      -c default_statistics_target=100
+      -c random_page_cost=1.1
+      -c effective_io_concurrency=200
+    networks:
+      - microservices-net
+
+  postgres-inventory:
+    image: postgres:16-alpine
+    container_name: postgres-inventory
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: inventory_db
+      POSTGRES_USER: inventory_user
+      POSTGRES_PASSWORD: inventory_password
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5435:5432"
+    volumes:
+      - postgres_inventory_data:/var/lib/postgresql/data
+      - ./init-scripts/inventory:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U inventory_user -d inventory_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    command: >
+      postgres
+      -c max_connections=100
+      -c shared_buffers=256MB
+      -c effective_cache_size=1GB
+      -c maintenance_work_mem=64MB
+      -c checkpoint_completion_target=0.9
+      -c wal_buffers=16MB
+      -c default_statistics_target=100
+      -c random_page_cost=1.1
+      -c effective_io_concurrency=200
+    networks:
+      - microservices-net
+
+  kafka-init:
+    image: confluentinc/cp-kafka:7.5.0
+    depends_on:
+      kafka:
+        condition: service_healthy
+    command: |
+      bash -c "
+        kafka-topics --bootstrap-server kafka:29092 --create --if-not-exists --topic checkout-events --partitions 3 --replication-factor 1
+        kafka-topics --bootstrap-server kafka:29092 --create --if-not-exists --topic checkout-notifications --partitions 3 --replication-factor 1
+        echo 'Topics created successfully'
+      "
+    restart: "no"
+    networks:
+      - microservices-net
+
+  checkout:
+    build:
+      context: .
+      dockerfile: ./checkout/Dockerfile
+    container_name: checkout
+    restart: unless-stopped
+    depends_on:
+      kafka-init:
+        condition: service_completed_successfully
+      postgres-checkout:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      # Kafka Configuration
+      KAFKA_BROKERS: kafka:29092
+
+      # Database Configuration
+      DB_HOST: postgres-checkout
+      DB_PORT: 5432
+      DB_USER: checkout_user
+      DB_PASSWORD: checkout_password
+      DB_NAME: checkout_db
+      DB_SSLMODE: disable
+      DB_LOG_LEVEL: warn
+
+      # Application Configuration
+      SERVER_PORT: 8080
+      LOG_LEVEL: info
+
+      # Health Check Configuration
+      HEALTH_CHECK_TIMEOUT: 30s
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - microservices-net
+
+  sale:
+    build:
+      context: .
+      dockerfile: ./sale/Dockerfile
+    container_name: sale
+    restart: unless-stopped
+    depends_on:
+      kafka-init:
+        condition: service_completed_successfully
+      postgres-sales:
+        condition: service_healthy
+    ports:
+      - "8083:8080"
+    environment:
+      # Kafka Configuration
+      KAFKA_BROKERS: kafka:29092
+
+      # Database Configuration
+      DB_HOST: postgres-sales
+      DB_PORT: 5432
+      DB_USER: sales_user
+      DB_PASSWORD: sales_password
+      DB_NAME: sales_db
+      DB_SSLMODE: disable
+      DB_LOG_LEVEL: warn
+
+      # Application Configuration
+      SERVER_PORT: 8080
+      LOG_LEVEL: info
+
+      # Health Check Configuration
+      HEALTH_CHECK_TIMEOUT: 30s
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - microservices-net
+
+  payment:
+    build:
+      context: .
+      dockerfile: ./payment/Dockerfile
+    container_name: payment
+    restart: unless-stopped
+    depends_on:
+      kafka-init:
+        condition: service_completed_successfully
+      postgres-payment:
+        condition: service_healthy
+    ports:
+      - "8081:8080"
+    environment:
+      # Kafka Configuration
+      KAFKA_BROKERS: kafka:29092
+
+      # Database Configuration
+      DB_HOST: postgres-payment
+      DB_PORT: 5432
+      DB_USER: payment_user
+      DB_PASSWORD: payment_password
+      DB_NAME: payment_db
+      DB_SSLMODE: disable
+      DB_LOG_LEVEL: warn
+
+      # Application Configuration
+      LOG_LEVEL: info
+
+      # Payment Failure Simulation (Educational)
+      PAYMENT_ENABLE_FAILURES: "true"
+      PAYMENT_FAILURE_RATE: "0.2"  # 20% failure rate for educational purposes
+
+      # Health Check Configuration
+      HEALTH_CHECK_TIMEOUT: 30s
+    networks:
+      - microservices-net
+
+  inventory:
+    build:
+      context: .
+      dockerfile: ./inventory/Dockerfile
+    container_name: inventory
+    restart: unless-stopped
+    depends_on:
+      kafka-init:
+        condition: service_completed_successfully
+      postgres-inventory:
+        condition: service_healthy
+    ports:
+      - "8082:8082"
+    environment:
+      # Kafka Configuration
+      KAFKA_BROKERS: kafka:29092
+
+      # Database Configuration
+      DB_HOST: postgres-inventory
+      DB_PORT: 5432
+      DB_USER: inventory_user
+      DB_PASSWORD: inventory_password
+      DB_NAME: inventory_db
+      DB_SSLMODE: disable
+      DB_LOG_LEVEL: warn
+
+      # Application Configuration
+      SERVER_PORT: 8082
+      LOG_LEVEL: info
+
+      # Health Check Configuration
+      HEALTH_CHECK_TIMEOUT: 30s
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8082/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - microservices-net
+
+  # Database Inspection Service
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin
+    restart: unless-stopped
+    depends_on:
+      - postgres-checkout
+      - postgres-sales
+      - postgres-payment
+      - postgres-inventory
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+      - ./config/pgadmin/servers.json:/pgadmin4/servers.json:ro
+    networks:
+      - microservices-net
+
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    container_name: kafka-ui
+    restart: unless-stopped
+    depends_on:
+      kafka:
+        condition: service_healthy
+    ports:
+      - "8090:8080"
+    environment:
+      KAFKA_CLUSTERS_0_NAME: local
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:29092
+      KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper:2181
+    networks:
+      - microservices-net
+
+volumes:
+  postgres_checkout_data:
+    driver: local
+  postgres_sales_data:
+    driver: local
+  postgres_payment_data:
+    driver: local
+  postgres_inventory_data:
+    driver: local
+  pgadmin_data:
+    driver: local
+
+networks:
+  microservices-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

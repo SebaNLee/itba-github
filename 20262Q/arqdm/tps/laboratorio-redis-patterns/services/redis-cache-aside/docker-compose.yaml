@@ -1,0 +1,107 @@
+# Compose v2 — from this directory:
+#   docker compose up -d valkey postgres
+#   docker compose up app
+#   docker compose run --rm eval
+#   docker compose run --rm test
+#
+# Valkey image pin (spec §3.4 COULD): tag recorded in README.
+services:
+  valkey:
+    image: valkey/valkey:8.0.1
+    container_name: redis-cache-aside-valkey
+    healthcheck:
+      test: ["CMD", "valkey-cli", "ping"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: redis-cache-aside-postgres
+    environment:
+      POSTGRES_USER: catalog
+      POSTGRES_PASSWORD: catalog
+      POSTGRES_DB: catalog
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/00-init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U catalog -d catalog"]
+      interval: 2s
+      timeout: 5s
+      retries: 30
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+    image: redis-cache-aside:local
+    container_name: redis-cache-aside-app
+    depends_on:
+      valkey:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://catalog:catalog@postgres:5432/catalog
+      REDIS_URL: redis://valkey:6379/0
+      CACHE_TTL_SECONDS: "1800"
+      CACHE_ENABLED: "true"
+      HOST: 0.0.0.0
+      PORT: "8000"
+    ports:
+      - "8000:8000"
+    command: ["python", "-m", "redis_cache_aside"]
+
+  builder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+    image: redis-cache-aside:local
+    container_name: redis-cache-aside-builder
+    command:
+      - python
+      - -c
+      - 'import redis_cache_aside; print("redis-cache-aside: builder ok")'
+
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: test
+    image: redis-cache-aside:test
+    container_name: redis-cache-aside-test
+    depends_on:
+      valkey:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://catalog:catalog@postgres:5432/catalog
+      REDIS_URL: redis://valkey:6379/0
+      CACHE_TTL_SECONDS: "2"
+      CACHE_ENABLED: "true"
+    command: ["pytest", "-q"]
+
+  # Visual + script evaluations (specs/02-cli-eval.md, EVALUATE.md). Does not require `app`.
+  eval:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+    image: redis-cache-aside:local
+    container_name: redis-cache-aside-eval
+    depends_on:
+      valkey:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://catalog:catalog@postgres:5432/catalog
+      REDIS_URL: redis://valkey:6379/0
+      CACHE_TTL_SECONDS: "1800"
+      VISUAL_EVAL_REQUESTS: "1000"
+      VISUAL_EVAL_CONCURRENT: "1"
+      VISUAL_EVAL_PRODUCT_ID: "demo-1"
+    command: ["python", "-m", "redis_cache_aside.visual_eval"]

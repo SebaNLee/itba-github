@@ -1,0 +1,60 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "Checkout Database",
+      "Group": "Microservices",
+      "Host": "postgres-checkout",
+      "Port": 5432,
+      "MaintenanceDB": "checkout_db",
+      "Username": "checkout_user",
+      "SSLMode": "prefer",
+      "SSLCompression": 0,
+      "Timeout": 10,
+      "UseSSHTunnel": 0,
+      "TunnelPort": "22",
+      "TunnelAuthentication": 0
+    },
+    "2": {
+      "Name": "Sales Database",
+      "Group": "Microservices",
+      "Host": "postgres-sales",
+      "Port": 5432,
+      "MaintenanceDB": "sales_db",
+      "Username": "sales_user",
+      "SSLMode": "prefer",
+      "SSLCompression": 0,
+      "Timeout": 10,
+      "UseSSHTunnel": 0,
+      "TunnelPort": "22",
+      "TunnelAuthentication": 0
+    },
+    "3": {
+      "Name": "Payment Database",
+      "Group": "Microservices",
+      "Host": "postgres-payment",
+      "Port": 5432,
+      "MaintenanceDB": "payment_db",
+      "Username": "payment_user",
+      "SSLMode": "prefer",
+      "SSLCompression": 0,
+      "Timeout": 10,
+      "UseSSHTunnel": 0,
+      "TunnelPort": "22",
+      "TunnelAuthentication": 0
+    },
+    "4": {
+      "Name": "Inventory Database",
+      "Group": "Microservices",
+      "Host": "postgres-inventory",
+      "Port": 5432,
+      "MaintenanceDB": "inventory_db",
+      "Username": "inventory_user",
+      "SSLMode": "prefer",
+      "SSLCompression": 0,
+      "Timeout": 10,
+      "UseSSHTunnel": 0,
+      "TunnelPort": "22",
+      "TunnelAuthentication": 0
+    }
+  }
+}

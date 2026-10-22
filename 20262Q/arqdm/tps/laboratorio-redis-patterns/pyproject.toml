@@ -1,0 +1,12 @@
+# Root metadata for structural compliance tooling (see ./tests/).
+# CI installs `pytest` explicitly; locally: `pip install -r <(echo pytest)` or `uv pip install pytest`.
+[project]
+name = "laboratorio-redis-patterns"
+version = "0"
+description = "Monorepo root: structural compliance tests only (see ./tests/)."
+requires-python = ">=3.12"
+readme = "README.md"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
