@@ -46,9 +46,9 @@
 [submodule "20262Q/pod/tpe1-26Q2-g4"]
 	path = 20262Q/pod/tpe1-26Q2-g4
 	url = git@github.com:SebaNLee/tpe1-26Q2-g4.git
-[submodule "20262Q/cgraf/orbital-shipyard"]
-	path = 20262Q/cgraf/orbital-shipyard
-	url = git@github.com:SebaNLee/orbital-shipyard.git
 [submodule "20262Q/cripto/cripto-steganography-bmp"]
 	path = 20262Q/cripto/cripto-steganography-bmp
 	url = https://github.com/SebaNLee/cripto-steganography-bmp
+[submodule "20262Q/cgraf/agawata-lucent-transporter"]
+	path = 20262Q/cgraf/agawata-lucent-transporter
+	url = git@github.com:SebaNLee/agawata-lucent-transporter.git
