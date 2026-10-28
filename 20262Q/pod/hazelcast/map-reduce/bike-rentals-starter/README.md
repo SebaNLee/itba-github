@@ -38,17 +38,9 @@ Después de haber realizado el build
 
 ```shell
 cd server/target
-```
-```shell
 tar -xzf hz-bike-rentals-server-2026.1Q-bin.tar.gz
-```
-```shell
 cd hz-bike-rentals-server-2026.1Q
-```
-```shell
 chmod u+x run-node.sh
-```
-```shell
 sh run-node.sh
 ```
 
@@ -58,16 +50,8 @@ sh run-node.sh
 
 ```shell
 cd client/target
-```
-```shell
 tar -xzf hz-bike-rentals-client-2026.1Q-bin.tar.gz
-```
-```shell
 cd hz-bike-rentals-client-2026.1Q
-```
-```shell
 chmod u+x run-client.sh
-```
-```shell
 sh run-client.sh bikeRentals.csv
 ```

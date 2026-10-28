@@ -29,7 +29,7 @@ public class Client {
 
         try {
             // Group Config
-            GroupConfig groupConfig = new GroupConfig().setName("l12345").setPassword("l12345-pass");
+            GroupConfig groupConfig = new GroupConfig().setName("l64675").setPassword("l64675-pass");
 
             // Client Network Config
             ClientNetworkConfig clientNetworkConfig = new ClientNetworkConfig();
