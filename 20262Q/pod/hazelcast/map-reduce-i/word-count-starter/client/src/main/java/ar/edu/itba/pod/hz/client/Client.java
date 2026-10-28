@@ -12,8 +12,11 @@ import com.hazelcast.mapreduce.JobTracker;
 import com.hazelcast.mapreduce.KeyValueSource;
 
 import ar.edu.itba.pod.hz.api.MaxLengthTokenizerMapper;
+import ar.edu.itba.pod.hz.api.WordCountCollator;
+import ar.edu.itba.pod.hz.api.WordCountCombinerFactory;
 import ar.edu.itba.pod.hz.api.WordCountReducerFactory;
 import ar.edu.itba.pod.hz.api.WordCountTokenizerMapper;
+import ar.edu.itba.pod.hz.api.First100LinesKeyPredicate;
 import ar.edu.itba.pod.hz.api.MaxLengthReducerFactory;
 
 import org.slf4j.Logger;
@@ -23,7 +26,9 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
@@ -66,20 +71,22 @@ public class Client {
 			// Clase 11: Ejercicio 1
 			//
 
+			// clase 12, ej1 también, se agrega Predicate, Combiner, Collator
+
 			// MapReduce Job
 			Job<String, String> job1 = jobTracker.newJob(wordsKeyValueSource);
-			ICompletableFuture<Map<String, Long>> future1 = job1
+			ICompletableFuture<List<Map.Entry<String,Long>>> future1 = job1
+					.keyPredicate(new First100LinesKeyPredicate()) // predicate
 					.mapper(new WordCountTokenizerMapper())
+					.combiner(new WordCountCombinerFactory()) // combiner
 					.reducer(new WordCountReducerFactory())
-					.submit();
+					.submit(new WordCountCollator()); // collator
 
 			// Wait and retrieve the result
-			Map<String, Long> result1 = future1.get();
+			List<Map.Entry<String,Long>> result1 = future1.get();
 
-			// Sort entries ascending by count and print
-			result1.entrySet().stream()
-					.sorted((Map.Entry.comparingByValue()))
-					.forEach(IO::println);
+			// Print directly, sort in the collator
+			result1.stream().forEach(IO::println);
 
 			//
 			// Clase 11: Ejercicio 2
