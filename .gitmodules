@@ -52,3 +52,6 @@
 [submodule "20262Q/cgraf/agawata-lucent-transporter"]
 	path = 20262Q/cgraf/agawata-lucent-transporter
 	url = git@github.com:SebaNLee/agawata-lucent-transporter.git
+[submodule "20262Q/pod/tpe2-26Q2-g4"]
+	path = 20262Q/pod/tpe2-26Q2-g4
+	url = https://github.com/SebaNLee/tpe2-26Q2-g4
