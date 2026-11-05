@@ -1,0 +1,30 @@
+# Valores personalizados para el chart de PostgreSQL
+
+auth:
+  enablePostgresUser: true
+  # contraseña para el usuario postgres y db postgres
+  postgresPassword: passwordPropia
+
+  #Parametros cuando queremos usar un usuario, db y password personalizados que no sean db=postgres, user=postgres. Se deberia usar en conjunto con enablePostgresUser: false
+#  database: demo_db
+#  username: demo_user
+#  password: demo_password
+
+# Configuración del pod primario (usado por algunos charts)
+primary:
+  #Configuracion de persistencia. Sin storageClass usa la del cluster por defecto
+  persistence:
+    enabled: true
+    size: 4Gi
+  # Recursos: si no los definís, el chart usa un "resourcesPreset" y te lo avisa con un WARNING
+  resources:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+
+# Métricas no las necesitamos asi que off
+metrics:
+  enabled: false

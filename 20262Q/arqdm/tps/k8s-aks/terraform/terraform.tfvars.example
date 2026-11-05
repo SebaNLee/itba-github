@@ -1,0 +1,8 @@
+# ./elegir-region.sh crea terraform.tfvars con location y node_vm_size.
+# Agregá ahí cualquier otro valor que quieras cambiar.
+
+location     = "southafricanorth"
+node_vm_size = "Standard_B2s_v2"
+
+project_name = "figuritas"
+node_count   = 2

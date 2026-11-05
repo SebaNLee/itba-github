@@ -1,0 +1,29 @@
+# Sistema / OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# Logs y temporales
+*.log
+*.tmp
+*.swp
+*.bak
+
+# Artefactos de Helm / empaquetado
+*.tgz
+charts/*.tgz
+charts/**/charts/*.tgz
+.helm/
+
+# Salidas de build / releases
+dist/
+release/
+build/
+
+# Configuración local / secretos
+.env

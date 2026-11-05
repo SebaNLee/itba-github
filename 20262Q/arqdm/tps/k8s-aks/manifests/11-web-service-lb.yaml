@@ -1,0 +1,14 @@
+# Un Service LoadBalancer: en AKS, Azure crea una IP pública y una regla en su balanceador.
+# En la parte 6 se borra y la web pasa a estar detrás del Gateway.
+apiVersion: v1
+kind: Service
+metadata:
+  name: web
+  namespace: figuritas
+spec:
+  type: LoadBalancer
+  selector:
+    app: web
+  ports:
+    - port: 80
+      targetPort: 80

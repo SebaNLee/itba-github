@@ -1,0 +1,44 @@
+# Un solo punto de entrada. El Gateway pide la infraestructura (Envoy Gateway crea su
+# propio Service LoadBalancer = una IP pública); las HTTPRoute cuelgan servicios detrás.
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: figuritas
+  namespace: figuritas
+spec:
+  gatewayClassName: eg
+  listeners:
+    - name: http
+      protocol: HTTP
+      port: 80
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: web
+  namespace: figuritas
+spec:
+  parentRefs:
+    - name: figuritas
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: web
+          port: 80
+---
+# La web vuelve a ser interna: ya no necesita su propia IP pública.
+apiVersion: v1
+kind: Service
+metadata:
+  name: web
+  namespace: figuritas
+spec:
+  type: ClusterIP
+  selector:
+    app: web
+  ports:
+    - port: 80
+      targetPort: 80

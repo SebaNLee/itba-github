@@ -1,0 +1,8 @@
+# Infraestructura del cluster (no de una app): la clase de Gateway que implementa Envoy Gateway.
+# Las apps referencian `gatewayClassName: eg` desde sus Gateway.
+apiVersion: gateway.networking.k8s.io/v1
+kind: GatewayClass
+metadata:
+  name: eg
+spec:
+  controllerName: gateway.envoyproxy.io/gatewayclass-controller

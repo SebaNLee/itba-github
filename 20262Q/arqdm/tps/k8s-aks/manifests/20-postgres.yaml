@@ -1,0 +1,76 @@
+# Base del álbum. La password NO está acá: va en el Secret `postgres-cred`, que se crea
+# con kubectl (parte 4) para que nunca termine commiteado.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres
+  namespace: figuritas
+data:
+  POSTGRES_DB: album
+  POSTGRES_USER: album
+  # El disco de Azure viene formateado con una carpeta lost+found en la raíz,
+  # y Postgres se niega a inicializar en un directorio que no está vacío.
+  PGDATA: /var/lib/postgresql/data/pgdata
+---
+# Headless (clusterIP: None): el DNS `postgres` resuelve directo a la IP del pod.
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres
+  namespace: figuritas
+spec:
+  clusterIP: None
+  selector:
+    app: postgres
+  ports:
+    - port: 5432
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: postgres
+  namespace: figuritas
+spec:
+  serviceName: postgres
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:17
+          ports:
+            - containerPort: 5432
+          envFrom:
+            - configMapRef:
+                name: postgres
+            - secretRef:
+                name: postgres-cred
+          readinessProbe:
+            exec:
+              command: ["pg_isready", "-U", "album", "-d", "album"]
+            periodSeconds: 5
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              memory: 512Mi
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/postgresql/data
+  # Un PVC por réplica. Sin storageClassName usa la StorageClass default del cluster:
+  # en AKS es un Azure Disk que se crea en el momento (aprovisionamiento dinámico).
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 4Gi

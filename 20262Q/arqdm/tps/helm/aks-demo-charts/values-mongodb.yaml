@@ -1,0 +1,15 @@
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+# Sin storageClass: usa la StorageClass por defecto del cluster
+# (default en AKS, standard en minikube).
+persistence:
+  size: 4Gi
+
+auth:
+  enabled: false

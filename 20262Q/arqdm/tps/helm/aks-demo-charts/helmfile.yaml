@@ -1,0 +1,63 @@
+repositories:
+  - name: bitnami
+    url: https://charts.bitnami.com/bitnami
+
+# Sin wait, needs sólo ordena los helm install: no espera a que los pods estén listos.
+helmDefaults:
+  wait: true
+  timeout: 600
+
+releases:
+  - name: mongodb
+    namespace: aks-demo
+    chart: bitnami/mongodb
+    version: 20.0.5
+    values:
+      - values-mongodb.yaml
+
+  - name: rabbitmq
+    namespace: aks-demo
+    chart: bitnami/rabbitmq
+    version: 16.0.14
+    values:
+      - values-rabbitmq.yaml
+
+  - name: makeline-service
+    namespace: aks-demo
+    chart: ./makeline-service
+    needs:
+      - mongodb
+      - rabbitmq
+  - name: order-service
+    namespace: aks-demo
+    chart: ./order-service
+    needs:
+      - mongodb
+      - rabbitmq
+  - name: product-service
+    namespace: aks-demo
+    chart: ./product-service
+  - name: store-admin
+    namespace: aks-demo
+    chart: ./store-admin
+    needs:
+      - product-service
+      - order-service
+      - makeline-service
+  - name: store-front
+    namespace: aks-demo
+    chart: ./store-front
+    needs:
+      - product-service
+      - order-service
+      - makeline-service
+  - name: virtual-customer
+    namespace: aks-demo
+    chart: ./virtual-customer
+    needs:
+      - store-front
+  - name: virtual-worker
+    namespace: aks-demo
+    chart: ./virtual-worker
+    needs:
+      - store-front
